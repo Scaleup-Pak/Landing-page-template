@@ -11,13 +11,13 @@ export function Creators() {
               <div className=" ">
                 <h4
                   style={{ fontFamily: "Nunito, sans-serif" }}
-                  className="text-center mb-[17px]  text-[28px] sm:text-[32px] md:text-[38px] lg:text-[44px] xl:text-[48px] 2xl:text-[50px] leading-tight md:leading-[50px] font-sans font-bold "
+                  className="text-left mb-[17px]  text-[28px] sm:text-[32px] md:text-[38px] lg:text-[44px] xl:text-[48px] 2xl:text-[50px] leading-tight md:leading-[50px] font-sans font-bold "
                 >
                   Creator Program - The Comedy Economy{" "}
                 </h4>
                 <p
                   style={{ fontFamily: "Nunito, sans-serif" }}
-                  className="text-center text-[#22222280]    sm:text-lg md:text-xl lg:text-[22px]    leading-relaxed md:leading-8"
+                  className="text-left text-[#22222280]    sm:text-lg md:text-xl lg:text-[22px]    leading-relaxed md:leading-8"
                 >
                   In the pursuit of innovation and happiness, La La Laugh is on
                   a mission to build the clearest, fairest, and kindest way to
