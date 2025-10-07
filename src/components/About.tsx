@@ -1,5 +1,6 @@
 import line from "../assets/line.svg";
 import aboutsec from "../assets/aboutsec.png";
+import about from "../assets/about.png";
 
 export function About() {
   return (
@@ -33,8 +34,12 @@ export function About() {
               </p>
             </div>
           </div>
+          {/* image with responsivness for all screens */}
+          <div className="flex justify-center mt-[80px]">
+            <img src={about} alt="" className="w-auto h-auto" />
+          </div>
 
-          <div className="mt-8 flex flex-col 2xl:gap-[50px] xl:gap-16 lg:gap-12 md:gap-10 sm:gap-8 gap-6 ">
+          <div className="mt-[110px] flex flex-col 2xl:gap-[50px] xl:gap-16 lg:gap-12 md:gap-10 sm:gap-8 gap-6 ">
             <div className="flex flex-col md:flex-row items-center justify-center md:justify-between gap-6 sm:gap-8 md:gap-10 lg:gap-12 xl:gap-16 2xl:gap-[171px]">
               <div className="flex-1 w-full md:w-auto">
                 <h4 style={{ fontFamily: 'Nunito, sans-serif' }} className="text-center md:text-left text-[28px] sm:text-[32px] md:text-[38px] lg:text-[44px] xl:text-[48px] 2xl:text-[50px] leading-tight md:leading-[50px] font-sans font-bold ">
