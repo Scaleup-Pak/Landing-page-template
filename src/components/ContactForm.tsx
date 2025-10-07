@@ -15,7 +15,7 @@ interface FormErrors {
 
 export const ContactForm: React.FC = () => {
   const [formData, setFormData] = useState<ContactFormData>({
-    userType: '',
+    userType: 'waitlist',
     name: '',
     email: '',
     subject: '',
@@ -145,7 +145,7 @@ export const ContactForm: React.FC = () => {
         <div className="mb-6">
           <p 
             style={{ fontFamily: "Nunito, sans-serif" }}
-            className="block text-sm font-medium text-gray-700 mb-3"
+            className="block text-[18px] font-semibold text-[#000000] mb-3"
           >
             Select User Type <span className="text-red-500 ml-1">*</span>
           </p>
