@@ -3,7 +3,7 @@ import iphone from "../assets/iphon.png";
 
 export function Creators() {
   return (
-    <section className="w-full pt-[105px]">
+    <section className="w-full pt-[105px] mb-4">
       <div className="w-full px-4 sm:px-6 md:px-8 lg:px-16 xl:px-24 2xl:px-[106px]">
         <div className="max-w-[1440px] mx-auto">
           <div className="mt-8  flex flex-col 2xl:gap-[60px] xl:gap-16 lg:gap-12 md:gap-10 sm:gap-8 gap-6 ">
@@ -35,16 +35,17 @@ export function Creators() {
                   Click <span className="text-[#000]">Contact Us</span> with suggestions—or simply join the <span className="text-[#000]">waiting list</span> to be part of the launch.
                 </p>
               </div>
+              {/* creator program image and i want that image should always be attached to the end */}
             <div className=" ">
               <div className=" pt-[53px]  px-[78px] w-full h-full flex justify-between gap-[100px] bg-[#F4F4F4] rounded-[30px]">
-                {/* left side image and right side text */}
-                <div className=" ">
+                {/* left side image wich will only show from md to above and right side text */}
+                <div className="hidden lg:flex lg:flex-col lg:justify-end">
                   <div className=" w-full">
                     <img src={iphone} width={400}  alt="Creators" />
                   </div>
                 </div>
                 {/* right side */}
-                <div className="w-[50%] ">
+                <div className="lg:w-[50%] w-full ">
                   <div className="flex flex-col gap-5 justify-center ">
                     <h4
                       style={{ fontFamily: "Nunito, sans-serif" }}
@@ -65,8 +66,8 @@ export function Creators() {
                       joyful revolution.
                     </p>
                     {/* button */}
-                    <div>
-                      <button className="bg-[#3931C5] text-white cursor-pointer items-start px-6 py-3 rounded-[11px] transition">
+                    <div className="flex justify-center lg:justify-start mb-6">
+                      <button className="bg-[#3931C5] text-white cursor-pointer  px-6 py-3 rounded-[11px] transition">
                         Join the Waitlist
                       </button>
                     </div>
