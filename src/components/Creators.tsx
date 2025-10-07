@@ -1,13 +1,12 @@
 import mobile from "../assets/mobile.png";
-import iphone from "../assets/iphone.png";
+import iphone from "../assets/iphon.png";
 
 export function Creators() {
   return (
     <section className="w-full pt-[105px]">
       <div className="w-full px-4 sm:px-6 md:px-8 lg:px-16 xl:px-24 2xl:px-[106px]">
         <div className="max-w-[1440px] mx-auto">
-          <div className="mt-8  flex flex-col 2xl:gap-[50px] xl:gap-16 lg:gap-12 md:gap-10 sm:gap-8 gap-6 ">
-            <div className="px-[46px] ">
+          <div className="mt-8  flex flex-col 2xl:gap-[60px] xl:gap-16 lg:gap-12 md:gap-10 sm:gap-8 gap-6 ">
               <div className=" ">
                 <h4
                   style={{ fontFamily: "Nunito, sans-serif" }}
@@ -29,21 +28,19 @@ export function Creators() {
                 </p>
                 <p
                   style={{ fontFamily: "Nunito, sans-serif" }}
-                  className="text-center text-[#22222280]    sm:text-lg md:text-xl lg:text-[22px]    leading-relaxed md:leading-8"
+                  className="text-left text-[#22222280]    sm:text-lg md:text-xl lg:text-[22px]    leading-relaxed md:leading-8"
                 >
                   We want to make La La Laugh the best place for you to create
                   and share content that sparks joy. Have ideas or feedback?
-                  Click Contact Us with suggestions—or simply join the waiting
-                  list to be part of the launch.
+                  Click <span className="text-[#000]">Contact Us</span> with suggestions—or simply join the <span className="text-[#000]">waiting list</span> to be part of the launch.
                 </p>
               </div>
-            </div>
-            <div className=" mt-[60px] ">
+            <div className=" ">
               <div className=" pt-[53px]  px-[78px] w-full h-full flex justify-between gap-[100px] bg-[#F4F4F4] rounded-[30px]">
                 {/* left side image and right side text */}
                 <div className=" ">
                   <div className=" w-full">
-                    <img src={iphone} width={300}  alt="Creators" />
+                    <img src={iphone} width={400}  alt="Creators" />
                   </div>
                 </div>
                 {/* right side */}
