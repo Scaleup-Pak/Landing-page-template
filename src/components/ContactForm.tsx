@@ -213,10 +213,10 @@ export const ContactForm: React.FC = () => {
           style={{ fontFamily: "Nunito, sans-serif" }}
           className={`
             w-full py-4 px-6 rounded-lg font-semibold text-white text-lg
-            transition-all duration-200
+            transition-all duration-200 cursor-pointer
             ${isSubmitting 
               ? 'bg-gray-400 cursor-not-allowed' 
-              : 'bg-[#6366F1] hover:bg-[#5B5DF1] focus:ring-2 focus:ring-[#6366F1] focus:ring-offset-2 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5'
+              : 'bg-[#3931C5] hover:bg-[#5B5DF1] focus:ring-2 focus:ring-[#6366F1] focus:ring-offset-2 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5'
             }
           `}
         >
