@@ -23,7 +23,7 @@ export function Header({
 
   return (
     <header className="w-full px-4 sm:px-6 md:px-8 lg:px-16 xl:px-24 2xl:px-[106px] py-4 sm:py-5 md:py-6" style={{ backgroundColor }}>
-      <div className="max-w-[1440px] mx-auto flex items-center justify-between border">
+      <div className="max-w-[1440px] mx-auto flex items-center justify-between ">
         {/* Logo */}
         <div className="flex-shrink-0">
           <img src={logo} alt="Lalalaugh logo" className="h-7 sm:h-8 md:h-9 lg:h-10" />

@@ -1,10 +1,12 @@
 import line from "../assets/line.svg";
+import aboutsec from "../assets/aboutsec.png";
 
 export function About() {
   return (
     <section className="w-full pt-[105px]">
       <div className="w-full px-4 sm:px-6 md:px-8 lg:px-16 xl:px-24 2xl:px-[106px]">
         <div className="max-w-[1440px] mx-auto">
+          {/* first section */}
           <div
             className="flex flex-col items-center justify-center"
             style={{ gap: 25 }}
@@ -48,7 +50,7 @@ export function About() {
               </div>
             </div>
 
-            <div className="mt-8 pt-6  border-gray-300">
+            <div className=" ">
               <p style={{ fontFamily: 'Nunito, sans-serif' }} className="text-center text-[#22222280]   md:text-left text-base sm:text-lg md:text-xl lg:text-[22px]    leading-relaxed md:leading-8">
                 La La Laugh is your “take-a-break” app, a global stage built to
                 bring joy back to the internet. Here, everyone—not just
@@ -67,6 +69,11 @@ export function About() {
               </p>
              <h2 style={{ fontFamily: 'Nunito, sans-serif' }} className=" mt-6  text-heading-large">— Carlos Cicchelli, Founder & CEO</h2>
 
+            </div>
+
+            {/* image should be in the center and height width should be responsive */}
+            <div className="flex justify-center">
+              <img src={aboutsec} alt="" className="w-auto h-auto" />
             </div>
           </div>
         </div>
