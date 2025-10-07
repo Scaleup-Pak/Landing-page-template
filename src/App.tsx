@@ -3,6 +3,7 @@ import { Header } from "./components/Header";
 import { Creators } from "./components/Creators";
 import { Features } from "./components/Feature";
 import { ContactUs } from "./components/ContactUs";
+import { DownloadBanner } from "./components/DownloadBanner";
 //  after the header there will be component of about section
 function App() {
   return (
@@ -20,6 +21,10 @@ function App() {
       </section>
       <section id="contact">
         <ContactUs />
+      </section>
+      {/* <DownloadBanner /> */}
+      <section id="download">
+        <DownloadBanner />
       </section>
     </>
   );
