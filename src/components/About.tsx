@@ -13,17 +13,21 @@ export function About() {
             style={{ gap: 25 }}
           >
             <div className="flex flex-col items-center" style={{ gap: 25 }}>
-              <h1 className="text-[50px] leading-[56px] font-bold text-center">
+            <div className="">
+                <h1 className="text-[50px] leading-[56px] font-bold text-center">
                 <span className="text-[#3931C5]">Laughter</span> is the Reset
                 Button
               </h1>
-
-              <img
+{/* this image should show on the right side */}
+             <div className="flex md:justify-end justify-center mt-3 items-center md:mr-12 md:items-end">
+               <img
                 src={line}
                 alt=""
                 width={221}
                 height={17}
               />
+             </div>
+            </div>
             </div>
 
             <div className="flex flex-col items-center max-w-[800px] text-center">
