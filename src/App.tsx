@@ -1,8 +1,7 @@
-import { About } from "./components/About"
-import { Header } from "./components/Header"
-
-import { FontTest } from "./components/FontTest"
-import { Creators } from "./components/Creators"
+import { About } from "./components/About";
+import { Header } from "./components/Header";
+import { Creators } from "./components/Creators";
+import { Features } from "./components/Feature";
 //  after the header there will be component of about section
 function App() {
   return (
@@ -10,13 +9,16 @@ function App() {
       {/* <FontTest /> */}
       <Header />
       <section id="about">
-       <About />
+        <About />
       </section>
-         <section id="creators">
-       <Creators />
+      <section id="creators">
+        <Creators />
+      </section>
+      <section id="features">
+        <Features />
       </section>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
