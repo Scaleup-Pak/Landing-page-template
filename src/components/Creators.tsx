@@ -35,7 +35,7 @@ export function Creators() {
                   Click <span className="text-[#000]">Contact Us</span> with suggestions—or simply join the <span className="text-[#000]">waiting list</span> to be part of the launch.
                 </p>
               </div>
-              {/* creator program image and i want that image should always be attached to the end */}
+              {/* creator program image  */}
             <div className=" ">
               <div className=" pt-[53px]  px-[78px] w-full h-full flex justify-between gap-[100px] bg-[#F4F4F4] rounded-[30px]">
                 {/* left side image wich will only show from md to above and right side text */}
