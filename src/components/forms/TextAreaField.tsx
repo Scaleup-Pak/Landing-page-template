@@ -23,8 +23,8 @@ export const TextAreaField = forwardRef<HTMLTextAreaElement, TextAreaFieldProps>
           ref={ref}
           style={{ fontFamily: "Nunito, sans-serif" }}
           className={`
-            w-full px-4 py-3 rounded-lg border border-gray-300 
-            focus:ring-2 focus:ring-[#6366F1] focus:border-transparent 
+            w-full px-4 py-3 rounded-lg border border-[#0112201A] 
+            focus:ring-2 focus:ring-[#6366F1] focus:border-none 
             transition-colors duration-200
             placeholder:text-gray-400
             resize-vertical
