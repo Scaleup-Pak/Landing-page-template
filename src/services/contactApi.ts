@@ -119,6 +119,7 @@ export async function submitContactForm(
     timestamp: new Date().toISOString(),
     source: 'website_contact_form'
   };
+  console.log("🚀 ~ submitContactForm ~ payload:", payload)
 
   return apiRequest<ContactSubmissionResponse>(API_ENDPOINTS.CONTACT, {
     method: 'POST',
@@ -132,6 +133,9 @@ export async function submitContactFormMock(
 ): Promise<ApiResponse<ContactSubmissionResponse>> {
   // Simulate API delay
   await new Promise(resolve => setTimeout(resolve, 1000));
+  // Log mock payload for debugging
+  // eslint-disable-next-line no-console
+  console.log('Mock API received form data:', _formData);
 
   // Simulate random success/failure for testing
   const shouldSucceed = Math.random() > 0.2; // 80% success rate

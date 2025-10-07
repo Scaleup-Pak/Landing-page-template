@@ -87,6 +87,12 @@ export const ContactForm: React.FC = () => {
     setSubmitStatus({ type: null, message: '' });
 
     try {
+      // Log payload for debugging before submission
+      // This prints to the browser console when running in development
+      // and helps confirm what will be sent to the API.
+      // Keep this log during debugging and remove it for production if desired.
+      // eslint-disable-next-line no-console
+      console.log('Submitting contact form payload:', formData);
       const response = await submitContactFormApi(formData);
       
       if (response.success) {
