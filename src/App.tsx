@@ -4,6 +4,7 @@ import { Creators } from "./components/Creators";
 import { Features } from "./components/Feature";
 import { ContactUs } from "./components/ContactUs";
 import { DownloadBanner } from "./components/DownloadBanner";
+import { Footer } from "./components/Footer";
 //  after the header there will be component of about section
 function App() {
   return (
@@ -25,6 +26,9 @@ function App() {
       {/* <DownloadBanner /> */}
       <section id="download">
         <DownloadBanner />
+      </section>
+       <section id="footer">
+        <Footer />
       </section>
     </>
   );
