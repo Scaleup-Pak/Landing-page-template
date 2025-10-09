@@ -24,7 +24,7 @@ function App() {
         <ContactUs />
       </section>
       {/* <DownloadBanner /> */}
-      <section id="download">
+      <section id="advertiser">
         <DownloadBanner />
       </section>
        <section id="footer">
