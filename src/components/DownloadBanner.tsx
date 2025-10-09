@@ -1,5 +1,6 @@
 import playstoreIcon from "../assets/playstore.png";
 import appleicon from "../assets/applelogo.png";
+import downlodeImage from "../assets//downloadsection.png";
 
 export function DownloadBanner() {
   return (
@@ -8,6 +9,10 @@ export function DownloadBanner() {
         <div className="max-w-[1440px] mx-auto">
           <div className="flex flex-col gap-8 md:gap-[60px]">
             <div className="flex flex-col gap-[6px]">
+              {/* adjust the size for small and mid screen */}
+              <div className="w-full max-w-xs sm:max-w-md md:max-w-[780px] mx-auto mb-4">
+                <img src={downlodeImage} alt="" className="w-full h-auto" />
+              </div>
               <h4
                 style={{ fontFamily: "Nunito, sans-serif" }}
                 className="text-center text-[#FFFFFF] text-[28px] sm:text-[32px] md:text-[40px] leading-tight md:leading-[50px] font-sans font-bold"
