@@ -1,8 +1,8 @@
 const navLinks = [
-  { href: "/about", label: "About us", active: true },
-  { href: "/creators", label: "Creators", active: false },
-  { href: "/features", label: "Features", active: false },
-  { href: "/advertisers", label: "Advertisers", active: false },
+  { href: "#about", label: "About us", active: true },
+  { href: "#creators", label: "Creators", active: false },
+  { href: "#features", label: "Features", active: false },
+  { href: "#contact", label: "Advertisers", active: false },
 ]
 
 import { useState } from 'react'
@@ -21,6 +21,14 @@ export function Header({
 }: HeaderProps = {}) {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
+  const handleNavClick = (href: string) => {
+    const element = document.querySelector(href)
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }
+    setIsMenuOpen(false)
+  }
+
   return (
     <header className="w-full px-4 sm:px-6 md:px-8 lg:px-16 xl:px-24 2xl:px-[106px] py-4 sm:py-5 md:py-6" style={{ backgroundColor }}>
       <div className="max-w-[1440px] mx-auto flex items-center justify-between ">
@@ -37,6 +45,7 @@ export function Header({
               className={`transition-colors font-medium text-sm xl:text-base cursor-pointer hover:text-white ${
                 link.active ? "text-white" : "text-white/70"
               }`}
+              onClick={() => handleNavClick(link.href)}
             >
               {link.label}
             </span>
@@ -48,7 +57,7 @@ export function Header({
           <button
             type="button"
             className="hidden lg:block bg-white text-[#3931C5] hover:bg-white/90 font-semibold px-4 xl:px-6 py-2 xl:py-3 rounded-lg transition-colors text-sm xl:text-base whitespace-nowrap"
-            onClick={() => {}}
+            onClick={() => handleNavClick('#contact')}
           >
             {ctaText}
           </button>
@@ -82,7 +91,7 @@ export function Header({
                 className={`transition-colors font-medium text-sm sm:text-base cursor-pointer hover:text-white ${
                   link.active ? "text-white" : "text-white/70"
                 }`}
-                onClick={() => setIsMenuOpen(false)}
+                onClick={() => handleNavClick(link.href)}
               >
                 {link.label}
               </span>
@@ -90,7 +99,7 @@ export function Header({
             <button
               type="button"
               className="bg-white text-[#3931C5] hover:bg-white/90 font-semibold px-4 sm:px-5 py-2 sm:py-2.5 rounded-lg transition-colors text-sm sm:text-base self-start mt-2"
-              onClick={() => setIsMenuOpen(false)}
+              onClick={() => handleNavClick('#contact')}
             >
               {ctaText}
             </button>
