@@ -8,7 +8,7 @@ export function Footer() {
       {/* Container with responsive padding */}
       <div className="w-full  px-4 sm:px-6 md:px-8 lg:pl-16 lg:pr-12 xl:pl-24 xl:pr-16 2xl:pl-[110px] 2xl:pr-[218px] ">
         {/* Main flex container: responsive layout */}
-        <div className="flex border flex-col lg:flex-row gap-8 sm:gap-10 md:gap-12 lg:gap-16 xl:gap-20 2xl:gap-[170px] ">
+        <div className="flex  flex-col lg:flex-row gap-8 sm:gap-10 md:gap-12 lg:gap-16 xl:gap-20 2xl:gap-[170px] ">
           {/* Left Section - Responsive width */}
           <div className="w-full lg:flex-1 flex flex-col gap-4 sm:gap-5 md:gap-6 ">
             <div className="w-24 sm:w-28 md:w-32">
@@ -191,7 +191,7 @@ export function Footer() {
       <div className="mt-8 px-4 sm:px-6 md:px-8 lg:pl-16 lg:pr-12 xl:pl-24 xl:pr-16 2xl:pl-[110px] sm:mt-10 md:mt-12 pt-6 sm:pt-7 md:pt-8 border-t border-[#CCCCCC] flex flex-col sm:flex-row justify-between items-center gap-4 sm:gap-6">
         <p
           style={{ fontFamily: "Nunito, sans-serif" }}
-          className="text-[#999999] text-xs sm:text-sm text-center sm:text-left"
+          className="text-[#00000066] text-xs sm:text-[20px] text-center sm:text-left"
         >
           Lalalaughteams @ all rights reserved
         </p>
