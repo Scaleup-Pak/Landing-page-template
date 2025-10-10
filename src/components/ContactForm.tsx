@@ -4,6 +4,7 @@ import { RadioGroup, type RadioOption } from './forms/RadioGroup';
 import { TextAreaField } from './forms/TextAreaField';
 import { validateContactForm, type ContactFormData } from '../utils/validation';
 import { submitContactFormApi } from '../services/contactApi';
+import { toast, Toaster } from 'sonner';
 
 interface FormErrors {
   userType?: string;
@@ -24,10 +25,6 @@ export const ContactForm: React.FC = () => {
 
   const [errors, setErrors] = useState<FormErrors>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<{
-    type: 'success' | 'error' | null;
-    message: string;
-  }>({ type: null, message: '' });
 
   const userTypeOptions: RadioOption[] = [
     { value: 'waitlist', label: 'Waitlist' },
@@ -45,11 +42,6 @@ export const ContactForm: React.FC = () => {
     if (errors[field]) {
       setErrors(prev => ({ ...prev, [field]: undefined }));
     }
-    
-    // Clear submit status when user makes changes
-    if (submitStatus.type) {
-      setSubmitStatus({ type: null, message: '' });
-    }
   };
 
   const handleUserTypeChange = (value: string) => {
@@ -58,11 +50,6 @@ export const ContactForm: React.FC = () => {
     // Clear error when user selects
     if (errors.userType) {
       setErrors(prev => ({ ...prev, userType: undefined }));
-    }
-    
-    // Clear submit status when user makes changes
-    if (submitStatus.type) {
-      setSubmitStatus({ type: null, message: '' });
     }
   };
 
@@ -74,9 +61,9 @@ export const ContactForm: React.FC = () => {
     
     if (!validation.isValid) {
       setErrors(validation.errors);
-      setSubmitStatus({
-        type: 'error',
-        message: 'Please fix the errors below and try again.'
+      toast.error('Please fix the errors below and try again.', {
+        duration: 4000,
+        style: { fontFamily: "Nunito, sans-serif" }
       });
       return;
     }
@@ -84,7 +71,6 @@ export const ContactForm: React.FC = () => {
     // Clear errors and start submission
     setErrors({});
     setIsSubmitting(true);
-    setSubmitStatus({ type: null, message: '' });
 
     try {
       // Log payload for debugging before submission
@@ -96,9 +82,9 @@ export const ContactForm: React.FC = () => {
       const response = await submitContactFormApi(formData);
       
       if (response.success) {
-        setSubmitStatus({
-          type: 'success',
-          message: response.message || 'Your message has been sent successfully!'
+        toast.success(response.message || 'Your message has been sent successfully! 🎉', {
+          duration: 4000,
+          style: { fontFamily: "Nunito, sans-serif" }
         });
         
         // Reset form on successful submission
@@ -110,16 +96,16 @@ export const ContactForm: React.FC = () => {
           message: ''
         });
       } else {
-        setSubmitStatus({
-          type: 'error',
-          message: response.error || 'Failed to send message. Please try again.'
+        toast.error(response.error || 'Failed to send message. Please try again.', {
+          duration: 4000,
+          style: { fontFamily: "Nunito, sans-serif" }
         });
       }
     } catch (error) {
       console.error('Form submission error:', error);
-      setSubmitStatus({
-        type: 'error',
-        message: 'An unexpected error occurred. Please try again later.'
+      toast.error('An unexpected error occurred. Please try again later.', {
+        duration: 4000,
+        style: { fontFamily: "Nunito, sans-serif" }
       });
     } finally {
       setIsSubmitting(false);
@@ -128,25 +114,8 @@ export const ContactForm: React.FC = () => {
 
   return (
     <div className="max-w-2xl mx-auto">
+      <Toaster position="top-center" richColors />
       <form onSubmit={handleSubmit} className="space-y-6">
-        {/* Submit Status Message */}
-        {submitStatus.type && (
-          <div className={`
-            p-4 rounded-lg border
-            ${submitStatus.type === 'success' 
-              ? 'bg-green-50 border-green-200 text-green-800' 
-              : 'bg-red-50 border-red-200 text-red-800'
-            }
-          `}>
-            <p 
-              style={{ fontFamily: "Nunito, sans-serif" }}
-              className="text-sm font-medium"
-            >
-              {submitStatus.message}
-            </p>
-          </div>
-        )}
-
         {/* User Type Selection */}
         <div className="mb-6">
           <p 
