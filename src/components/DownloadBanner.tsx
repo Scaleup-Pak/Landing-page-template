@@ -29,7 +29,7 @@ export function DownloadBanner() {
 
             <div className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-5">
               {/* Google Play Button */}
-              <button className="bg-white hover:bg-white/90 transition-colors rounded-2xl px-6 py-3 flex items-center gap-4 ">
+              <button className="bg-white cursor-pointer hover:bg-white/90 transition-colors rounded-2xl px-6 py-3 flex items-center gap-4 ">
                 <img src={playstoreIcon} alt="" />
                 <div className="flex flex-col items-start">
                   <span className="text-xs text-black/80 font-medium">
@@ -42,7 +42,7 @@ export function DownloadBanner() {
               </button>
 
               {/* App Store Button */}
-              <button className="bg-white hover:bg-white/90 transition-colors rounded-2xl px-6 py-3 flex items-center gap-4 ">
+              <button className="bg-white cursor-pointer hover:bg-white/90 transition-colors rounded-2xl px-6 py-3 flex items-center gap-4 ">
                 <img src={appleicon} alt="" />
                 <div className="flex flex-col items-start">
                   <span className="text-xs text-black/80 font-medium">
