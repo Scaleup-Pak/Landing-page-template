@@ -1,5 +1,5 @@
+import ImageGrid from "./ImageGrid";
 
-import { ImageGrid } from "./ImageGrid";
 
 export function Features() {
   return (
