@@ -48,7 +48,7 @@ const ImageGrid: React.FC = () => {
 
         {/* Second Row - 3 images with varying widths */}
         <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-          <div className="w-full sm:flex-[1.3] sm:h-[180px] md:h-[285.766px] overflow-hidden rounded-lg">
+          <div className="w-full sm:flex-[1.5] sm:h-[180px] md:h-[285.766px] overflow-hidden rounded-lg">
             <img 
               src={image5} 
               alt="Feature 5" 
@@ -56,7 +56,7 @@ const ImageGrid: React.FC = () => {
             />
           </div>
           
-          <div className="w-full sm:flex-[0.8] sm:h-[180px] md:h-[285.766px] overflow-hidden rounded-lg">
+          <div className="w-full sm:flex-[0.7] sm:h-[180px] md:h-[285.766px] overflow-hidden rounded-lg">
             <img 
               src={image6} 
               alt="Feature 6" 
@@ -64,7 +64,7 @@ const ImageGrid: React.FC = () => {
             />
           </div>
           
-          <div className="w-full sm:flex-[1.5] sm:h-[180px] md:h-[285.766px] overflow-hidden rounded-lg">
+          <div className="w-full sm:flex-[1.8] sm:h-[180px] md:h-[285.766px] overflow-hidden rounded-lg">
             <img 
               src={image7} 
               alt="Feature 7" 
