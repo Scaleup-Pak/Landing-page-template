@@ -1,7 +1,9 @@
 import iphone from "../assets/iphon.png";
 import EmblaCarousel from "./Carousel";
+import { useNavigate } from "react-router-dom";
 
 export function Creators() {
+  const navigate = useNavigate();
   return (
     <section className="w-full pt-[105px] mb-4">
       {/* carousel section */}
@@ -75,7 +77,10 @@ export function Creators() {
                     </p>
                     {/* button */}
                     <div className="flex justify-center lg:justify-start mb-6">
-                      <button className="bg-[#3931C5] text-white cursor-pointer  px-6 py-3 rounded-[11px] transition">
+                      <button 
+                        onClick={() => navigate('/waitlist')}
+                        className="bg-[#3931C5] text-white cursor-pointer  px-6 py-3 rounded-[11px] transition"
+                      >
                         Join the Waitlist
                       </button>
                     </div>

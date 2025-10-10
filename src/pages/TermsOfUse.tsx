@@ -5,37 +5,28 @@ export function TermsOfUse() {
   return (
     <div className="min-h-screen bg-white">
       {/* Logo and Title Section */}
-      <div className="px-4 sm:px-6 md:px-8 lg:px-16 xl:px-24 2xl:px-[110px] pt-6 sm:pt-8 pb-4 sm:pb-6">
-        <Link to="/">
+      <div className="px-4 sm:px-6 md:px-8 lg:px-16 xl:px-24 2xl:px-32 pt-6 sm:pt-8 pb-4 sm:pb-6">
+        <Link to="/" className="focus:outline-none focus:ring-2 focus:ring-[#3931C5] focus:ring-offset-2">
           <img
             src={FooterLogo}
             alt="LA LA LAUGH Logo"
-            className="w-20 sm:w-24 md:w-28 lg:w-32 mb-8 sm:mb-12 md:mb-[70px]"
+            className="w-16 sm:w-20 md:w-24 lg:w-28 xl:w-32 h-auto mb-6 sm:mb-8 md:mb-10 lg:mb-12"
           />
         </Link>
         <h1
-          className="text-2xl sm:text-3xl md:text-4xl lg:text-[44px]"
-          style={{
-            fontFamily: "Nunito, sans-serif",
-            color: "#000000",
-            fontWeight: 700,
-            lineHeight: "1.2",
-          }}
+          className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-[44px] font-bold text-black"
+          style={{ fontFamily: "Nunito, sans-serif" }}
         >
           Terms of Use & Privacy Policy
         </h1>
       </div>
 
       {/* Content */}
-      <div className="px-4 sm:px-6 md:px-8 lg:px-16 xl:px-24 2xl:px-[110px] pb-8 sm:pb-12">
+      <div className="px-4 sm:px-6 md:px-8 lg:px-16 xl:px-24 2xl:px-32 pb-8 sm:pb-12 md:pb-16">
         <div style={{ fontFamily: "Nunito, sans-serif" }}>
           <p
-            className="text-base sm:text-lg md:text-xl lg:text-[24px] mb-6 sm:mb-8"
-            style={{
-              color: "rgba(0, 0, 0, 0.50)",
-              fontWeight: 500,
-              lineHeight: "144.7%",
-            }}
+            className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-[24px] mb-6 sm:mb-8 text-gray-500"
+            style={{ fontWeight: 500, lineHeight: "1.447" }}
           >
             Welcome to La La Laugh! These Terms of Use ("Terms") govern your
             access to and use of the La La Laugh app and related services (the
@@ -46,22 +37,13 @@ export function TermsOfUse() {
           {/* Section 1 */}
           <div className="mb-6 sm:mb-8">
             <h2
-              className="text-xl sm:text-2xl md:text-[28px] mb-3 sm:mb-4"
-              style={{
-                color: "#000",
-                fontWeight: 700,
-                lineHeight: "normal",
-              }}
+              className="text-lg sm:text-xl md:text-2xl lg:text-[28px] mb-3 sm:mb-4 font-bold text-black"
             >
               1. The La La Laugh Service
             </h2>
             <p
-              className="text-base sm:text-lg md:text-xl lg:text-[24px] mb-3 sm:mb-4"
-              style={{
-                color: "rgba(0, 0, 0, 0.50)",
-                fontWeight: 500,
-                lineHeight: "144.7%",
-              }}
+              className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-[24px] mb-3 sm:mb-4 text-gray-500"
+              style={{ fontWeight: 500, lineHeight: "1.447" }}
             >
               La La Laugh is the world's first social entertainment platform
               built to share humor and connect people through laughter. Our
@@ -69,60 +51,36 @@ export function TermsOfUse() {
               inclusive environment.
             </p>
             <p
-              style={{
-                color: "rgba(0, 0, 0, 0.50)",
-                fontSize: "24px",
-                fontWeight: 500,
-                lineHeight: "144.7%",
-                marginBottom: "8px",
-              }}
+              className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-[24px] mb-3 sm:mb-4 text-gray-500"
+              style={{ fontWeight: 500, lineHeight: "1.447" }}
             >
               The Service includes:
             </p>
-            <ul style={{ paddingLeft: "24px", marginBottom: "8px" }}>
+            <ul className="pl-6 space-y-2">
               <li
-                style={{
-                  color: "rgba(0, 0, 0, 0.50)",
-                  fontSize: "24px",
-                  fontWeight: 500,
-                  lineHeight: "144.7%",
-                  marginBottom: "8px",
-                }}
+                className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-[24px] text-gray-500"
+                style={{ fontWeight: 500, lineHeight: "1.447" }}
               >
                 • Tools for users to create, share, and discover jokes, comedy,
                 and parody.
               </li>
               <li
-                style={{
-                  color: "rgba(0, 0, 0, 0.50)",
-                  fontSize: "24px",
-                  fontWeight: 500,
-                  lineHeight: "144.7%",
-                  marginBottom: "8px",
-                }}
+                className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-[24px] text-gray-500"
+                style={{ fontWeight: 500, lineHeight: "1.447" }}
               >
                 • Community features to help users connect and build an
                 audience.
               </li>
               <li
-                style={{
-                  color: "rgba(0, 0, 0, 0.50)",
-                  fontSize: "24px",
-                  fontWeight: 500,
-                  lineHeight: "144.7%",
-                  marginBottom: "8px",
-                }}
+                className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-[24px] text-gray-500"
+                style={{ fontWeight: 500, lineHeight: "1.447" }}
               >
                 • Systems for brand partnerships, advertising, and monetization
                 for creators.
               </li>
               <li
-                style={{
-                  color: "rgba(0, 0, 0, 0.50)",
-                  fontSize: "24px",
-                  fontWeight: 500,
-                  lineHeight: "144.7%",
-                }}
+                className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-[24px] text-gray-500"
+                style={{ fontWeight: 500, lineHeight: "1.447" }}
               >
                 • Inclusive innovations such as a patented left-hand toggle and
                 accessibility features.
@@ -131,49 +89,29 @@ export function TermsOfUse() {
           </div>
 
           {/* Section 2 */}
-          <div className="mb-8">
+          <div className="mb-6 sm:mb-8">
             <h2
-              style={{
-                color: "#000",
-                fontSize: "28px",
-                fontWeight: 700,
-                lineHeight: "normal",
-                marginBottom: "16px",
-              }}
+              className="text-lg sm:text-xl md:text-2xl lg:text-[28px] mb-3 sm:mb-4 font-bold text-black"
             >
               2. Eligibility
             </h2>
-            <ul style={{ paddingLeft: "24px" }}>
+            <ul className="pl-6 space-y-2">
               <li
-                style={{
-                  color: "rgba(0, 0, 0, 0.50)",
-                  fontSize: "24px",
-                  fontWeight: 500,
-                  lineHeight: "144.7%",
-                  marginBottom: "8px",
-                }}
+                className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-[24px] text-gray-500"
+                style={{ fontWeight: 500, lineHeight: "1.447" }}
               >
                 • You must be at least 13 years old to use La La Laugh.
               </li>
               <li
-                style={{
-                  color: "rgba(0, 0, 0, 0.50)",
-                  fontSize: "24px",
-                  fontWeight: 500,
-                  lineHeight: "144.7%",
-                  marginBottom: "8px",
-                }}
+                className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-[24px] text-gray-500"
+                style={{ fontWeight: 500, lineHeight: "1.447" }}
               >
                 • If you are under 18, you represent that you have
                 parental/guardian consent.
               </li>
               <li
-                style={{
-                  color: "rgba(0, 0, 0, 0.50)",
-                  fontSize: "24px",
-                  fontWeight: 500,
-                  lineHeight: "144.7%",
-                }}
+                className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-[24px] text-gray-500"
+                style={{ fontWeight: 500, lineHeight: "1.447" }}
               >
                 • Certain features may not be available in all regions due to
                 local laws.
@@ -182,132 +120,78 @@ export function TermsOfUse() {
           </div>
 
           {/* Section 3 */}
-          <div className="mb-8">
+          <div className="mb-6 sm:mb-8">
             <h2
-              style={{
-                color: "#000",
-                fontSize: "28px",
-                fontWeight: 700,
-                lineHeight: "normal",
-                marginBottom: "16px",
-              }}
+              className="text-lg sm:text-xl md:text-2xl lg:text-[28px] mb-3 sm:mb-4 font-bold text-black"
             >
               3. User-Generated Content (UGC)
             </h2>
             <p
-              style={{
-                color: "rgba(0, 0, 0, 0.50)",
-                fontSize: "24px",
-                fontWeight: 500,
-                lineHeight: "144.7%",
-                marginBottom: "12px",
-              }}
+              className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-[24px] mb-3 sm:mb-4 text-gray-500"
+              style={{ fontWeight: 500, lineHeight: "1.447" }}
             >
               La La Laugh is a humor-first platform. By posting, you agree that:
             </p>
-            <ul style={{ paddingLeft: "24px", marginBottom: "12px" }}>
+            <ul className="pl-6 space-y-2">
               <li
-                style={{
-                  color: "rgba(0, 0, 0, 0.50)",
-                  fontSize: "24px",
-                  fontWeight: 500,
-                  lineHeight: "144.7%",
-                  marginBottom: "8px",
-                }}
+                className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-[24px] text-gray-500"
+                style={{ fontWeight: 500, lineHeight: "1.447" }}
               >
                 • You own or have the rights to the content you post.
               </li>
               <li
-                style={{
-                  color: "rgba(0, 0, 0, 0.50)",
-                  fontSize: "24px",
-                  fontWeight: 500,
-                  lineHeight: "144.7%",
-                  marginBottom: "8px",
-                }}
+                className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-[24px] text-gray-500"
+                style={{ fontWeight: 500, lineHeight: "1.447" }}
               >
-                • Content that violates our Terms or Community Guidelines or
-                that violates this will be removed.
+                • Content that violates our Terms or Community Guidelines will be
+                removed.
               </li>
               <li
-                style={{
-                  color: "rgba(0, 0, 0, 0.50)",
-                  fontSize: "24px",
-                  fontWeight: 500,
-                  lineHeight: "144.7%",
-                  marginBottom: "8px",
-                }}
+                className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-[24px] text-gray-500"
+                style={{ fontWeight: 500, lineHeight: "1.447" }}
               >
                 • You may not post harmful, hateful, violent, sexually explicit,
                 or illegal material.
               </li>
               <li
-                style={{
-                  color: "rgba(0, 0, 0, 0.50)",
-                  fontSize: "24px",
-                  fontWeight: 500,
-                  lineHeight: "144.7%",
-                  marginBottom: "8px",
-                }}
+                className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-[24px] text-gray-500"
+                style={{ fontWeight: 500, lineHeight: "1.447" }}
               >
                 • You may not post private/confidential information without
                 consent.
               </li>
               <li
-                style={{
-                  color: "rgba(0, 0, 0, 0.50)",
-                  fontSize: "24px",
-                  fontWeight: 500,
-                  lineHeight: "144.7%",
-                }}
+                className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-[24px] text-gray-500"
+                style={{ fontWeight: 500, lineHeight: "1.447" }}
               >
                 • You are responsible for ensuring your content does not
                 infringe others' rights.
               </li>
             </ul>
             <p
-              style={{
-                color: "rgba(0, 0, 0, 0.50)",
-                fontSize: "24px",
-                fontWeight: 500,
-                lineHeight: "144.7%",
-                marginBottom: "8px",
-              }}
+              className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-[24px] mt-3 sm:mt-4 mb-3 sm:mb-4 text-gray-500"
+              style={{ fontWeight: 500, lineHeight: "1.447" }}
             >
               We retain the right to:
             </p>
-            <ul style={{ paddingLeft: "24px" }}>
+            <ul className="pl-6 space-y-2">
               <li
-                style={{
-                  color: "rgba(0, 0, 0, 0.50)",
-                  fontSize: "24px",
-                  fontWeight: 500,
-                  lineHeight: "144.7%",
-                  marginBottom: "8px",
-                }}
+                className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-[24px] text-gray-500"
+                style={{ fontWeight: 500, lineHeight: "1.447" }}
               >
                 • Remove content that does not comply with our Community
                 Guidelines.
               </li>
               <li
-                style={{
-                  color: "rgba(0, 0, 0, 0.50)",
-                  fontSize: "24px",
-                  fontWeight: 500,
-                  lineHeight: "144.7%",
-                  marginBottom: "8px",
-                }}
+                className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-[24px] text-gray-500"
+                style={{ fontWeight: 500, lineHeight: "1.447" }}
               >
                 • Suspend or terminate accounts engaged in repeated or serious
                 violations.
               </li>
               <li
-                style={{
-                  color: "rgba(0, 0, 0, 0.50)",
-                  fontSize: "24px",
-                  fontWeight: 500,
-                  lineHeight: "144.7%",
-                }}
+                className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-[24px] text-gray-500"
+                style={{ fontWeight: 500, lineHeight: "1.447" }}
               >
                 • Cooperate with law enforcement where required.
               </li>
@@ -315,62 +199,37 @@ export function TermsOfUse() {
           </div>
 
           {/* Section 4 */}
-          <div className="mb-8">
+          <div className="mb-6 sm:mb-8">
             <h2
-              style={{
-                color: "#000",
-                fontSize: "28px",
-                fontWeight: 700,
-                lineHeight: "normal",
-                marginBottom: "16px",
-              }}
+              className="text-lg sm:text-xl md:text-2xl lg:text-[28px] mb-3 sm:mb-4 font-bold text-black"
             >
               4. Moderation and Safety
             </h2>
-            <ul style={{ paddingLeft: "24px" }}>
+            <ul className="pl-6 space-y-2">
               <li
-                style={{
-                  color: "rgba(0, 0, 0, 0.50)",
-                  fontSize: "24px",
-                  fontWeight: 500,
-                  lineHeight: "144.7%",
-                  marginBottom: "8px",
-                }}
+                className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-[24px] text-gray-500"
+                style={{ fontWeight: 500, lineHeight: "1.447" }}
               >
                 • La La Laugh provides in-app tools for reporting inappropriate
                 or offensive content.
               </li>
               <li
-                style={{
-                  color: "rgba(0, 0, 0, 0.50)",
-                  fontSize: "24px",
-                  fontWeight: 500,
-                  lineHeight: "144.7%",
-                  marginBottom: "8px",
-                }}
+                className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-[24px] text-gray-500"
+                style={{ fontWeight: 500, lineHeight: "1.447" }}
               >
                 • Users may block or mute other accounts to control their
                 experience.
               </li>
               <li
-                style={{
-                  color: "rgba(0, 0, 0, 0.50)",
-                  fontSize: "24px",
-                  fontWeight: 500,
-                  lineHeight: "144.7%",
-                  marginBottom: "8px",
-                }}
+                className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-[24px] text-gray-500"
+                style={{ fontWeight: 500, lineHeight: "1.447" }}
               >
                 • Reported content will be reviewed, and appropriate action will
                 be taken for removal or suspension.
               </li>
               <li
-                style={{
-                  color: "rgba(0, 0, 0, 0.50)",
-                  fontSize: "24px",
-                  fontWeight: 500,
-                  lineHeight: "144.7%",
-                }}
+                className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-[24px] text-gray-500"
+                style={{ fontWeight: 500, lineHeight: "1.447" }}
               >
                 • While we aim to foster a positive community, you may encounter
                 content you find offensive. We do not guarantee that all such
@@ -380,163 +239,101 @@ export function TermsOfUse() {
           </div>
 
           {/* Section 5 */}
-          <div className="mb-8">
+          <div className="mb-6 sm:mb-8">
             <h2
-              style={{
-                color: "#000",
-                fontSize: "28px",
-                fontWeight: 700,
-                lineHeight: "normal",
-                marginBottom: "16px",
-              }}
+              className="text-lg sm:text-xl md:text-2xl lg:text-[28px] mb-3 sm:mb-4 font-bold text-black"
             >
               5. Privacy Policy
             </h2>
             <p
-              style={{
-                color: "rgba(0, 0, 0, 0.50)",
-                fontSize: "24px",
-                fontWeight: 500,
-                lineHeight: "144.7%",
-                marginBottom: "12px",
-              }}
+              className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-[24px] mb-3 sm:mb-4 text-gray-500"
+              style={{ fontWeight: 500, lineHeight: "1.447" }}
             >
               Providing our Service requires collecting and processing some of
               your information.
             </p>
             <p
-              style={{
-                color: "rgba(0, 0, 0, 0.50)",
-                fontSize: "24px",
-                fontWeight: 500,
-                lineHeight: "144.7%",
-                marginBottom: "8px",
-              }}
+              className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-[24px] mb-3 sm:mb-4 text-gray-500"
+              style={{ fontWeight: 500, lineHeight: "1.447" }}
             >
               We collect:
             </p>
-            <ul style={{ paddingLeft: "24px", marginBottom: "12px" }}>
+            <ul className="pl-6 space-y-2">
               <li
-                style={{
-                  color: "rgba(0, 0, 0, 0.50)",
-                  fontSize: "24px",
-                  fontWeight: 500,
-                  lineHeight: "144.7%",
-                  marginBottom: "8px",
-                }}
+                className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-[24px] text-gray-500"
+                style={{ fontWeight: 500, lineHeight: "1.447" }}
               >
                 • Account information (name, email, username).
               </li>
               <li
-                style={{
-                  color: "rgba(0, 0, 0, 0.50)",
-                  fontSize: "24px",
-                  fontWeight: 500,
-                  lineHeight: "144.7%",
-                  marginBottom: "8px",
-                }}
+                className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-[24px] text-gray-500"
+                style={{ fontWeight: 500, lineHeight: "1.447" }}
               >
                 • Content you share (text, images, video).
               </li>
               <li
-                style={{
-                  color: "rgba(0, 0, 0, 0.50)",
-                  fontSize: "24px",
-                  fontWeight: 500,
-                  lineHeight: "144.7%",
-                }}
+                className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-[24px] text-gray-500"
+                style={{ fontWeight: 500, lineHeight: "1.447" }}
               >
                 • Device and usage data (log-ins, activity, settings).
               </li>
             </ul>
             <p
-              style={{
-                color: "rgba(0, 0, 0, 0.50)",
-                fontSize: "24px",
-                fontWeight: 500,
-                lineHeight: "144.7%",
-                marginBottom: "8px",
-              }}
+              className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-[24px] mt-3 sm:mt-4 mb-3 sm:mb-4 text-gray-500"
+              style={{ fontWeight: 500, lineHeight: "1.447" }}
             >
               We use your data to:
             </p>
-            <ul style={{ paddingLeft: "24px", marginBottom: "12px" }}>
+            <ul className="pl-6 space-y-2">
               <li
-                style={{
-                  color: "rgba(0, 0, 0, 0.50)",
-                  fontSize: "24px",
-                  fontWeight: 500,
-                  lineHeight: "144.7%",
-                  marginBottom: "8px",
-                }}
+                className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-[24px] text-gray-500"
+                style={{ fontWeight: 500, lineHeight: "1.447" }}
               >
                 • Operate, improve, and secure the Service.
               </li>
               <li
-                style={{
-                  color: "rgba(0, 0, 0, 0.50)",
-                  fontSize: "24px",
-                  fontWeight: 500,
-                  lineHeight: "144.7%",
-                  marginBottom: "8px",
-                }}
+                className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-[24px] text-gray-500"
+                style={{ fontWeight: 500, lineHeight: "1.447" }}
               >
                 • Personalize your experience.
               </li>
               <li
-                style={{
-                  color: "rgba(0, 0, 0, 0.50)",
-                  fontSize: "24px",
-                  fontWeight: 500,
-                  lineHeight: "144.7%",
-                }}
+                className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-[24px] text-gray-500"
+                style={{ fontWeight: 500, lineHeight: "1.447" }}
               >
                 • Provide creator monetization and advertising features.
               </li>
             </ul>
             <p
-              style={{
-                color: "rgba(0, 0, 0, 0.50)",
-                fontSize: "24px",
-                fontWeight: 500,
-                lineHeight: "144.7%",
-                marginBottom: "12px",
-              }}
+              className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-[24px] mt-3 sm:mt-4 mb-3 sm:mb-4 text-gray-500"
+              style={{ fontWeight: 500, lineHeight: "1.447" }}
             >
               We do not sell your personal information. We may share anonymized
               or aggregated data with advertisers to improve relevance.
             </p>
             <p
-              style={{
-                color: "rgba(0, 0, 0, 0.50)",
-                fontSize: "24px",
-                fontWeight: 500,
-                lineHeight: "144.7%",
-                marginBottom: "8px",
-              }}
+              className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-[24px] mb-3 sm:mb-4 text-gray-500"
+              style={{ fontWeight: 500, lineHeight: "1.447" }}
             >
               Data Rights:
             </p>
-            <ul style={{ paddingLeft: "24px" }}>
+            <ul className="pl-6 space-y-2">
               <li
-                style={{
-                  color: "rgba(0, 0, 0, 0.50)",
-                  fontSize: "24px",
-                  fontWeight: 500,
-                  lineHeight: "144.7%",
-                  marginBottom: "8px",
-                }}
+                className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-[24px] text-gray-500"
+                style={{ fontWeight: 500, lineHeight: "1.447" }}
               >
                 • You may request deletion of your account and data at any time
-                via in-app settings or by contacting support@lalalaugh.com
+                via in-app settings or by contacting{" "}
+                <a
+                  href="mailto:support@lalalaugh.com"
+                  className="text-[#3931C5] hover:underline"
+                >
+                  support@lalalaugh.com
+                </a>
               </li>
               <li
-                style={{
-                  color: "rgba(0, 0, 0, 0.50)",
-                  fontSize: "24px",
-                  fontWeight: 500,
-                  lineHeight: "144.7%",
-                }}
+                className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-[24px] text-gray-500"
+                style={{ fontWeight: 500, lineHeight: "1.447" }}
               >
                 • We comply with Apple's App Tracking Transparency (ATT) rules.
                 If we use IDFA or third-party ad tracking, you will be asked for
@@ -546,62 +343,37 @@ export function TermsOfUse() {
           </div>
 
           {/* Sections 6-13 */}
-          <div className="mb-8">
+          <div className="mb-6 sm:mb-8">
             <h2
-              style={{
-                color: "#000",
-                fontSize: "28px",
-                fontWeight: 700,
-                lineHeight: "normal",
-                marginBottom: "16px",
-              }}
+              className="text-lg sm:text-xl md:text-2xl lg:text-[28px] mb-3 sm:mb-4 font-bold text-black"
             >
               6. Monetization and Advertising
             </h2>
-            <ul style={{ paddingLeft: "24px" }}>
+            <ul className="pl-6 space-y-2">
               <li
-                style={{
-                  color: "rgba(0, 0, 0, 0.50)",
-                  fontSize: "24px",
-                  fontWeight: 500,
-                  lineHeight: "144.7%",
-                  marginBottom: "8px",
-                }}
+                className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-[24px] text-gray-500"
+                style={{ fontWeight: 500, lineHeight: "1.447" }}
               >
                 • La La Laugh is free to use.
               </li>
               <li
-                style={{
-                  color: "rgba(0, 0, 0, 0.50)",
-                  fontSize: "24px",
-                  fontWeight: 500,
-                  lineHeight: "144.7%",
-                  marginBottom: "8px",
-                }}
+                className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-[24px] text-gray-500"
+                style={{ fontWeight: 500, lineHeight: "1.447" }}
               >
                 • Ads may appear on our platform. Advertisers may target ads,
-                but yourpersonal information (e.g., email, phone number) will
+                but your personal information (e.g., email, phone number) will
                 not be shared without your consent.
               </li>
               <li
-                style={{
-                  color: "rgba(0, 0, 0, 0.50)",
-                  fontSize: "24px",
-                  fontWeight: 500,
-                  lineHeight: "144.7%",
-                  marginBottom: "8px",
-                }}
+                className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-[24px] text-gray-500"
+                style={{ fontWeight: 500, lineHeight: "1.447" }}
               >
                 • You may monetize your content through our Creator Program,
                 including ads, tips, challenges, and brand deals.
               </li>
               <li
-                style={{
-                  color: "rgba(0, 0, 0, 0.50)",
-                  fontSize: "24px",
-                  fontWeight: 500,
-                  lineHeight: "144.7%",
-                }}
+                className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-[24px] text-gray-500"
+                style={{ fontWeight: 500, lineHeight: "1.447" }}
               >
                 • La La Laugh reserves the right to run its own promotional
                 content and campaigns.
@@ -609,132 +381,77 @@ export function TermsOfUse() {
             </ul>
           </div>
 
-          <div className="mb-8">
+          <div className="mb-6 sm:mb-8">
             <h2
-              style={{
-                color: "#000",
-                fontSize: "28px",
-                fontWeight: 700,
-                lineHeight: "normal",
-                marginBottom: "16px",
-              }}
+              className="text-lg sm:text-xl md:text-2xl lg:text-[28px] mb-3 sm:mb-4 font-bold text-black"
             >
               7. Restrictions
             </h2>
             <p
-              style={{
-                color: "rgba(0, 0, 0, 0.50)",
-                fontSize: "24px",
-                fontWeight: 500,
-                lineHeight: "144.7%",
-                marginBottom: "8px",
-              }}
+              className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-[24px] mb-3 sm:mb-4 text-gray-500"
+              style={{ fontWeight: 500, lineHeight: "1.447" }}
             >
               You agree not to:
             </p>
-            <ul style={{ paddingLeft: "24px" }}>
+            <ul className="pl-6 space-y-2">
               <li
-                style={{
-                  color: "rgba(0, 0, 0, 0.50)",
-                  fontSize: "24px",
-                  fontWeight: 500,
-                  lineHeight: "144.7%",
-                  marginBottom: "8px",
-                }}
+                className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-[24px] text-gray-500"
+                style={{ fontWeight: 500, lineHeight: "1.447" }}
               >
                 • Use the Service for unlawful purposes.
               </li>
               <li
-                style={{
-                  color: "rgba(0, 0, 0, 0.50)",
-                  fontSize: "24px",
-                  fontWeight: 500,
-                  lineHeight: "144.7%",
-                  marginBottom: "8px",
-                }}
+                className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-[24px] text-gray-500"
+                style={{ fontWeight: 500, lineHeight: "1.447" }}
               >
                 • Harass, exploit, or harm others.
               </li>
               <li
-                style={{
-                  color: "rgba(0, 0, 0, 0.50)",
-                  fontSize: "24px",
-                  fontWeight: 500,
-                  lineHeight: "144.7%",
-                  marginBottom: "8px",
-                }}
+                className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-[24px] text-gray-500"
+                style={{ fontWeight: 500, lineHeight: "1.447" }}
               >
                 • Attempt to hack or disrupt La La Laugh's systems.
               </li>
               <li
-                style={{
-                  color: "rgba(0, 0, 0, 0.50)",
-                  fontSize: "24px",
-                  fontWeight: 500,
-                  lineHeight: "144.7%",
-                  marginBottom: "8px",
-                }}
+                className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-[24px] text-gray-500"
+                style={{ fontWeight: 500, lineHeight: "1.447" }}
               >
                 • Use bots, scrapers, or unauthorized automation.
               </li>
               <li
-                style={{
-                  color: "rgba(0, 0, 0, 0.50)",
-                  fontSize: "24px",
-                  fontWeight: 500,
-                  lineHeight: "144.7%",
-                }}
+                className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-[24px] text-gray-500"
+                style={{ fontWeight: 500, lineHeight: "1.447" }}
               >
                 • Sell, rent, or trade accounts or user data.
               </li>
             </ul>
           </div>
 
-          <div className="mb-8">
+          <div className="mb-6 sm:mb-8">
             <h2
-              style={{
-                color: "#000",
-                fontSize: "28px",
-                fontWeight: 700,
-                lineHeight: "normal",
-                marginBottom: "16px",
-              }}
+              className="text-lg sm:text-xl md:text-2xl lg:text-[28px] mb-3 sm:mb-4 font-bold text-black"
             >
               8. Intellectual Property
             </h2>
             <p
-              style={{
-                color: "rgba(0, 0, 0, 0.50)",
-                fontSize: "24px",
-                fontWeight: 500,
-                lineHeight: "144.7%",
-                marginBottom: "8px",
-              }}
+              className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-[24px] mb-3 sm:mb-4 text-gray-500"
+              style={{ fontWeight: 500, lineHeight: "1.447" }}
             >
               You own your content. However:
             </p>
-            <ul style={{ paddingLeft: "24px" }}>
+            <ul className="pl-6 space-y-2">
               <li
-                style={{
-                  color: "rgba(0, 0, 0, 0.50)",
-                  fontSize: "24px",
-                  fontWeight: 500,
-                  lineHeight: "144.7%",
-                  marginBottom: "8px",
-                }}
+                className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-[24px] text-gray-500"
+                style={{ fontWeight: 500, lineHeight: "1.447" }}
               >
                 • By posting, you grant La La Laugh a non-exclusive, worldwide,
-                royalty- free license to host, display, and promote your content
+                royalty-free license to host, display, and promote your content
                 while it is on the Service. This license ends when your content
                 is deleted.
               </li>
               <li
-                style={{
-                  color: "rgba(0, 0, 0, 0.50)",
-                  fontSize: "24px",
-                  fontWeight: 500,
-                  lineHeight: "144.7%",
-                }}
+                className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-[24px] text-gray-500"
+                style={{ fontWeight: 500, lineHeight: "1.447" }}
               >
                 • Our trademarks, layouts, and app design remain the property of
                 Ideas to Move Forward LLC.
@@ -742,109 +459,64 @@ export function TermsOfUse() {
             </ul>
           </div>
 
-          <div className="mb-8">
+          <div className="mb-6 sm:mb-8">
             <h2
-              style={{
-                color: "#000",
-                fontSize: "28px",
-                fontWeight: 700,
-                lineHeight: "normal",
-                marginBottom: "16px",
-              }}
+              className="text-lg sm:text-xl md:text-2xl lg:text-[28px] mb-3 sm:mb-4 font-bold text-black"
             >
               9. Content Removal and Account Termination
             </h2>
             <p
-              style={{
-                color: "rgba(0, 0, 0, 0.50)",
-                fontSize: "24px",
-                fontWeight: 500,
-                lineHeight: "144.7%",
-                marginBottom: "8px",
-              }}
+              className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-[24px] mb-3 sm:mb-4 text-gray-500"
+              style={{ fontWeight: 500, lineHeight: "1.447" }}
             >
               La La Laugh reserves the right to remove content or restrict
               access if:
             </p>
-            <ul style={{ paddingLeft: "24px" }}>
+            <ul className="pl-6 space-y-2">
               <li
-                style={{
-                  color: "rgba(0, 0, 0, 0.50)",
-                  fontSize: "24px",
-                  fontWeight: 500,
-                  lineHeight: "144.7%",
-                  marginBottom: "8px",
-                }}
+                className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-[24px] text-gray-500"
+                style={{ fontWeight: 500, lineHeight: "1.447" }}
               >
                 • You violate these Terms or Community Guidelines.
               </li>
               <li
-                style={{
-                  color: "rgba(0, 0, 0, 0.50)",
-                  fontSize: "24px",
-                  fontWeight: 500,
-                  lineHeight: "144.7%",
-                  marginBottom: "8px",
-                }}
+                className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-[24px] text-gray-500"
+                style={{ fontWeight: 500, lineHeight: "1.447" }}
               >
                 • You create legal risk for La La Laugh or others.
               </li>
               <li
-                style={{
-                  color: "rgba(0, 0, 0, 0.50)",
-                  fontSize: "24px",
-                  fontWeight: 500,
-                  lineHeight: "144.7%",
-                }}
+                className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-[24px] text-gray-500"
+                style={{ fontWeight: 500, lineHeight: "1.447" }}
               >
                 • You infringe intellectual property repeatedly.
               </li>
             </ul>
           </div>
 
-          <div className="mb-8">
+          <div className="mb-6 sm:mb-8">
             <h2
-              style={{
-                color: "#000",
-                fontSize: "28px",
-                fontWeight: 700,
-                lineHeight: "normal",
-                marginBottom: "16px",
-              }}
+              className="text-lg sm:text-xl md:text-2xl lg:text-[28px] mb-3 sm:mb-4 font-bold text-black"
             >
               10. Disclaimer of Warranties and Limitation of Liability
             </h2>
-            <ul style={{ paddingLeft: "24px" }}>
+            <ul className="pl-6 space-y-2">
               <li
-                style={{
-                  color: "rgba(0, 0, 0, 0.50)",
-                  fontSize: "24px",
-                  fontWeight: 500,
-                  lineHeight: "144.7%",
-                  marginBottom: "8px",
-                }}
+                className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-[24px] text-gray-500"
+                style={{ fontWeight: 500, lineHeight: "1.447" }}
               >
                 • The Service is provided "as is" without warranties of any
                 kind.
               </li>
               <li
-                style={{
-                  color: "rgba(0, 0, 0, 0.50)",
-                  fontSize: "24px",
-                  fontWeight: 500,
-                  lineHeight: "144.7%",
-                  marginBottom: "8px",
-                }}
+                className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-[24px] text-gray-500"
+                style={{ fontWeight: 500, lineHeight: "1.447" }}
               >
                 • We are not liable for user-generated content.
               </li>
               <li
-                style={{
-                  color: "rgba(0, 0, 0, 0.50)",
-                  fontSize: "24px",
-                  fontWeight: 500,
-                  lineHeight: "144.7%",
-                }}
+                className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-[24px] text-gray-500"
+                style={{ fontWeight: 500, lineHeight: "1.447" }}
               >
                 • To the maximum extent permitted by law, La La Laugh is not
                 liable for damages, lost profits, or data.
@@ -852,38 +524,23 @@ export function TermsOfUse() {
             </ul>
           </div>
 
-          <div className="mb-8">
+          <div className="mb-6 sm:mb-8">
             <h2
-              style={{
-                color: "#000",
-                fontSize: "28px",
-                fontWeight: 700,
-                lineHeight: "normal",
-                marginBottom: "16px",
-              }}
+              className="text-lg sm:text-xl md:text-2xl lg:text-[28px] mb-3 sm:mb-4 font-bold text-black"
             >
               11. Arbitration and Dispute Resolution
             </h2>
-            <ul style={{ paddingLeft: "24px" }}>
+            <ul className="pl-6 space-y-2">
               <li
-                style={{
-                  color: "rgba(0, 0, 0, 0.50)",
-                  fontSize: "24px",
-                  fontWeight: 500,
-                  lineHeight: "144.7%",
-                  marginBottom: "8px",
-                }}
+                className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-[24px] text-gray-500"
+                style={{ fontWeight: 500, lineHeight: "1.447" }}
               >
                 • Disputes must be resolved by binding arbitration, except where
-                small claims of intellectual property issues apply.
+                small claims or intellectual property issues apply.
               </li>
               <li
-                style={{
-                  color: "rgba(0, 0, 0, 0.50)",
-                  fontSize: "24px",
-                  fontWeight: 500,
-                  lineHeight: "144.7%",
-                }}
+                className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-[24px] text-gray-500"
+                style={{ fontWeight: 500, lineHeight: "1.447" }}
               >
                 • You may opt out of arbitration by contacting us within 30 days
                 of acceptance of these Terms.
@@ -891,25 +548,15 @@ export function TermsOfUse() {
             </ul>
           </div>
 
-          <div className="mb-8">
+          <div className="mb-6 sm:mb-8">
             <h2
-              style={{
-                color: "#000",
-                fontSize: "28px",
-                fontWeight: 700,
-                lineHeight: "normal",
-                marginBottom: "16px",
-              }}
+              className="text-lg sm:text-xl md:text-2xl lg:text-[28px] mb-3 sm:mb-4 font-bold text-black"
             >
               12. Updates
             </h2>
             <p
-              style={{
-                color: "rgba(0, 0, 0, 0.50)",
-                fontSize: "24px",
-                fontWeight: 500,
-                lineHeight: "144.7%",
-              }}
+              className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-[24px] text-gray-500"
+              style={{ fontWeight: 500, lineHeight: "1.447" }}
             >
               We may update these Terms and Privacy Policy. Users will be
               notified in-app or via email, and continued use of the Service
@@ -917,26 +564,15 @@ export function TermsOfUse() {
             </p>
           </div>
 
-          <div className="mb-12">
+          <div className="mb-8 sm:mb-12">
             <h2
-              style={{
-                color: "#000",
-                fontSize: "28px",
-                fontWeight: 700,
-                lineHeight: "normal",
-                marginBottom: "16px",
-              }}
+              className="text-lg sm:text-xl md:text-2xl lg:text-[28px] mb-3 sm:mb-4 font-bold text-black"
             >
               13. Contact Us
             </h2>
             <p
-              style={{
-                color: "rgba(0, 0, 0, 0.50)",
-                fontSize: "24px",
-                fontWeight: 500,
-                lineHeight: "144.7%",
-                marginBottom: "8px",
-              }}
+              className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-[24px] mb-3 sm:mb-4 text-gray-500"
+              style={{ fontWeight: 500, lineHeight: "1.447" }}
             >
               Ideas to Move Forward LLC
               <br />
@@ -945,17 +581,13 @@ export function TermsOfUse() {
               Sheridan, WY 82801, USA
             </p>
             <p
-              style={{
-                color: "rgba(0, 0, 0, 0.50)",
-                fontSize: "24px",
-                fontWeight: 500,
-                lineHeight: "144.7%",
-              }}
+              className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-[24px] text-gray-500"
+              style={{ fontWeight: 500, lineHeight: "1.447" }}
             >
               Email:{" "}
               <a
                 href="mailto:support@lalalaugh.com"
-                style={{ color: "#3931C5", textDecoration: "none" }}
+                className="text-[#3931C5] hover:underline"
               >
                 support@lalalaugh.com
               </a>

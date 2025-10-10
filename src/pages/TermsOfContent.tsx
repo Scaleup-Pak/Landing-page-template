@@ -5,21 +5,21 @@ export function TermsOfContent() {
   return (
     <div className="min-h-screen bg-white">
       {/* Logo and Title Section */}
-      <div className="px-4 sm:px-6 md:px-8 lg:px-16 xl:px-24 2xl:px-[110px] pt-8 pb-6">
+      <div className="px-4 sm:px-6 md:px-8 lg:px-16 xl:px-24 2xl:px-[110px] pt-6 sm:pt-8 pb-4 sm:pb-6">
         <Link to="/">
           <img
             src={FooterLogo}
             alt="LA LA LAUGH Logo"
-            className="w-24 sm:w-28 md:w-32 mb-[70px]"
+            className="w-20 sm:w-24 md:w-28 lg:w-32 mb-8 sm:mb-12 md:mb-[70px]"
           />
         </Link>
         <h1
+          className="text-2xl sm:text-3xl md:text-4xl lg:text-[44px]"
           style={{
             fontFamily: "Nunito, sans-serif",
             color: "#000000",
-            fontSize: "44px",
             fontWeight: 700,
-            lineHeight: "31px",
+            lineHeight: "1.2",
           }}
         >
           Terms of Content
@@ -27,15 +27,14 @@ export function TermsOfContent() {
       </div>
 
       {/* Content */}
-      <div className="px-4 sm:px-6 md:px-8 lg:px-16 xl:px-24 2xl:px-[110px] pb-12">
+      <div className="px-4 sm:px-6 md:px-8 lg:px-16 xl:px-24 2xl:px-[110px] pb-8 sm:pb-12">
         <div style={{ fontFamily: "Nunito, sans-serif" }}>
           <p
+            className="text-base sm:text-lg md:text-xl lg:text-[24px] mb-6 sm:mb-8"
             style={{
               color: "rgba(0, 0, 0, 0.50)",
-              fontSize: "24px",
               fontWeight: 500,
               lineHeight: "144.7%",
-              marginBottom: "32px",
             }}
           >
             This Privacy Policy describes how LA LA Laugh collects, uses, and
@@ -45,22 +44,21 @@ export function TermsOfContent() {
           </p>
 
           {/* Section 1 */}
-          <div className="mb-8">
+          <div className="mb-6 sm:mb-8">
             <h2
+              className="text-xl sm:text-2xl md:text-3xl lg:text-[36px] mb-3 sm:mb-4"
               style={{
                 color: "#000",
-                fontSize: "36px",
                 fontWeight: 600,
                 lineHeight: "normal",
-                marginBottom: "16px",
               }}
             >
               1. Introduction
             </h2>
             <p
+              className="text-base sm:text-lg md:text-xl lg:text-[24px]"
               style={{
                 color: "rgba(0, 0, 0, 0.50)",
-                fontSize: "24px",
                 fontWeight: 500,
                 lineHeight: "144.7%",
               }}
@@ -72,44 +70,41 @@ export function TermsOfContent() {
           </div>
 
           {/* Section 2 */}
-          <div className="mb-8">
+          <div className="mb-6 sm:mb-8">
             <h2
+              className="text-xl sm:text-2xl md:text-3xl lg:text-[36px] mb-3 sm:mb-4"
               style={{
                 color: "#000",
-                fontSize: "36px",
                 fontWeight: 600,
                 lineHeight: "normal",
-                marginBottom: "16px",
               }}
             >
               2. Information We Collect
             </h2>
             <p
+              className="text-base sm:text-lg md:text-xl lg:text-[24px] mb-2 sm:mb-3"
               style={{
                 color: "rgba(0, 0, 0, 0.50)",
-                fontSize: "24px",
                 fontWeight: 500,
                 lineHeight: "144.7%",
-                marginBottom: "12px",
               }}
             >
               We collect the following data when you use our services:
             </p>
             <p
+              className="text-base sm:text-lg md:text-xl lg:text-[24px] mb-2"
               style={{
                 color: "rgba(0, 0, 0, 0.50)",
-                fontSize: "24px",
                 fontWeight: 500,
                 lineHeight: "144.7%",
-                marginBottom: "8px",
               }}
             >
               - Personal Information: Name, email address, and payment details.
             </p>
             <p
+              className="text-base sm:text-lg md:text-xl lg:text-[24px]"
               style={{
                 color: "rgba(0, 0, 0, 0.50)",
-                fontSize: "24px",
                 fontWeight: 500,
                 lineHeight: "144.7%",
               }}
@@ -120,55 +115,51 @@ export function TermsOfContent() {
           </div>
 
           {/* Section 3 */}
-          <div className="mb-8">
+          <div className="mb-6 sm:mb-8">
             <h2
+              className="text-xl sm:text-2xl md:text-3xl lg:text-[36px] mb-3 sm:mb-4"
               style={{
                 color: "#000",
-                fontSize: "36px",
                 fontWeight: 600,
                 lineHeight: "normal",
-                marginBottom: "16px",
               }}
             >
               3. How We Use Your Information
             </h2>
             <p
+              className="text-base sm:text-lg md:text-xl lg:text-[24px] mb-2 sm:mb-3"
               style={{
                 color: "rgba(0, 0, 0, 0.50)",
-                fontSize: "24px",
                 fontWeight: 500,
                 lineHeight: "144.7%",
-                marginBottom: "12px",
               }}
             >
               We use the collected data to:
             </p>
             <p
+              className="text-base sm:text-lg md:text-xl lg:text-[24px] mb-2"
               style={{
                 color: "rgba(0, 0, 0, 0.50)",
-                fontSize: "24px",
                 fontWeight: 500,
                 lineHeight: "144.7%",
-                marginBottom: "8px",
               }}
             >
               - Provide and improve our services.
             </p>
             <p
+              className="text-base sm:text-lg md:text-xl lg:text-[24px] mb-2"
               style={{
                 color: "rgba(0, 0, 0, 0.50)",
-                fontSize: "24px",
                 fontWeight: 500,
                 lineHeight: "144.7%",
-                marginBottom: "8px",
               }}
             >
               - Conduct analytics and research.
             </p>
             <p
+              className="text-base sm:text-lg md:text-xl lg:text-[24px]"
               style={{
                 color: "rgba(0, 0, 0, 0.50)",
-                fontSize: "24px",
                 fontWeight: 500,
                 lineHeight: "144.7%",
               }}
@@ -179,22 +170,21 @@ export function TermsOfContent() {
           </div>
 
           {/* Section 4 */}
-          <div className="mb-8">
+          <div className="mb-6 sm:mb-8">
             <h2
+              className="text-xl sm:text-2xl md:text-3xl lg:text-[36px] mb-3 sm:mb-4"
               style={{
                 color: "#000",
-                fontSize: "36px",
                 fontWeight: 600,
                 lineHeight: "normal",
-                marginBottom: "16px",
               }}
             >
               4. Data Sharing
             </h2>
             <p
+              className="text-base sm:text-lg md:text-xl lg:text-[24px]"
               style={{
                 color: "rgba(0, 0, 0, 0.50)",
-                fontSize: "24px",
                 fontWeight: 500,
                 lineHeight: "144.7%",
               }}
@@ -204,22 +194,21 @@ export function TermsOfContent() {
           </div>
 
           {/* Section 5 */}
-          <div className="mb-8">
+          <div className="mb-6 sm:mb-8">
             <h2
+              className="text-xl sm:text-2xl md:text-3xl lg:text-[36px] mb-3 sm:mb-4"
               style={{
                 color: "#000",
-                fontSize: "36px",
                 fontWeight: 600,
                 lineHeight: "normal",
-                marginBottom: "16px",
               }}
             >
               5. Data Retention & Deletion
             </h2>
             <p
+              className="text-base sm:text-lg md:text-xl lg:text-[24px]"
               style={{
                 color: "rgba(0, 0, 0, 0.50)",
-                fontSize: "24px",
                 fontWeight: 500,
                 lineHeight: "144.7%",
               }}
@@ -231,22 +220,21 @@ export function TermsOfContent() {
           </div>
 
           {/* Section 6 */}
-          <div className="mb-8">
+          <div className="mb-6 sm:mb-8">
             <h2
+              className="text-xl sm:text-2xl md:text-3xl lg:text-[36px] mb-3 sm:mb-4"
               style={{
                 color: "#000",
-                fontSize: "36px",
                 fontWeight: 600,
                 lineHeight: "normal",
-                marginBottom: "16px",
               }}
             >
               6. Security Measures
             </h2>
             <p
+              className="text-base sm:text-lg md:text-xl lg:text-[24px]"
               style={{
                 color: "rgba(0, 0, 0, 0.50)",
-                fontSize: "24px",
                 fontWeight: 500,
                 lineHeight: "144.7%",
               }}
@@ -256,45 +244,42 @@ export function TermsOfContent() {
             </p>
           </div>
 
-          {/* Section 6 - Your Rights */}
-          <div className="mb-8">
+          {/* Section 7 - Your Rights */}
+          <div className="mb-6 sm:mb-8">
             <h2
+              className="text-xl sm:text-2xl md:text-3xl lg:text-[36px] mb-3 sm:mb-4"
               style={{
                 color: "#000",
-                fontSize: "36px",
                 fontWeight: 600,
                 lineHeight: "normal",
-                marginBottom: "16px",
               }}
             >
-              6. Your Rights
+              7. Your Rights
             </h2>
             <p
+              className="text-base sm:text-lg md:text-xl lg:text-[24px] mb-2 sm:mb-3"
               style={{
                 color: "rgba(0, 0, 0, 0.50)",
-                fontSize: "24px",
                 fontWeight: 500,
                 lineHeight: "144.7%",
-                marginBottom: "12px",
               }}
             >
               As a user, you have the right to:
             </p>
             <p
+              className="text-base sm:text-lg md:text-xl lg:text-[24px] mb-2"
               style={{
                 color: "rgba(0, 0, 0, 0.50)",
-                fontSize: "24px",
                 fontWeight: 500,
                 lineHeight: "144.7%",
-                marginBottom: "8px",
               }}
             >
               - Access and update your data.
             </p>
             <p
+              className="text-base sm:text-lg md:text-xl lg:text-[24px]"
               style={{
                 color: "rgba(0, 0, 0, 0.50)",
-                fontSize: "24px",
                 fontWeight: 500,
                 lineHeight: "144.7%",
               }}
@@ -303,23 +288,22 @@ export function TermsOfContent() {
             </p>
           </div>
 
-          {/* Section 7 */}
-          <div className="mb-8">
+          {/* Section 8 */}
+          <div className="mb-6 sm:mb-8">
             <h2
+              className="text-xl sm:text-2xl md:text-3xl lg:text-[36px] mb-3 sm:mb-4"
               style={{
                 color: "#000",
-                fontSize: "36px",
                 fontWeight: 600,
                 lineHeight: "normal",
-                marginBottom: "16px",
               }}
             >
-              7. Legal Compliance
+              8. Legal Compliance
             </h2>
             <p
+              className="text-base sm:text-lg md:text-xl lg:text-[24px]"
               style={{
                 color: "rgba(0, 0, 0, 0.50)",
-                fontSize: "24px",
                 fontWeight: 500,
                 lineHeight: "144.7%",
               }}
@@ -329,23 +313,22 @@ export function TermsOfContent() {
             </p>
           </div>
 
-          {/* Section 8 */}
-          <div className="mb-12">
+          {/* Section 9 */}
+          <div className="mb-8 sm:mb-12">
             <h2
+              className="text-xl sm:text-2xl md:text-3xl lg:text-[36px] mb-3 sm:mb-4"
               style={{
                 color: "#000",
-                fontSize: "36px",
                 fontWeight: 600,
                 lineHeight: "normal",
-                marginBottom: "16px",
               }}
             >
-              8. Contact Information
+              9. Contact Information
             </h2>
             <p
+              className="text-base sm:text-lg md:text-xl lg:text-[24px]"
               style={{
                 color: "rgba(0, 0, 0, 0.50)",
-                fontSize: "24px",
                 fontWeight: 500,
                 lineHeight: "144.7%",
               }}
