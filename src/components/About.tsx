@@ -80,9 +80,9 @@ export function About() {
 
             </div>
 
-            {/* image should be in the center and height width should be responsive */}
-            <div className="flex justify-center">
-              <img src={aboutsec} alt="" className="w-auto h-auto" />
+            {/* image should be in the center and height width should be responsive according to screen size for sm md lg xl */} 
+            <div className="flex justify-center lg:w-full w-[50%] mx-auto ">
+              <img src={aboutsec} alt="" className="" />
             </div>
           </div>
         </div>
