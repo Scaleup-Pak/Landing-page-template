@@ -11,15 +11,19 @@ interface CardData {
   id: number;
   imageUrl: string;
 }
-
 const CarouselCard: React.FC<{ card: CardData; isActive: boolean }> = ({ card, isActive }) => {
   return (
     <div 
-      className={`relative flex-[0_0_280px] md:flex-[0_0_320px] mx-2 transition-all duration-500 ease-out ${
+      className={`relative mx-2 transition-all duration-500 ease-out ${
         isActive 
-          ? 'h-[620px] ' 
-          : 'h-[540px] '
-      }`}
+          ? 'h-[620px]' 
+          : 'h-[540px]'
+      } 
+      flex-[0_0_calc(100%-16px)] 
+      sm:flex-[0_0_calc(50%-16px)] 
+      md:flex-[0_0_calc(33.333%-16px)] 
+      lg:flex-[0_0_calc(20%-16px)]
+      `}
     >
       <div className={`w-full h-full rounded-3xl overflow-hidden transition-transform duration-500 ease-out ${
         isActive ? 'scale-100' : 'scale-95'
