@@ -1,12 +1,34 @@
+import { useNavigate, useLocation } from "react-router-dom";
 import playstoreIcon from "../assets/playstore.png";
 import appleicon from "../assets/appleFootericon.png";
 import FooterLogo from "../assets/footerlogo.png";
 import Qrcode from "../assets/Qrcode.png";
+
 export function Footer() {
+  const navigate = useNavigate();
+  const location = useLocation();
+
   const handleNavClick = (href: string) => {
-    const element = document.querySelector(href)
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    // If it's a route path, navigate to it
+    if (href.startsWith('/')) {
+      navigate(href);
+    } else {
+      // If it's a hash link and we're not on homepage, go to homepage first
+      if (location.pathname !== '/') {
+        navigate('/');
+        setTimeout(() => {
+          const element = document.querySelector(href);
+          if (element) {
+            element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        }, 100);
+      } else {
+        // We're on homepage, just scroll
+        const element = document.querySelector(href);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
     }
   }
 
@@ -165,7 +187,7 @@ export function Footer() {
                   <span
                     style={{ fontFamily: "Nunito, sans-serif" }}
                     className="text-[#00000080] hover:text-[#3931C5] transition-colors text-sm sm:text-[18px] cursor-pointer"
-                    onClick={() => handleNavClick('#terms')}
+                    onClick={() => handleNavClick('/terms')}
                   >
                     Terms of use & Privacy Policy
                   </span>
@@ -174,7 +196,7 @@ export function Footer() {
                   <span
                     style={{ fontFamily: "Nunito, sans-serif" }}
                     className="text-[#00000080] hover:text-[#3931C5] transition-colors text-sm sm:text-[18px] cursor-pointer"
-                    onClick={() => handleNavClick('#content-terms')}
+                    onClick={() => handleNavClick('/content-terms')}
                   >
                     Terms of Contents
                   </span>

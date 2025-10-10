@@ -1,36 +1,19 @@
-import { About } from "./components/About";
-import { Header } from "./components/Header";
-import { Creators } from "./components/Creators";
-import { Features } from "./components/Feature";
-import { ContactUs } from "./components/ContactUs";
-import { DownloadBanner } from "./components/DownloadBanner";
-import { Footer } from "./components/Footer";
-//  after the header there will be component of about section
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { HomePage } from "./pages/HomePage";
+import { TermsOfUse } from "./pages/TermsOfUse";
+import { TermsOfContent } from "./pages/TermsOfContent";
+import { ScrollToTop } from "./components/ScrollToTop";
+
 function App() {
   return (
-    <>
-      {/* <FontTest /> */}
-      <Header />
-      <section id="about">
-        <About />
-      </section>
-      <section id="creators">
-        <Creators />
-      </section>
-      <section id="features">
-        <Features />
-      </section>
-      <section id="contact">
-        <ContactUs />
-      </section>
-      {/* <DownloadBanner /> */}
-      <section id="advertiser">
-        <DownloadBanner />
-      </section>
-       <section id="footer">
-        <Footer />
-      </section>
-    </>
+    <Router>
+      <ScrollToTop />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/terms" element={<TermsOfUse />} />
+        <Route path="/content-terms" element={<TermsOfContent />} />
+      </Routes>
+    </Router>
   );
 }
 
