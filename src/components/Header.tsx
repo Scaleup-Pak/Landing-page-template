@@ -56,7 +56,7 @@ export function Header({
         <div className="flex items-center gap-3 sm:gap-4">
           <button
             type="button"
-            className="hidden lg:block bg-white text-[#3931C5] hover:bg-white/90 font-semibold px-4 xl:px-6 py-2 xl:py-3 rounded-lg transition-colors text-sm xl:text-base whitespace-nowrap"
+            className="hidden lg:block bg-white cursor-pointer text-[#3931C5] hover:bg-white/90 font-semibold px-4 xl:px-6 py-2 xl:py-3 rounded-lg transition-colors text-sm xl:text-base whitespace-nowrap"
             onClick={() => handleNavClick('#contact')}
           >
             {ctaText}
@@ -65,7 +65,7 @@ export function Header({
           {/* Mobile Menu Button */}
           <button
             type="button"
-            className="lg:hidden text-white focus:outline-none p-1"
+            className="lg:hidden text-white focus:outline-none p-1 cursor-pointer"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Toggle menu"
           >
