@@ -1,47 +1,55 @@
-import mobile from "../assets/mobile.png";
 import iphone from "../assets/iphon.png";
+import EmblaCarousel from "./Carousel";
 
 export function Creators() {
   return (
     <section className="w-full pt-[105px] mb-4">
-      <div className="w-full px-4 sm:px-6 md:px-8 lg:px-16 xl:px-24 2xl:px-[106px]">
-        <div className="max-w-[1440px] mx-auto">
+      {/* carousel section */}
+      <div className="w-full  py-[55px]">
+      
+        <EmblaCarousel/>
+      </div>
+      <div className="w-full  px-4 sm:px-6 md:px-8 lg:px-16 xl:px-24 2xl:px-[106px]">
+        <div className="max-w-[1440px]  mx-auto">
           <div className="mt-8  flex flex-col 2xl:gap-[60px] xl:gap-16 lg:gap-12 md:gap-10 sm:gap-8 gap-6 ">
-              <div className=" ">
-                <h4
-                  style={{ fontFamily: "Nunito, sans-serif" }}
-                  className="text-left mb-[17px]  text-[28px] sm:text-[32px] md:text-[38px] lg:text-[44px] xl:text-[48px] 2xl:text-[50px] leading-tight md:leading-[50px] font-sans font-bold "
-                >
-                  Creator Program - The Comedy Economy{" "}
-                </h4>
-                <p
-                  style={{ fontFamily: "Nunito, sans-serif" }}
-                  className="text-left text-[#22222280]    sm:text-lg md:text-xl lg:text-[22px]    leading-relaxed md:leading-8"
-                >
-                  In the pursuit of innovation and happiness, La La Laugh is on
-                  a mission to build the clearest, fairest, and kindest way to
-                  monetize creativity. Our Creator Program is designed for real
-                  income—because why shouldn’t making people laugh also help you
-                  earn? With ongoing innovations, we’re finding smarter ways for
-                  creators to monetize and collaborate directly with brands and
-                  advertisers.
-                </p>
-                <p
-                  style={{ fontFamily: "Nunito, sans-serif" }}
-                  className="text-left text-[#22222280]    sm:text-lg md:text-xl lg:text-[22px]    leading-relaxed md:leading-8"
-                >
-                  We want to make La La Laugh the best place for you to create
-                  and share content that sparks joy. Have ideas or feedback?
-                  Click <span className="text-[#000]">Contact Us</span> with suggestions—or simply join the <span className="text-[#000]">waiting list</span> to be part of the launch.
-                </p>
-              </div>
-              {/* creator program image  */}
+            <div className=" ">
+              <h4
+                style={{ fontFamily: "Nunito, sans-serif" }}
+                className="text-left mb-[17px]  text-[28px] sm:text-[32px] md:text-[38px] lg:text-[44px] xl:text-[48px]  leading-tight md:leading-[50px] font-sans font-bold "
+              >
+                Creator Program - The Comedy Economy{" "}
+              </h4>
+              <p
+                style={{ fontFamily: "Nunito, sans-serif" }}
+                className="text-left text-[#22222280]    sm:text-lg md:text-xl lg:text-[22px]    leading-relaxed md:leading-8"
+              >
+                In the pursuit of innovation and happiness, La La Laugh is on a
+                mission to build the clearest, fairest, and kindest way to
+                monetize creativity. Our Creator Program is designed for real
+                income—because why shouldn’t making people laugh also help you
+                earn? With ongoing innovations, we’re finding smarter ways for
+                creators to monetize and collaborate directly with brands and
+                advertisers.
+              </p>
+              <p
+                style={{ fontFamily: "Nunito, sans-serif" }}
+                className="text-left text-[#22222280]    sm:text-lg md:text-xl lg:text-[22px]    leading-relaxed md:leading-8"
+              >
+                We want to make La La Laugh the best place for you to create and
+                share content that sparks joy. Have ideas or feedback? Click{" "}
+                <span className="text-[#000]">Contact Us</span> with
+                suggestions—or simply join the{" "}
+                <span className="text-[#000]">waiting list</span> to be part of
+                the launch.
+              </p>
+            </div>
+            {/* creator program image  */}
             <div className=" ">
               <div className=" pt-[53px]  px-[78px] w-full h-full flex justify-between gap-[100px] bg-[#F4F4F4] rounded-[30px]">
                 {/* left side image wich will only show from md to above and right side text */}
                 <div className="hidden lg:flex lg:flex-col lg:justify-end">
                   <div className=" w-full">
-                    <img src={iphone} width={400}  alt="Creators" />
+                    <img src={iphone} width={400} alt="Creators" />
                   </div>
                 </div>
                 {/* right side */}
