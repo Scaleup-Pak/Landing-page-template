@@ -41,21 +41,21 @@ const CarouselCard: React.FC<{ card: CardData; isActive: boolean }> = ({ card, i
 const EmblaCarousel: React.FC = () => {
 const [emblaRef, emblaApi] = useEmblaCarousel(
   {
-    align: 'center',
+    align: 'center',  // Changed from 'center' to 'start'
     loop: true,
-    skipSnaps: false,  // Changed from true to false
+    skipSnaps: false,
     dragFree: false,
     startIndex: 0,
-    inViewThreshold: 0.7,  // Added - only show slides 70% in view
-    containScroll: 'trimSnaps',  // Added
-    watchDrag: true,  // Added
+    slidesToScroll: 1,  // Added - scroll one slide at a time
+    containScroll: 'trimSnaps',
+    watchDrag: true,
   },
   [Autoplay({ 
     delay: 3000, 
     stopOnInteraction: false,
     playOnInit: true,
     stopOnMouseEnter: false,
-    stopOnLastSnap: false  // Changed from true to false (for proper looping)
+    stopOnLastSnap: false
   })]
 );
 
@@ -129,20 +129,21 @@ return (
     <div className="h-[50px]"></div>
     
     {/* Carousel Component */}
-    <div className="embla w-full flex flex-col items-center justify-center p-4 md:p-8">
-      <div className="embla__viewport relative w-full overflow-hidden" ref={emblaRef}>
-        <div className="embla__container flex items-center">
-          {cards.map((card, index) => (
-            <div key={card.id} className="embla__slide">
-              <CarouselCard 
-                card={card} 
-                isActive={index === selectedIndex}
-              />
-            </div>
-          ))}
+   {/* Carousel Component */}
+<div className="embla w-full flex flex-col items-center justify-center p-4 md:p-8">
+  <div className="embla__viewport relative w-full overflow-hidden min-h-[660px]" ref={emblaRef}>
+    <div className="embla__container flex items-center">
+      {cards.map((card, index) => (
+        <div key={card.id} className="embla__slide">
+          <CarouselCard 
+            card={card} 
+            isActive={index === selectedIndex}
+          />
         </div>
-      </div>
+      ))}
     </div>
+  </div>
+</div>
 
     {/* 50px gap */}
     <div className="h-[50px]"></div>
