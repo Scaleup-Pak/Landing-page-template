@@ -1,7 +1,11 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
-
+import image1 from "../assets/content-creator/1.png";
+import image2 from "../assets/content-creator/2.png";
+import image3 from "../assets/content-creator/3.png";
+import image4 from "../assets/content-creator/4.png";
+import image5 from "../assets/content-creator/5.png";
 interface CardData {
   id: number;
   imageUrl: string;
@@ -12,17 +16,17 @@ const CarouselCard: React.FC<{ card: CardData; isActive: boolean }> = ({ card, i
     <div 
       className={`relative flex-[0_0_280px] md:flex-[0_0_320px] mx-2 transition-all duration-500 ease-out ${
         isActive 
-          ? 'h-[620px] opacity-100' 
-          : 'h-[540px] opacity-70'
+          ? 'h-[620px] ' 
+          : 'h-[540px] '
       }`}
     >
-      <div className={`w-full h-full rounded-3xl overflow-hidden shadow-2xl transition-transform duration-500 ease-out ${
+      <div className={`w-full h-full rounded-3xl overflow-hidden transition-transform duration-500 ease-out ${
         isActive ? 'scale-100' : 'scale-95'
       }`}>
         <img 
           src={card.imageUrl} 
           alt={`Slide ${card.id}`}
-          className="w-full h-full object-cover"
+          className="w-full h-full object-contain"
         />
       </div>
     </div>
@@ -53,31 +57,31 @@ const EmblaCarousel: React.FC = () => {
   const cards: CardData[] = [
     {
       id: 1,
-      imageUrl: 'https://images.unsplash.com/photo-1682687220742-aba13b6e50ba?w=400&h=700&fit=crop',
+      imageUrl: image1,
     },
     {
       id: 2,
-      imageUrl: 'https://images.unsplash.com/photo-1682687221038-404cb8830901?w=400&h=700&fit=crop',
+      imageUrl: image2,
     },
     {
       id: 3,
-      imageUrl: 'https://images.unsplash.com/photo-1682687220063-4742bd7fd538?w=400&h=700&fit=crop',
+      imageUrl: image3,
     },
     {
       id: 4,
-      imageUrl: 'https://images.unsplash.com/photo-1682687220199-d0124f48f95b?w=400&h=700&fit=crop',
+      imageUrl: image4,
     },
     {
       id: 5,
-      imageUrl: 'https://images.unsplash.com/photo-1682687220067-dced9a881b56?w=400&h=700&fit=crop',
+      imageUrl: image5,
     },
      {
       id: 6,
-      imageUrl: 'https://images.unsplash.com/photo-1682687220199-d0124f48f95b?w=400&h=700&fit=crop',
+      imageUrl: image1,
     },
     {
       id: 7,
-      imageUrl: 'https://images.unsplash.com/photo-1682687220067-dced9a881b56?w=400&h=700&fit=crop',
+      imageUrl: image2,
     },
   ];
 

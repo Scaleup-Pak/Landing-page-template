@@ -1,5 +1,4 @@
-import mobile from "../assets/mobile.png";
-import iphone from "../assets/iphon.png";
+
 import { ImageGrid } from "./ImageGrid";
 
 export function Features() {
@@ -64,7 +63,11 @@ export function Features() {
           </div>
         </div>
       </div>
-      <ImageGrid />
+      <div className="mt-6">
+        <ImageGrid />
+        <ImageGrid />
+
+      </div>
     </section>
   );
 }

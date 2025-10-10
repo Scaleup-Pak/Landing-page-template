@@ -1,29 +1,36 @@
+import image1 from '../assets/Featur-section/1.jpg';
+import image2 from '../assets/Featur-section/2.jpg';
+import image3 from '../assets/Featur-section/3.jpg';
+import image4 from '../assets/Featur-section/4.jpg';
+import image5 from '../assets/Featur-section/5.jpg';
+import image6 from '../assets/Featur-section/6.jpg';
+import image7 from '../assets/Featur-section/7.jpg';
+
 export function ImageGrid() {
   // Image data representing the 14 total images (4+3+4+3)
   const imageData = [
     // Row 1: 4 images
-    { id: 1, src: "https://images.unsplash.com/photo-1520637836862-4d197d17c86a?w=300&h=200&fit=crop", alt: "Person with VR headset" },
-    { id: 2, src: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=300&h=200&fit=crop", alt: "Woman waving" },
-    { id: 3, src: "https://images.unsplash.com/photo-1594736797933-d0501ba2fe65?w=300&h=200&fit=crop", alt: "Woman with phone" },
-    { id: 4, src: "https://images.unsplash.com/photo-1516726817505-f5ed825624d8?w=300&h=200&fit=crop", alt: "Woman with headphones" },
-    
-    // Row 2: 3 images  
-    { id: 5, src: "https://images.unsplash.com/photo-1531545514256-b1400bc00f31?w=300&h=200&fit=crop", alt: "Woman with colorful sweater" },
-    { id: 6, src: "https://images.unsplash.com/photo-1512485800893-b08ec1ea59b1?w=300&h=200&fit=crop", alt: "Woman with healthy food" },
-    { id: 7, src: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=300&h=200&fit=crop", alt: "Singer performing" },
-    
-    // Row 3: 4 images
-    { id: 8, src: "https://images.unsplash.com/photo-1520637836862-4d197d17c86a?w=300&h=200&fit=crop", alt: "Person with VR headset" },
-    { id: 9, src: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=300&h=200&fit=crop", alt: "Woman waving" },
-    { id: 10, src: "https://images.unsplash.com/photo-1594736797933-d0501ba2fe65?w=300&h=200&fit=crop", alt: "Woman with phone" },
-    { id: 11, src: "https://images.unsplash.com/photo-1516726817505-f5ed825624d8?w=300&h=200&fit=crop", alt: "Woman with headphones" },
-    
-    // Row 4: 3 images
-    { id: 12, src: "https://images.unsplash.com/photo-1531545514256-b1400bc00f31?w=300&h=200&fit=crop", alt: "Woman with colorful sweater" },
-    { id: 13, src: "https://images.unsplash.com/photo-1512485800893-b08ec1ea59b1?w=300&h=200&fit=crop", alt: "Woman with healthy food" },
-    { id: 14, src: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=300&h=200&fit=crop", alt: "Singer performing" }
-  ];
+    { id: 1, src: image1, alt: "Person with VR headset" },
+    { id: 2, src: image2, alt: "Woman waving" },
+    { id: 3, src: image3, alt: "Woman with phone" },
+    { id: 4, src: image4, alt: "Woman with headphones" },
 
+    // Row 2: 3 images
+    { id: 5, src: image5, alt: "Woman with colorful sweater" },
+    { id: 6, src: image6, alt: "Woman with healthy food" },
+    { id: 7, src: image7, alt: "Singer performing" },
+
+    // // Row 3: 4 images
+    // { id: 8, src: image1, alt: "Person with VR headset" },
+    // { id: 9, src: image2, alt: "Woman waving" },
+    // { id: 10, src: image3, alt: "Woman with phone" },
+    // { id: 11, src: image4, alt: "Woman with headphones" },
+
+    // // Row 2: 3 images
+    // { id: 5, src: image5, alt: "Woman with colorful sweater" },
+    // { id: 6, src: image6, alt: "Woman with healthy food" },
+    // { id: 7, src: image7, alt: "Singer performing" },
+  ]
   // Split images into rows
   const row1 = imageData.slice(0, 4);   // First 4 images
   const row2 = imageData.slice(4, 7);   // Next 3 images  
@@ -31,7 +38,7 @@ export function ImageGrid() {
   const row4 = imageData.slice(11, 14); // Last 3 images
 
   return (
-    <div className="w-full px-4 sm:px-6 md:px-8 lg:px-16 xl:px-24 2xl:px-[106px] py-8">
+    <div className="w-full px-4 sm:px-6 md:px-8 lg:px-16 xl:px-24 2xl:px-[106px] ">
       <div className="max-w-[1440px] mx-auto space-y-4">
         
         {/* Row 1: 4 images */}
