@@ -1,0 +1,52 @@
+.embla {
+  overflow: hidden;
+}
+
+.embla__viewport {
+  overflow: hidden;
+}
+
+.embla__container {
+  backface-visibility: hidden;
+  display: flex;
+  touch-action: pan-y pinch-zoom;
+  margin-left: calc(var(--slide-spacing) * -1);
+  transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Added smooth animation */
+}
+
+.embla__slide {
+  backface-visibility: hidden;
+  flex: 0 0 auto;
+  min-width: 0;
+  padding-left: var(--slide-spacing);
+  position: relative;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+/* Mask the edges to hide repositioning slides */
+.embla__viewport::before,
+.embla__viewport::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100px;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.embla__viewport::before {
+  left: 0;
+  background: linear-gradient(to right, #D9D9D94D 0%, transparent 100%);
+}
+
+.embla__viewport::after {
+  right: 0;
+  background: linear-gradient(to left, #D9D9D94D 0%, transparent 100%);
+}
+
+/* Smooth transition when slides are being moved */
+.embla__container.is-dragging {
+  transition: none;
+}
