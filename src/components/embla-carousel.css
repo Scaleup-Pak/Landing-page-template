@@ -56,7 +56,7 @@
 
 @media (min-width: 1024px) {
   .embla__slide {
-    flex: 0 0 calc(20% - var(--slide-spacing));
+    flex: 0 0 calc(21% - var(--slide-spacing));
   }
   
   .embla__container {
@@ -80,10 +80,8 @@
 
 .embla__viewport::before {
   left: 0;
-  background: linear-gradient(to right, #D9D9D94D 0%, transparent 100%);
 }
 
 .embla__viewport::after {
   right: 0;
-  background: linear-gradient(to left, #D9D9D94D 0%, transparent 100%);
 }

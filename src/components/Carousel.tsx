@@ -16,9 +16,9 @@ interface CardData {
 const CarouselCard: React.FC<{ card: CardData; isActive: boolean }> = ({ card, isActive }) => {
   return (
     <div 
-      className={`relative transition-all duration-500 ease-out ${isActive ? 'h-[598.417px]' : 'h-[478.326px]'}`}
+      className="relative h-[598.417px] flex items-center justify-center"
     >
-      <div className={`w-full h-full rounded-3xl overflow-hidden transition-transform duration-500 ease-out will-change-transform ${isActive ? 'scale-100' : 'scale-95'}`}>
+      <div className={`rounded-3xl overflow-hidden transition-transform duration-500 ease-out will-change-transform ${isActive ? 'w-full h-full scale-100' : 'w-[95%] h-[478.326px] scale-95'}`}>
         <img 
           src={card.imageUrl} 
           alt={`Slide ${card.id}`}
@@ -36,6 +36,7 @@ const EmblaCarousel: React.FC = () => {
       loop: true,
       skipSnaps: false,
       dragFree: false,
+
       slidesToScroll: 1,
       containScroll: 'trimSnaps',
       duration: 25, // Smooth transition duration
@@ -98,8 +99,8 @@ const EmblaCarousel: React.FC = () => {
       
       <div className="h-[50px]"></div>
       
-      <div className="embla w-full flex flex-col items-center justify-center p-4 md:p-8">
-        <div className="embla__viewport relative w-full overflow-hidden" ref={emblaRef}>
+      <div className="embla w-full flex flex-col items-center justify-center  p-4 md:p-8">
+        <div className="embla__viewport   relative w-full overflow-hidden" ref={emblaRef}>
           <div className="embla__container flex items-center">
             {cards.map((card, index) => (
               <div key={`${card.id}-${index}`} className="embla__slide">
