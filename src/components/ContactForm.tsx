@@ -122,7 +122,7 @@ export const ContactForm: React.FC = () => {
             style={{ fontFamily: "Nunito, sans-serif" }}
             className="block text-[18px] font-semibold text-[#000000] mb-3"
           >
-            Select User Type <span className="text-red-500 ml-1">*</span>
+            Select User Type 
           </p>
           <RadioGroup
             name="userType"
@@ -141,7 +141,7 @@ export const ContactForm: React.FC = () => {
           value={formData.name}
           onChange={handleInputChange('name')}
           error={errors.name}
-          required
+          
           maxLength={50}
         />
 
@@ -153,7 +153,7 @@ export const ContactForm: React.FC = () => {
           value={formData.email}
           onChange={handleInputChange('email')}
           error={errors.email}
-          required
+          
           maxLength={254}
         />
 
@@ -165,7 +165,7 @@ export const ContactForm: React.FC = () => {
           value={formData.subject}
           onChange={handleInputChange('subject')}
           error={errors.subject}
-          required
+          
           maxLength={100}
         />
 
@@ -176,7 +176,7 @@ export const ContactForm: React.FC = () => {
           value={formData.message}
           onChange={handleInputChange('message')}
           error={errors.message}
-          required
+          
           maxLength={1000}
           rows={5}
         />
