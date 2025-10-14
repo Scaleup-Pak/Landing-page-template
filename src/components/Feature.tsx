@@ -1,6 +1,5 @@
 import ImageGrid from "./ImageGrid";
 
-
 export function Features() {
   return (
     <section className="w-full pt-[105px] mb-4">
@@ -10,13 +9,13 @@ export function Features() {
             <div className=" ">
               <h4
                 style={{ fontFamily: "Nunito, sans-serif" }}
-                className="text-left mb-[17px]  text-[28px] sm:text-[32px] md:text-[38px] lg:text-[44px] xl:text-[48px] 2xl:text-[50px] leading-tight md:leading-[50px] font-sans font-bold "
+                className="text-left mb-[17px]  text-[28px] sm:text-[32px] md:text-[40px]  leading-tight md:leading-[50px] font-sans font-bold "
               >
                 Humor Sells and does it well
               </h4>
               <p
-                style={{ fontFamily: "Nunito",color: "rgba(0, 0, 0, 0.60)" }}
-                className="text-left     sm:text-lg md:text-xl lg:text-[22px]    leading-relaxed md:leading-[29px] font-normal"
+                style={{ fontFamily: "Nunito", color: "rgba(0, 0, 0, 0.60)" }}
+                className="text-left     sm:text-lg md:text-xl lg:text-[20px]    leading-relaxed md:leading-[29px] font-normal"
               >
                 Now is the time to laugh — and laughter sells. Humor has always
                 been a powerful connector, but in today’s world, it’s more
@@ -26,28 +25,28 @@ export function Features() {
                 sales are booming, and studies show why:
               </p>
               <p
-                style={{ fontFamily: "Nunito" }}
-                className="text-left text-[#00000099]    sm:text-lg md:text-xl lg:text-[22px]    leading-relaxed md:leading-[29px] font-normal"
+                style={{ fontFamily: "Nunito", color: "rgba(0, 0, 0, 0.60)" }}
+                className="text-left    sm:text-lg md:text-xl lg:text-[20px]    leading-relaxed md:leading-[29px] font-normal"
               >
                 90% of consumers are more likely to remember a brand that uses
                 humor.
               </p>
               <p
-                style={{ fontFamily: "Nunito" }}
-                className="text-left text-[#00000099]    sm:text-lg md:text-xl lg:text-[22px]    leading-relaxed md:leading-[29px] font-normal"
+                style={{ fontFamily: "Nunito", color: "rgba(0, 0, 0, 0.60)" }}
+                className="text-left    sm:text-lg md:text-xl lg:text-[20px]    leading-relaxed md:leading-[29px] font-normal"
               >
                 70% would choose a funny brand over the competition.
               </p>
               <p
-                style={{ fontFamily: "Nunito" }}
-                className="text-left text-[#00000099]    sm:text-lg md:text-xl lg:text-[22px]    leading-relaxed md:leading-[29px] font-normal"
+                style={{ fontFamily: "Nunito", color: "rgba(0, 0, 0, 0.60)" }}
+                className="text-left    sm:text-lg md:text-xl lg:text-[20px]    leading-relaxed md:leading-[29px] font-normal"
               >
                 80% say they’re more likely to buy again if a brand makes them
                 laugh.
               </p>
               <p
-                style={{ fontFamily: "Nunito" }}
-                className="text-left text-[#00000099]    sm:text-lg md:text-xl lg:text-[22px]    leading-relaxed md:leading-[29px] font-normal"
+                style={{ fontFamily: "Nunito", color: "rgba(0, 0, 0, 0.60)" }}
+                className="text-left    sm:text-lg md:text-xl lg:text-[20px]    leading-relaxed md:leading-[29px] font-normal"
               >
                 On La La Laugh, your brand connects with audiences in their
                 happiest moments — when they’re smiling, laughing, and ready to
@@ -66,7 +65,6 @@ export function Features() {
       <div className="mt-6 flex flex-col gap-16">
         <ImageGrid />
         <ImageGrid />
-
       </div>
     </section>
   );

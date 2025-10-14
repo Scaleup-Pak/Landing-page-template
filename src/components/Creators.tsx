@@ -17,7 +17,7 @@ export function Creators() {
             <div className=" ">
               <h4
                 style={{ fontFamily: "Nunito, sans-serif" }}
-                className="text-left mb-[17px]  text-[28px] sm:text-[32px] md:text-[38px] lg:text-[44px] xl:text-[48px]  leading-tight md:leading-[50px] font-sans font-bold "
+                className="text-left mb-[17px]  text-[28px] sm:text-[32px] md:text-[40px]  leading-tight md:leading-[50px] font-sans font-bold "
               >
                 Creator Program - The Comedy Economy{" "}
               </h4>
@@ -73,7 +73,7 @@ export function Creators() {
                   <div className="flex flex-col gap-5 justify-center ">
                     <h4
                       style={{ fontFamily: "Nunito, sans-serif" }}
-                      className="text-center md:text-left text-[28px] sm:text-[32px] md:text-[38px] lg:text-[44px] xl:text-[48px] 2xl:text-[50px] leading-tight md:leading-[50px] font-sans font-bold "
+                      className="text-center md:text-left text-[24px] lg:w-[50%] md:text-[30px] leading-tight md:leading-[50px] font-sans font-bold "
                     >
                       App Based On Your Dominant Hand
                     </h4>
