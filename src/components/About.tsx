@@ -4,7 +4,7 @@ import about from "../assets/about.png";
 
 export function About() {
   return (
-    <section className="w-full pt-[105px]">
+    <section className="w-full bg-[#FFFFFF] pt-[105px]">
       <div className="w-full px-4 sm:px-6 md:px-8 lg:px-16 xl:px-24 2xl:px-[106px]">
         <div className="max-w-[1440px] mx-auto">
           {/* first section */}
@@ -14,7 +14,8 @@ export function About() {
           >
             <div className="flex flex-col items-center" style={{ gap: 25 }}>
             <div className="">
-                <h1 className="text-[50px] leading-[56px] font-bold text-center">
+                <h1 className="text-[50px] leading-[56px]  text-center"
+                 style={{ fontFamily: "Nunito, sans-serif", fontWeight: 700 }}>
                 <span className="text-[#3931C5]">Laughter</span> is the Reset
                 Button
               </h1>
@@ -44,15 +45,15 @@ export function About() {
           </div>
 
           <div className="mt-[110px] flex flex-col 2xl:gap-[50px] xl:gap-16 lg:gap-12 md:gap-10 sm:gap-8 gap-6 ">
-            <div className="flex flex-col md:flex-row items-center justify-center md:justify-between gap-6 sm:gap-8 md:gap-10 lg:gap-12 xl:gap-16 2xl:gap-[171px]">
+            <div className="flex flex-col md:flex-row items-start justify-center md:justify-between gap-6 sm:gap-8 md:gap-10 lg:gap-12 xl:gap-16 2xl:gap-[171px]">
               <div className="flex-1 w-full md:w-auto">
-                <h4 style={{ fontFamily: 'Nunito, sans-serif' }} className="text-center md:text-left text-[28px] sm:text-[32px] md:text-[38px] lg:text-[44px] xl:text-[48px] 2xl:text-[50px] leading-tight md:leading-[50px] font-sans font-bold ">
+                <h4 style={{ fontFamily: 'Nunito', fontWeight: 700,fontStyle: 'normal' }} className="text-center md:text-left text-[28px] sm:text-[32px] md:text-[38px] lg:text-[40px] leading-tight md:leading-[50px]">
                   Most Powerful Way To Connect Every Audience
                 </h4>
               </div>
 
               <div className="flex-1 w-full md:w-auto">
-                <p style={{ fontFamily: 'Nunito, sans-serif' }} className="text-center md:text-left text-base sm:text-lg md:text-xl lg:text-[22px] xl:text-2xl 2xl:text-[26px] font-semibold font-sans leading-relaxed md:leading-9 text-[#222222]">
+                <p style={{ fontFamily: 'Nunito',fontWeight: 600,fontStyle: 'normal' }} className="text-center md:text-left text-base sm:text-lg md:text-xl lg:text-[26px]   leading-relaxed md:leading-9 text-[#222]">
                   La La Laugh — the world's first social entertainment app where
                   laughter is the reset button
                 </p>
@@ -60,23 +61,45 @@ export function About() {
             </div>
 
             <div className=" ">
-              <p style={{ fontFamily: 'Nunito, sans-serif' }} className="text-center text-[#22222280]   md:text-left text-base sm:text-lg md:text-xl lg:text-[22px]    leading-relaxed md:leading-8">
-                La La Laugh is your “take-a-break” app, a global stage built to
-                bring joy back to the internet. Here, everyone—not just
-                professional comedians—can create and share laughter,
-                discovering humor across languages and cultures. Our ambition?
-                To become the best platform in the world for creator
-                monetization while doing the most human thing of all: building
-                connection through laughter.
+              <p
+                style={{
+                  color: 'rgba(34, 34, 34, 0.50)',
+                  fontFamily: 'Nunito',
+                  fontSize: '22px',
+                  fontStyle: 'normal',
+                  fontWeight: 500,
+                  lineHeight: '33.8px',
+                }}
+                className="text-center md:text-left"
+              >
+                La La Laugh is your “take-a-break” app, a global stage built to bring joy back to the internet. Here, everyone—not just professional comedians—can create and share laughter, discovering humor across languages and cultures. Our ambition? To become the best platform in the world for creator monetization while doing the most human thing of all: building connection through laughter.
               </p>
-              <p style={{ fontFamily: 'Nunito, sans-serif' }} className="text-center text-[#22222280]   md:text-left text-base sm:text-lg md:text-xl lg:text-[22px]    leading-relaxed md:leading-8">
-                Forget toxic feeds and endless doomscrolling. Here, jokes,
-                comedy, and parody are the cure. Trolls and dark algorithms? Not
-                welcome. Just pure comedy, inclusivity, and a simple space to
-                unwind. Ditch the drama. Let humor be the medicine that changes
-                the world. Join La La Laugh’s joyful revolution.
+              <p
+                style={{
+                  color: 'rgba(34, 34, 34, 0.50)',
+                  fontFamily: 'Nunito',
+                  fontSize: '22px',
+                  fontStyle: 'normal',
+                  fontWeight: 500,
+                  lineHeight: '33.8px',
+                }}
+                className="text-center md:text-left"
+              >
+                Forget toxic feeds and endless doomscrolling. Here, jokes, comedy, and parody are the cure. Trolls and dark algorithms? Not welcome. Just pure comedy, inclusivity, and a simple space to unwind. Ditch the drama. Let humor be the medicine that changes the world. Join La La Laugh’s joyful revolution.
               </p>
-             <h2 style={{ fontFamily: 'Nunito, sans-serif' }} className=" mt-6  text-heading-large">— Carlos Cicchelli, Founder & CEO</h2>
+              <h2
+                style={{
+                  color: '#222',
+                  fontFamily: 'Nunito',
+                  fontSize: '27px',
+                  fontStyle: 'normal',
+                  fontWeight: 600,
+                  lineHeight: '33.8px',
+                }}
+                className="mt-6 text-heading-large text-center md:text-left"
+              >
+                — Carlos Cicchelli, Founder & CEO
+              </h2>
 
             </div>
 
