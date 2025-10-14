@@ -79,8 +79,8 @@ export function Creators() {
                     </h4>
 
                     <p
-                      style={{ fontFamily: "Nunito, sans-serif" }}
-                      className="text-center text-[#22222280]   md:text-left text-base sm:text-lg md:text-xl lg:text-[22px]    leading-relaxed md:leading-8"
+                      style={{ fontFamily: "Nunito" }}
+                      className="text-center text-[#00000099]   md:text-left text-base sm:text-lg md:text-xl lg:text-[18px]    leading-relaxed md:leading-8"
                     >
                       Forget toxic feeds and endless doomscrolling. Here, jokes,
                       comedy, and parody are the cure. Trolls and dark
@@ -95,7 +95,7 @@ export function Creators() {
                         onClick={() => navigate('/waitlist')}
                         className="bg-[#3931C5] text-white cursor-pointer  px-6 py-3 rounded-[11px] transition"
                       >
-                        Join the Waitlist
+                 Explore App
                       </button>
                     </div>
                   </div>
