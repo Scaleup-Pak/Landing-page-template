@@ -157,7 +157,7 @@ return (
           className={`transition-all duration-300 rounded-full ${
             index === selectedIndex
               ? 'w-8 h-3 bg-blue-600'
-              : 'w-3 h-3 bg-gray-400 hover:bg-gray-500'
+              : 'w-3 h-3 bg-[#FFFFFF] '
           }`}
           aria-label={`Go to slide ${index + 1}`}
         />

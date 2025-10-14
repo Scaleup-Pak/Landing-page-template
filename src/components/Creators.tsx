@@ -22,8 +22,15 @@ export function Creators() {
                 Creator Program - The Comedy Economy{" "}
               </h4>
               <p
-                style={{ fontFamily: "Nunito, sans-serif" }}
-                className="text-left text-[#22222280]    sm:text-lg md:text-xl lg:text-[22px]    leading-relaxed md:leading-8"
+                   style={{
+                  color: 'rgba(0, 0, 0, 0.60)',
+                  fontFamily: 'Nunito',
+                  fontSize: '20px',
+                  fontStyle: 'normal',
+                  fontWeight: 500,
+                  lineHeight: '33.8px',
+                }}
+                className="text-center md:text-left"
               >
                 In the pursuit of innovation and happiness, La La Laugh is on a
                 mission to build the clearest, fairest, and kindest way to
@@ -34,8 +41,15 @@ export function Creators() {
                 advertisers.
               </p>
               <p
-                style={{ fontFamily: "Nunito, sans-serif" }}
-                className="text-left text-[#22222280]    sm:text-lg md:text-xl lg:text-[22px]    leading-relaxed md:leading-8"
+                    style={{
+                  color: 'rgba(0, 0, 0, 0.60)',
+                  fontFamily: 'Nunito',
+                  fontSize: '20px',
+                  fontStyle: 'normal',
+                  fontWeight: 500,
+                  lineHeight: '33.8px',
+                }}
+                className="text-center md:text-left"
               >
                 We want to make La La Laugh the best place for you to create and
                 share content that sparks joy. Have ideas or feedback? Click{" "}

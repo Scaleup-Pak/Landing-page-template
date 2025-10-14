@@ -62,28 +62,14 @@ export function About() {
 
             <div className=" ">
               <p
-                style={{
-                  color: 'rgba(34, 34, 34, 0.50)',
-                  fontFamily: 'Nunito',
-                  fontSize: '22px',
-                  fontStyle: 'normal',
-                  fontWeight: 500,
-                  lineHeight: '33.8px',
-                }}
-                className="text-center md:text-left"
+              style={{ fontFamily: "Nunito, sans-serif" }}
+                className="text-left text-[#22222280]    sm:text-lg md:text-xl lg:text-[22px]    leading-relaxed md:leading-8"
               >
                 La La Laugh is your “take-a-break” app, a global stage built to bring joy back to the internet. Here, everyone—not just professional comedians—can create and share laughter, discovering humor across languages and cultures. Our ambition? To become the best platform in the world for creator monetization while doing the most human thing of all: building connection through laughter.
               </p>
               <p
-                style={{
-                  color: 'rgba(34, 34, 34, 0.50)',
-                  fontFamily: 'Nunito',
-                  fontSize: '22px',
-                  fontStyle: 'normal',
-                  fontWeight: 500,
-                  lineHeight: '33.8px',
-                }}
-                className="text-center md:text-left"
+            style={{ fontFamily: "Nunito, sans-serif" }}
+                className="text-left text-[#22222280]    sm:text-lg md:text-xl lg:text-[22px]    leading-relaxed md:leading-8"
               >
                 Forget toxic feeds and endless doomscrolling. Here, jokes, comedy, and parody are the cure. Trolls and dark algorithms? Not welcome. Just pure comedy, inclusivity, and a simple space to unwind. Ditch the drama. Let humor be the medicine that changes the world. Join La La Laugh’s joyful revolution.
               </p>
