@@ -16,7 +16,7 @@ interface CardData {
 const CarouselCard: React.FC<{ card: CardData; isActive: boolean }> = ({ card, isActive }) => {
   return (
     <div 
-      className={`relative transition-all duration-500 ease-out ${isActive ? 'h-[620px]' : 'h-[540px]'}`}
+      className={`relative transition-all duration-500 ease-out ${isActive ? 'h-[598.417px]' : 'h-[478.326px]'}`}
     >
       <div className={`w-full h-full rounded-3xl overflow-hidden transition-transform duration-500 ease-out will-change-transform ${isActive ? 'scale-100' : 'scale-95'}`}>
         <img 
