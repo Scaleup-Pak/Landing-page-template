@@ -59,7 +59,7 @@ const EmblaCarousel: React.FC = () => {
     { id: 4, imageUrl: image4 },
     { id: 5, imageUrl: image5 },
     { id: 6, imageUrl: image2 },
-    { id: 7, imageUrl: image2 },
+    { id: 7, imageUrl: image4 },
   ];
 
   const onSelect = useCallback(() => {
