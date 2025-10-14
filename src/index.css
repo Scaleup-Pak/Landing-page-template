@@ -8,6 +8,7 @@
   --font-weight-bold: 700;
 }
 
+
 /* Custom text components */
 @layer components {
   .text-paragraph {

@@ -1,16 +1,22 @@
+/* Base carousel styles */
 .embla {
   overflow: hidden;
+  --slide-spacing: 1rem;
+  --slide-height: 620px;
 }
 
 .embla__viewport {
   overflow: hidden;
+  position: relative;
+  height: var(--slide-height);
 }
 
 .embla__container {
   backface-visibility: hidden;
   display: flex;
   touch-action: pan-y pinch-zoom;
-  transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  margin-left: calc(var(--slide-spacing) * -1);
+  will-change: transform;
 }
 
 .embla__slide {
@@ -20,16 +26,54 @@
   position: relative;
   opacity: 1;
   transition: opacity 0.3s ease;
+  transform: translate3d(0, 0, 0);
+  padding-left: var(--slide-spacing);
 }
 
-/* Mask the edges to hide repositioning slides */
+/* Prevent transition during dragging */
+.embla__container.is-dragging {
+  transition: none;
+}
+
+/* Responsive slide sizing */
+@media (max-width: 639px) {
+  .embla__slide {
+    flex: 0 0 calc(100% - var(--slide-spacing));
+  }
+}
+
+@media (min-width: 640px) and (max-width: 767px) {
+  .embla__slide {
+    flex: 0 0 calc(50% - var(--slide-spacing));
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .embla__slide {
+    flex: 0 0 calc(33.333% - var(--slide-spacing));
+  }
+}
+
+@media (min-width: 1024px) {
+  .embla__slide {
+    flex: 0 0 calc(20% - var(--slide-spacing));
+  }
+  
+  .embla__container {
+    max-width: calc(5 * 20% + 4 * var(--slide-spacing));
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* Edge masks to hide clone slides during loop */
 .embla__viewport::before,
 .embla__viewport::after {
   content: '';
   position: absolute;
   top: 0;
   bottom: 0;
-  width: 150px;  /* Increased from 100px */
+  width: 200px;
   z-index: 10;
   pointer-events: none;
 }
@@ -42,9 +86,4 @@
 .embla__viewport::after {
   right: 0;
   background: linear-gradient(to left, #D9D9D94D 0%, transparent 100%);
-}
-
-/* Smooth transition when slides are being moved */
-.embla__container.is-dragging {
-  transition: none;
 }
