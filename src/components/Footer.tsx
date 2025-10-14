@@ -33,7 +33,7 @@ export function Footer() {
   }
 
   return (
-    <footer className="w-full bg-[#F4F4F4] py-8 sm:py-10 md:py-12 lg:py-16">
+    <footer className="w-full bg-[#F4F4F4] py-8 sm:py-10 md:py-12 lg:py-20">
       {/* Container with responsive padding */}
       <div className="w-full  px-4 sm:px-6 md:px-8 lg:pl-16 lg:pr-12 xl:pl-24 xl:pr-16 2xl:pl-[110px] 2xl:pr-[218px] ">
         {/* Main flex container: responsive layout */}
