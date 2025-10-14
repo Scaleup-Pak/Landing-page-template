@@ -9,7 +9,7 @@ export function ContactUs() {
           <div className="">
               <h4
               style={{ fontFamily: "Nunito, sans-serif" }}
-              className="text-center mb-[17px]  text-[28px] sm:text-[32px] md:text-[38px]  leading-tight md:leading-[50px] font-sans font-bold "
+              className="text-center mb-[17px]  text-[28px] sm:text-[32px] md:text-[40px]  leading-tight md:leading-[50px] font-sans font-bold "
             >
               Contact Us
             </h4>
