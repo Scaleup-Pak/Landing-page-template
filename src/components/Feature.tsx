@@ -15,8 +15,8 @@ export function Features() {
                 Humor Sells and does it well
               </h4>
               <p
-                style={{ fontFamily: "Nunito, sans-serif" }}
-                className="text-left text-[#22222280]    sm:text-lg md:text-xl lg:text-[22px]    leading-relaxed md:leading-8"
+                style={{ fontFamily: "Nunito",color: "rgba(0, 0, 0, 0.60)" }}
+                className="text-left     sm:text-lg md:text-xl lg:text-[22px]    leading-relaxed md:leading-[29px] font-normal"
               >
                 Now is the time to laugh — and laughter sells. Humor has always
                 been a powerful connector, but in today’s world, it’s more
@@ -26,28 +26,28 @@ export function Features() {
                 sales are booming, and studies show why:
               </p>
               <p
-                style={{ fontFamily: "Nunito, sans-serif" }}
-                className="text-left text-[#22222280]    sm:text-lg md:text-xl lg:text-[22px]    leading-relaxed md:leading-8"
+                style={{ fontFamily: "Nunito" }}
+                className="text-left text-[#00000099]    sm:text-lg md:text-xl lg:text-[22px]    leading-relaxed md:leading-[29px] font-normal"
               >
                 90% of consumers are more likely to remember a brand that uses
                 humor.
               </p>
               <p
-                style={{ fontFamily: "Nunito, sans-serif" }}
-                className="text-left text-[#22222280]    sm:text-lg md:text-xl lg:text-[22px]    leading-relaxed md:leading-8"
+                style={{ fontFamily: "Nunito" }}
+                className="text-left text-[#00000099]    sm:text-lg md:text-xl lg:text-[22px]    leading-relaxed md:leading-[29px] font-normal"
               >
                 70% would choose a funny brand over the competition.
               </p>
               <p
-                style={{ fontFamily: "Nunito, sans-serif" }}
-                className="text-left text-[#22222280]    sm:text-lg md:text-xl lg:text-[22px]    leading-relaxed md:leading-8"
+                style={{ fontFamily: "Nunito" }}
+                className="text-left text-[#00000099]    sm:text-lg md:text-xl lg:text-[22px]    leading-relaxed md:leading-[29px] font-normal"
               >
                 80% say they’re more likely to buy again if a brand makes them
                 laugh.
               </p>
               <p
-                style={{ fontFamily: "Nunito, sans-serif" }}
-                className="text-left text-[#22222280]    sm:text-lg md:text-xl lg:text-[22px]    leading-relaxed md:leading-8"
+                style={{ fontFamily: "Nunito" }}
+                className="text-left text-[#00000099]    sm:text-lg md:text-xl lg:text-[22px]    leading-relaxed md:leading-[29px] font-normal"
               >
                 On La La Laugh, your brand connects with audiences in their
                 happiest moments — when they’re smiling, laughing, and ready to
