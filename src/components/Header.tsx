@@ -72,7 +72,7 @@ export function Header({
           {navigationLinks.map((link, index) => (
             <span
               key={link.href}
-              className={`relative transition-all duration-300 font-medium text-sm xl:text-base cursor-pointer hover:text-white hover:scale-105 ${
+              className={`relative transition-all duration-300  text-sm xl:text-base cursor-pointer hover:text-white hover:scale-105 ${
                 link.active ? "text-white" : "text-white/70"
               } after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-0.5 after:bg-white after:transition-all after:duration-300 hover:after:w-full`}
               onClick={() => handleNavClick(link.href)}
