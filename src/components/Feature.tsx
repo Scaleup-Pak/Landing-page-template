@@ -63,7 +63,7 @@ export function Features() {
           </div>
         </div>
       </div>
-      <div className="mt-6 flex flex-col gap-8">
+      <div className="mt-6 flex flex-col gap-16">
         <ImageGrid />
         <ImageGrid />
 
