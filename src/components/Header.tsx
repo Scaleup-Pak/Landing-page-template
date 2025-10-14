@@ -87,7 +87,7 @@ export function Header({
         <div className="flex items-center gap-3 sm:gap-4">
           <button
             type="button"
-            className="hidden lg:block bg-white cursor-pointer text-[#3931C5] hover:bg-white/90 hover:scale-105 hover:shadow-lg font-semibold px-4 xl:px-6 py-2 xl:py-3 rounded-lg transition-all duration-300 text-sm xl:text-base whitespace-nowrap transform"
+            className="hidden lg:block bg-white cursor-pointer text-[#3931C5] hover:bg-white/90 hover:scale-105 hover:shadow-lg font-semibold px-[30px] xl:px-6 py-2 xl:py-3 rounded-lg transition-all duration-300 text-sm xl:text-base whitespace-nowrap transform"
             onClick={() => handleNavClick('#contact')}
           >
             {ctaText}
