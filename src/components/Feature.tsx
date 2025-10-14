@@ -53,7 +53,7 @@ export function Features() {
                 engage.
               </p>
               <h2
-                style={{ fontFamily: "Nunito, sans-serif" }}
+                style={{ fontFamily: "Nunito", color:"#000000",fontWeight:600, fontStyle:"normal" }}
                 className="mt-6 text-heading text-[24px]"
               >
                 It’s not just impressions, it’s emotional impact.
