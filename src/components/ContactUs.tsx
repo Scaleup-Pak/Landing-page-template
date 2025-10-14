@@ -15,7 +15,7 @@ export function ContactUs() {
             </h4>
             <p
               style={{ fontFamily: "Nunito, sans-serif" }}
-              className="text-center text-[#22222280]    sm:text-lg md:text-xl     leading-relaxed md:leading-8"
+              className="text-center text-[#00000099]    sm:text-lg md:text-xl     leading-relaxed md:leading-8"
             >
               Please send us a note and we’ll get back to you as quickly as
               possible.
