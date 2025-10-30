@@ -1,8 +1,8 @@
 const navLinks = [
-  { href: "#about", label: "About us", active: true },
-  { href: "#creators", label: "Creators", active: false },
-  { href: "#features", label: "Features", active: false },
-  { href: "#advertiser", label: "Advertisers", active: false },
+  { href: "#about", label: "About us" },
+  { href: "#creators", label: "Creators" },
+  { href: "#features", label: "Features" },
+  { href: "#advertiser", label: "Advertisers" },
 ]
 
 import { useState, useEffect } from 'react'
@@ -21,11 +21,26 @@ export function Header({
 }: HeaderProps = {}) {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
+  const [activeLink, setActiveLink] = useState("")
 
-  // Handle scroll effect for header styling
+  // Handle scroll effect for header styling and active link highlighting
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10)
+
+      // Determine active link based on section in view
+      const sections = ["#about", "#creators", "#features", "#advertiser"]
+      let current = "#about"
+      sections.forEach((section) => {
+        const element = document.querySelector(section)
+        if (element) {
+          const rect = element.getBoundingClientRect()
+          if (rect.top <= 100 && rect.bottom >= 100) { // Threshold for "in view"
+            current = section
+          }
+        }
+      })
+      setActiveLink(current)
     }
     
     window.addEventListener('scroll', handleScroll)
@@ -35,7 +50,9 @@ export function Header({
   const handleNavClick = (href: string) => {
     const element = document.querySelector(href)
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      const header = document.querySelector('header')
+      const headerHeight = header ? header.offsetHeight : 0
+      window.scrollTo({ top: (element as HTMLElement).offsetTop - headerHeight, behavior: 'smooth' })
     }
     // Add a small delay before closing to see the click animation
     setTimeout(() => setIsMenuOpen(false), 150)
@@ -52,7 +69,7 @@ export function Header({
       )}
       
       <header 
-        className={`w-full px-4 sm:px-6 md:px-8 lg:px-16 xl:px-24 2xl:px-[106px] py-4 sm:py-5 md:py-6 transition-all duration-300 relative z-50 ${
+        className={`fixed top-0 w-full px-4 sm:px-6 md:px-8 lg:px-16 xl:px-24 2xl:px-[106px] py-4 sm:py-5 md:py-6 transition-all duration-300 z-50 ${
           isScrolled ? 'shadow-lg backdrop-blur-sm' : ''
         }`} 
         style={{ backgroundColor }}
@@ -73,8 +90,10 @@ export function Header({
             <span
               key={link.href}
               className={`relative transition-all duration-300  text-sm xl:text-base cursor-pointer hover:text-white hover:scale-105 ${
-                link.active ? "text-white" : "text-white/70"
-              } after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-0.5 after:bg-white after:transition-all after:duration-300 hover:after:w-full`}
+                link.href === activeLink ? "text-white" : "text-white/70"
+              } after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-0.5 after:bg-white after:transition-all after:duration-300 hover:after:w-full ${
+                link.href === activeLink ? 'after:w-full' : ''
+              }`}
               onClick={() => handleNavClick(link.href)}
               style={{ animationDelay: `${index * 0.1}s` }}
             >
@@ -129,10 +148,12 @@ export function Header({
               <span
                 key={link.href}
                 className={`transition-all duration-300 font-medium text-sm sm:text-base cursor-pointer hover:text-white hover:translate-x-2 hover:scale-105 active:scale-95 ${
-                  link.active ? "text-white" : "text-white/70"
+                  link.href === activeLink ? "text-white" : "text-white/70"
                 } transform translate-y-2 opacity-0 ${
                   isMenuOpen ? 'animate-slideInUp' : ''
-                } relative pl-4 before:absolute before:left-0 before:top-1/2 before:w-2 before:h-2 before:bg-white/50 before:rounded-full before:transform before:-translate-y-1/2 before:transition-all before:duration-300 hover:before:bg-white hover:before:scale-125`}
+                } relative pl-4 before:absolute before:left-0 before:top-1/2 before:w-2 before:h-2 before:bg-white/50 before:rounded-full before:transform before:-translate-y-1/2 before:transition-all before:duration-300 hover:before:bg-white hover:before:scale-125 ${
+                  link.href === activeLink ? 'before:bg-white before:scale-125' : ''
+                }`}
                 onClick={() => handleNavClick(link.href)}
                 style={{ 
                   animationDelay: `${index * 0.1}s`,

@@ -10,19 +10,19 @@ export function HomePage() {
   return (
     <>
       <Header />
-      <section id="">
+      <section className="pt-16">
         <About />
       </section>
-      <section id="">
+      <section >
         <Creators />
       </section>
-      <section id="">
+      <section >
         <Features />
       </section>
       <section id="contact">
         <ContactUs />
       </section>
-      <section id="">
+      <section >
         <DownloadBanner />
       </section>
       <section id="footer">
