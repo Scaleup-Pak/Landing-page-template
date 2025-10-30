@@ -17,10 +17,10 @@ export function About() {
                 <h1 className="text-[50px] leading-[56px]  text-center"
                  style={{ fontFamily: "Nunito, sans-serif", fontWeight: 700 }}>
                 <span className="text-[#3931C5]">Laughter</span> is the Reset
-                Button
+                
               </h1>
 {/* this image should show on the right side */}
-             <div className="flex md:justify-end justify-center mt-3 items-center md:mr-12 md:items-end">
+             <div className="flex md:justify-end justify-center mt-3 items-center md:mr-2 md:items-end">
                <img
                 src={line}
                 alt=""
