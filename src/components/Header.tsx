@@ -30,7 +30,7 @@ export function Header({
 
       // Determine active link based on section in view
       const sections = ["#about", "#creators", "#features", "#advertiser"]
-      let current = "#about"
+      let current = ""
       sections.forEach((section) => {
         const element = document.querySelector(section)
         if (element) {
@@ -90,9 +90,9 @@ export function Header({
             <span
               key={link.href}
               className={`relative transition-all duration-300  text-sm xl:text-base cursor-pointer hover:text-white hover:scale-105 ${
-                link.href === activeLink ? "text-white" : "text-white/70"
+                link.href === activeLink && activeLink ? "text-white" : "text-white/70"
               } after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-0.5 after:bg-white after:transition-all after:duration-300 hover:after:w-full ${
-                link.href === activeLink ? 'after:w-full' : ''
+                link.href === activeLink && activeLink ? 'after:w-full' : ''
               }`}
               onClick={() => handleNavClick(link.href)}
               style={{ animationDelay: `${index * 0.1}s` }}
@@ -148,11 +148,11 @@ export function Header({
               <span
                 key={link.href}
                 className={`transition-all duration-300 font-medium text-sm sm:text-base cursor-pointer hover:text-white hover:translate-x-2 hover:scale-105 active:scale-95 ${
-                  link.href === activeLink ? "text-white" : "text-white/70"
+                  link.href === activeLink && activeLink ? "text-white" : "text-white/70"
                 } transform translate-y-2 opacity-0 ${
                   isMenuOpen ? 'animate-slideInUp' : ''
                 } relative pl-4 before:absolute before:left-0 before:top-1/2 before:w-2 before:h-2 before:bg-white/50 before:rounded-full before:transform before:-translate-y-1/2 before:transition-all before:duration-300 hover:before:bg-white hover:before:scale-125 ${
-                  link.href === activeLink ? 'before:bg-white before:scale-125' : ''
+                  link.href === activeLink && activeLink ? 'before:bg-white before:scale-125' : ''
                 }`}
                 onClick={() => handleNavClick(link.href)}
                 style={{ 
