@@ -94,7 +94,7 @@ const EmblaCarousel: React.FC = () => {
         style={{ fontFamily: "Nunito, sans-serif" }} 
         className="block mx-auto w-full text-center text-[28px] sm:text-[32px] md:text-[38px] lg:text-[44px] xl:text-[48px] leading-tight md:leading-[50px] font-sans font-bold"
       >
-        Explore Our Top Content Creators
+        Explore Our Top Creators
       </h4>
       
       <div className="h-[50px]"></div>

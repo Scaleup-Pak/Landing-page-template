@@ -73,7 +73,7 @@ export function WaitlistPage() {
                     style={{ fontFamily: "Nunito, sans-serif" }}
                     className="text-[#222222] text-base sm:text-lg md:text-xl"
                   >
-                    Explore Our Top Content Creators
+                    Explore Our Top Creators
                   </p>
                 </div>
 
