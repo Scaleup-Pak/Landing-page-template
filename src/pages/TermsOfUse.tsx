@@ -325,10 +325,10 @@ export function TermsOfUse() {
                 • You may request deletion of your account and data at any time
                 via in-app settings or by contacting{" "}
                 <a
-                  href="mailto:support@lalalaugh.com"
+                  href="mailto:contact@lalalaugh.com"
                   className="text-[#3931C5] hover:underline"
                 >
-                  support@lalalaugh.com
+                 contact@lalalaugh.com
                 </a>
               </li>
               <li
@@ -586,10 +586,10 @@ export function TermsOfUse() {
             >
               Email:{" "}
               <a
-                href="mailto:support@lalalaugh.com"
+                href="mailto:contact@lalalaugh.com"
                 className="text-[#3931C5] hover:underline"
               >
-                support@lalalaugh.com
+                contact@lalalaugh.com
               </a>
             </p>
           </div>

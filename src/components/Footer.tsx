@@ -222,7 +222,7 @@ export function Footer() {
           style={{ fontFamily: "Nunito, sans-serif" }}
           className="text-[#00000066] text-xs sm:text-[20px] text-center sm:text-left"
         >
-          Lalalaughteams @ all rights reserved
+          Lalalaugh @ all rights reserved
         </p>
 
         {/* Social Media Icons */}

@@ -335,10 +335,10 @@ export function TermsOfContent() {
             >
               If you have any questions, contact us at:{" "}
               <a
-                href="mailto:support@lalalaugh.com"
+                href="mailto:contact@lalalaugh.com"
                 style={{ color: "#3931C5", textDecoration: "none" }}
               >
-                support@lalalaugh.com
+                contact@lalalaugh.com
               </a>
             </p>
           </div>
