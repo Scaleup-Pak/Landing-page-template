@@ -10,19 +10,19 @@ export function HomePage() {
   return (
     <>
       <Header />
-      <section id="about">
+      <section id="">
         <About />
       </section>
-      <section id="creators">
+      <section id="">
         <Creators />
       </section>
-      <section id="features">
+      <section id="">
         <Features />
       </section>
       <section id="contact">
         <ContactUs />
       </section>
-      <section id="advertiser">
+      <section id="">
         <DownloadBanner />
       </section>
       <section id="footer">

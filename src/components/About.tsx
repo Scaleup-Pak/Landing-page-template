@@ -44,7 +44,7 @@ export function About() {
             <img src={about} alt="" className="w-auto h-auto" />
           </div>
 
-          <div className="mt-[110px] flex flex-col 2xl:gap-[50px] xl:gap-16 lg:gap-12 md:gap-10 sm:gap-8 gap-6 ">
+          <div className="mt-[110px] flex flex-col 2xl:gap-[50px] xl:gap-16 lg:gap-12 md:gap-10 sm:gap-8 gap-6 " id="about">
             <div className="flex flex-col md:flex-row items-start justify-center md:justify-between gap-6 sm:gap-8 md:gap-10 lg:gap-12 xl:gap-16 2xl:gap-[171px]">
               <div className="flex-1 w-full md:w-auto">
                 <h4 style={{ fontFamily: 'Nunito', fontWeight: 700,fontStyle: 'normal' }} className="text-center md:text-left text-[28px] sm:text-[32px] md:text-[38px] lg:text-[40px] leading-tight md:leading-[50px]">
