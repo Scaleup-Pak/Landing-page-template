@@ -10,8 +10,10 @@ export function DownloadBanner() {
           <div className="flex flex-col gap-8 md:gap-[60px]">
             <div className="flex flex-col gap-[6px]">
               {/* adjust the size for small and mid screen */}
-              <div className="w-full max-w-xs sm:max-w-md md:max-w-[780px] mx-auto mb-4">
-                <img src={downlodeImage} alt="" className="w-full h-auto" />
+              <div className="w-full max-w-xs sm:max-w-md md:max-w-[780px] mx-auto mb-4 relative">
+                <img src={downlodeImage} alt="" className="w-full h-auto block" />
+                {/* White line effect attached to the bottom of the phone frame */}
+                <div className="absolute bottom-[px] left-1/2 transform -translate-x-1/2 w-[110%] md:w-[105%] lg:w-[115%] h-[3px] bg-white shadow-[0_0_20px_rgba(255,255,255,0.6)]"></div>
               </div>
               <h4
                 style={{ fontFamily: "Nunito, sans-serif", fontWeight: "700" }}
