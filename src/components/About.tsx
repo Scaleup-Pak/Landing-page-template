@@ -12,30 +12,27 @@ export function About() {
             className="flex flex-col items-center justify-center"
             style={{ gap: 25 }}
           >
-            <div className="flex flex-col items-center" style={{ gap: 25 }}>
-            <div className="">
-                <h1 className="text-[50px] leading-[56px]  text-center"
-                 style={{ fontFamily: "Nunito, sans-serif", fontWeight: 700 }}>
-                <span className="text-[#3931C5]">Laughter</span> is the Reset
-                
-              </h1>
-{/* this image should show on the right side */}
-             <div className="flex md:justify-end justify-center mt-3 items-center md:mr-2 md:items-end">
-               <img
-                src={line}
-                alt=""
-                width={221}
-                height={17}
-              />
-             </div>
-            </div>
+            <div className="flex flex-col items-center " style={{ gap: 25 }}>
+              <div className="">
+                <h1
+                  className="text-[50px] leading-[56px]  text-center"
+                  style={{ fontFamily: "Nunito, sans-serif", fontWeight: 700 }}
+                >
+                  <span className="text-[#3931C5]">Laughter</span> is the Reset
+                </h1>
+                {/* this image should show on the right side */}
+                <div className="flex md:justify-end justify-center  mt-3 md:mr-[-28px] items-center  md:items-end">
+                  <img src={line} alt="" width={221} height={17} />
+                </div>
+              </div>
             </div>
 
             <div className="flex flex-col items-center max-w-[800px] text-center">
               <p className="text-paragraph">
-                La La Laugh is the first social entertainment platform bringing
-                humor back to humanity — a joyful antidote to toxic feeds and
-                crazy times.
+                La La Laugh is the first social entertainment mobile application
+                in the world revolutionizing how we connect through humor, a
+                joyful antidote to toxic feeds and crazy times. Keep up to date
+                with us
               </p>
             </div>
           </div>
@@ -44,16 +41,33 @@ export function About() {
             <img src={about} alt="" className="w-auto h-auto" />
           </div>
 
-          <div className="mt-[110px] flex flex-col 2xl:gap-[50px] xl:gap-16 lg:gap-12 md:gap-10 sm:gap-8 gap-6 " id="about">
+          <div
+            className="mt-[110px] flex flex-col 2xl:gap-[50px] xl:gap-16 lg:gap-12 md:gap-10 sm:gap-8 gap-6 "
+            id="about"
+          >
             <div className="flex flex-col md:flex-row items-start justify-center md:justify-between gap-6 sm:gap-8 md:gap-10 lg:gap-12 xl:gap-16 2xl:gap-[171px]">
               <div className="flex-1 w-full md:w-auto">
-                <h4 style={{ fontFamily: 'Nunito', fontWeight: 700,fontStyle: 'normal' }} className="text-center md:text-left text-[28px] sm:text-[32px] md:text-[38px] lg:text-[40px] leading-tight md:leading-[50px]">
+                <h4
+                  style={{
+                    fontFamily: "Nunito",
+                    fontWeight: 700,
+                    fontStyle: "normal",
+                  }}
+                  className="text-center md:text-left text-[28px] sm:text-[32px] md:text-[38px] lg:text-[40px] leading-tight md:leading-[50px]"
+                >
                   Most Powerful Way To Connect Every Audience
                 </h4>
               </div>
 
               <div className="flex-1 w-full md:w-auto">
-                <p style={{ fontFamily: 'Nunito',fontWeight: 600,fontStyle: 'normal' }} className="text-center md:text-left text-base sm:text-lg md:text-xl lg:text-[26px]   leading-relaxed md:leading-9 text-[#222]">
+                <p
+                  style={{
+                    fontFamily: "Nunito",
+                    fontWeight: 600,
+                    fontStyle: "normal",
+                  }}
+                  className="text-center md:text-left text-base sm:text-lg md:text-xl lg:text-[26px]   leading-relaxed md:leading-9 text-[#222]"
+                >
                   La La Laugh — the world's first social entertainment app where
                   laughter is the reset button
                 </p>
@@ -62,34 +76,43 @@ export function About() {
 
             <div className=" ">
               <p
-              style={{ fontFamily: "Nunito, sans-serif" }}
+                style={{ fontFamily: "Nunito, sans-serif" }}
                 className="text-left text-[#22222280]    sm:text-lg md:text-xl lg:text-[22px]    leading-relaxed md:leading-8"
               >
-                La La Laugh is your “take-a-break” app, a global stage built to bring joy back to the internet. Here, everyone—not just professional comedians—can create and share laughter, discovering humor across languages and cultures. Our ambition? To become the best platform in the world for creator monetization while doing the most human thing of all: building connection through laughter.
+                La La Laugh is your “take-a-break” app, a global stage built to
+                bring joy back to the internet. Here, everyone—not just
+                professional comedians—can create and share laughter,
+                discovering humor across languages and cultures. Our ambition?
+                To become the best platform in the world for creator
+                monetization while doing the most human thing of all: building
+                connection through laughter.
               </p>
               <p
-            style={{ fontFamily: "Nunito, sans-serif" }}
+                style={{ fontFamily: "Nunito, sans-serif" }}
                 className="text-left text-[#22222280]    sm:text-lg md:text-xl lg:text-[22px]    leading-relaxed md:leading-8"
               >
-                Forget toxic feeds and endless doomscrolling. Here, jokes, comedy, and parody are the cure. Trolls and dark algorithms? Not welcome. Just pure comedy, inclusivity, and a simple space to unwind. Ditch the drama. Let humor be the medicine that changes the world. Join La La Laugh’s joyful revolution.
+                Forget toxic feeds and endless doomscrolling. Here, jokes,
+                comedy, and parody are the cure. Trolls and dark algorithms? Not
+                welcome. Just pure comedy, inclusivity, and a simple space to
+                unwind. Ditch the drama. Let humor be the medicine that changes
+                the world. Join La La Laugh’s joyful revolution.
               </p>
               <h2
                 style={{
-                  color: '#222',
-                  fontFamily: 'Nunito',
-                  fontSize: '27px',
-                  fontStyle: 'normal',
+                  color: "#222",
+                  fontFamily: "Nunito",
+                  fontSize: "27px",
+                  fontStyle: "normal",
                   fontWeight: 600,
-                  lineHeight: '33.8px',
+                  lineHeight: "33.8px",
                 }}
                 className="mt-6 text-heading-large text-center md:text-left"
               >
                 — Carlos Cicchelli, Founder & CEO
               </h2>
-
             </div>
 
-            {/* image should be in the center and height width should be responsive according to screen size for sm md lg xl */} 
+            {/* image should be in the center and height width should be responsive according to screen size for sm md lg xl */}
             <div className="flex justify-center lg:w-full w-[50%] mx-auto ">
               <img src={aboutsec} alt="" className="" />
             </div>
