@@ -1,15 +1,21 @@
 import iphone from "../assets/iphon.png";
 import EmblaCarousel from "./Carousel";
-import { useNavigate } from "react-router-dom";
 
 export function Creators() {
-  const navigate = useNavigate();
+  const handleScrollToWaitlist = () => {
+    const element = document.querySelector('#waitlist-form');
+    if (element) {
+      const header = document.querySelector('header');
+      const headerHeight = header ? header.offsetHeight : 0;
+      window.scrollTo({ top: (element as HTMLElement).offsetTop - headerHeight - 20, behavior: 'smooth' });
+    }
+  };
+  
   return (
     <section className="w-full pt-[105px] mb-4">
       {/* carousel section */}
       <div className="w-full  py-[55px]">
-      
-        <EmblaCarousel/>
+        <EmblaCarousel />
       </div>
       <div className="w-full  px-4 sm:px-6 md:px-8 lg:px-16 xl:px-24 2xl:px-[106px]">
         <div className="max-w-[1440px]  mx-auto">
@@ -22,13 +28,13 @@ export function Creators() {
                 Creator Program - The Comedy Economy{" "}
               </h4>
               <p
-                   style={{
-                  color: 'rgba(0, 0, 0, 0.60)',
-                  fontFamily: 'Nunito',
-                  fontSize: '20px',
-                  fontStyle: 'normal',
+                style={{
+                  color: "rgba(0, 0, 0, 0.60)",
+                  fontFamily: "Nunito",
+                  fontSize: "20px",
+                  fontStyle: "normal",
                   fontWeight: 500,
-                  lineHeight: '33.8px',
+                  lineHeight: "33.8px",
                 }}
                 className="text-center md:text-left"
               >
@@ -41,13 +47,13 @@ export function Creators() {
                 advertisers.
               </p>
               <p
-                    style={{
-                  color: 'rgba(0, 0, 0, 0.60)',
-                  fontFamily: 'Nunito',
-                  fontSize: '20px',
-                  fontStyle: 'normal',
+                style={{
+                  color: "rgba(0, 0, 0, 0.60)",
+                  fontFamily: "Nunito",
+                  fontSize: "20px",
+                  fontStyle: "normal",
                   fontWeight: 500,
-                  lineHeight: '33.8px',
+                  lineHeight: "33.8px",
                 }}
                 className="text-center md:text-left"
               >
@@ -91,11 +97,11 @@ export function Creators() {
                     </p>
                     {/* button */}
                     <div className="flex justify-center lg:justify-start mb-6">
-                      <button 
-                        onClick={() => navigate('/waitlist')}
-                        className="bg-[#3931C5] text-white cursor-pointer  px-6 py-3 rounded-[11px] transition"
+                      <button
+                        onClick={handleScrollToWaitlist}
+                        className="bg-[#3931C5] text-white cursor-pointer  px-6 py-3 rounded-[11px] transition hover:bg-[#2d25a0]"
                       >
-                 Explore App
+                        Explore App
                       </button>
                     </div>
                   </div>

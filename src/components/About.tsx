@@ -1,10 +1,36 @@
 import line from "../assets/line.svg";
 import aboutsec from "../assets/aboutsec.png";
 import about from "../assets/about.png";
+import { useState } from "react";
+import { toast, Toaster } from "sonner";
 
 export function About() {
+  const [email, setEmail] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    if (!email) return;
+    
+    setIsSubmitting(true);
+    
+    // Simulate API call
+    setTimeout(() => {
+      toast.success("Thank you! You've been added to our waitlist! 🎉", {
+        duration: 4000,
+        style: {
+          fontFamily: "Nunito, sans-serif",
+        }
+      });
+      setEmail("");
+      setIsSubmitting(false);
+    }, 500);
+  };
+
   return (
     <section className="w-full bg-[#FFFFFF] pt-[105px]">
+      <Toaster position="top-center" richColors />
       <div className="w-full px-4 sm:px-6 md:px-8 lg:px-16 xl:px-24 2xl:px-[106px]">
         <div className="max-w-[1440px] mx-auto">
           {/* first section */}
@@ -35,6 +61,29 @@ export function About() {
                 with us
               </p>
             </div>
+            
+            {/* Email signup form */}
+            <form id="waitlist-form" onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-4 justify-center items-center w-full max-w-2xl mx-auto mt-6">
+              <input 
+                type="email" 
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="Enter your email address"
+                required
+                disabled={isSubmitting}
+                className="w-full sm:flex-1 px-6 py-3 rounded-lg border border-gray-300 focus:outline-none focus:border-[#3931C5] disabled:bg-gray-100 disabled:cursor-not-allowed"
+                style={{ fontFamily: "Nunito, sans-serif" }}
+              />
+              <button 
+                type="submit"
+                disabled={isSubmitting}
+                className="w-full sm:w-auto cursor-pointer bg-[#3931C5] text-white px-8 py-3 rounded-lg hover:bg-[#2d25a0] transition disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap"
+                style={{ fontFamily: "Nunito, sans-serif" }}
+              >
+                {isSubmitting ? "Signing up..." : "Sign up"}
+              </button>
+            </form>
+
           </div>
           {/* image with responsivness for all screens */}
           <div className="flex justify-center mt-[80px]">

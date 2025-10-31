@@ -149,7 +149,7 @@ export function WaitlistPage() {
               <button 
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full sm:w-auto bg-[#3931C5] text-white px-8 py-3 rounded-lg hover:bg-[#2d25a0] transition disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full sm:w-auto cursor-pointer bg-[#3931C5] text-white px-8 py-3 rounded-lg hover:bg-[#2d25a0] transition disabled:opacity-50 disabled:cursor-not-allowed"
                 style={{ fontFamily: "Nunito, sans-serif" }}
               >
                 {isSubmitting ? "Signing up..." : "Sign up"}
