@@ -58,7 +58,7 @@ export function About() {
                 La La Laugh is the first social entertainment mobile application
                 in the world revolutionizing how we connect through humor, a
                 joyful antidote to toxic feeds and crazy times. Keep up to date
-                with us
+                with us:
               </p>
             </div>
             
