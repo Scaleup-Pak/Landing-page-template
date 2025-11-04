@@ -10,24 +10,27 @@ export function HomePage() {
   return (
     <>
       <Header />
-      <section className="pt-16">
-        <About />
-      </section>
-      <section >
-        <Creators />
-      </section>
-      <section >
-        <Features />
-      </section>
-      <section id="contact">
-        <ContactUs />
-      </section>
-      <section >
-        <DownloadBanner />
-      </section>
-      <section id="footer">
-        <Footer />
-      </section>
+      <main>
+        <h1 style={{display: 'none'}}>Lalalaugh – Social Entertainment App for Content Creators & Communities</h1>
+        <section className="pt-16">
+          <About />
+        </section>
+        <section>
+          <Creators />
+        </section>
+        <section>
+          <Features />
+        </section>
+        <section id="contact">
+          <ContactUs />
+        </section>
+        <section>
+          <DownloadBanner />
+        </section>
+        <section id="footer">
+          <Footer />
+        </section>
+      </main>
     </>
   );
 }

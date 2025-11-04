@@ -15,33 +15,45 @@ const ImageGrid: React.FC = () => {
           {/* Mobile: Stack vertically, Tablet+: Horizontal with flex */}
           <div className="w-full sm:flex-[0.8] sm:h-[180px] md:h-[285.766px] overflow-hidden rounded-lg">
             <img 
-              src={image1} 
-              alt="Feature 1" 
+              src={image1}
+              alt="Feature 1"
               className="w-full h-full object-cover"
+              loading="lazy"
+              width="400"
+              height="285"
             />
           </div>
           
           <div className="w-full sm:flex-[1.4] sm:h-[180px] md:h-[285.766px] overflow-hidden rounded-lg">
             <img 
-              src={image2} 
-              alt="Feature 2" 
+              src={image2}
+              alt="Feature 2"
               className="w-full h-full object-cover"
+              loading="lazy"
+              width="400"
+              height="285"
             />
           </div>
           
           <div className="w-full sm:flex-[0.9] sm:h-[180px] md:h-[285.766px] overflow-hidden rounded-lg">
             <img 
-              src={image3} 
-              alt="Feature 3" 
+              src={image3}
+              alt="Feature 3"
               className="w-full h-full object-cover"
+              loading="lazy"
+              width="400"
+              height="285"
             />
           </div>
           
           <div className="w-full sm:flex-[1.1] sm:h-[180px] md:h-[285.766px] overflow-hidden rounded-lg">
             <img 
-              src={image4} 
-              alt="Feature 4" 
+              src={image4}
+              alt="Feature 4"
               className="w-full h-full object-cover"
+              loading="lazy"
+              width="400"
+              height="285"
             />
           </div>
         </div>
@@ -50,25 +62,34 @@ const ImageGrid: React.FC = () => {
         <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
           <div className="w-full sm:flex-[1.5] sm:h-[180px] md:h-[285.766px] overflow-hidden rounded-lg">
             <img 
-              src={image5} 
-              alt="Feature 5" 
+              src={image5}
+              alt="Feature 5"
               className="w-full h-full object-cover"
+              loading="lazy"
+              width="400"
+              height="285"
             />
           </div>
           
           <div className="w-full sm:flex-[0.7] sm:h-[180px] md:h-[285.766px] overflow-hidden rounded-lg">
             <img 
-              src={image6} 
-              alt="Feature 6" 
+              src={image6}
+              alt="Feature 6"
               className="w-full h-full object-cover"
+              loading="lazy"
+              width="400"
+              height="285"
             />
           </div>
           
           <div className="w-full sm:flex-[1.8] sm:h-[180px] md:h-[285.766px] overflow-hidden rounded-lg">
             <img 
-              src={image7} 
-              alt="Feature 7" 
+              src={image7}
+              alt="Feature 7"
               className="w-full h-full object-cover"
+              loading="lazy"
+              width="400"
+              height="285"
             />
           </div>
         </div>
