@@ -67,7 +67,7 @@ export function Footer() {
               <div className="flex flex-row gap-3  sm:gap-4 lg:gap-3 items-start sm:items-center lg:items-start">
                 {/* QR Code */}
                 <div className="w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32   flex-shrink-0">
-                  <img src={Qrcode} alt="" />
+                  <img src={Qrcode} alt="Lalalaugh app QR code for download" loading="lazy" />
                 </div>
 
                 {/* Store Buttons with same width and hight */}
