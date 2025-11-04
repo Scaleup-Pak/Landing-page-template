@@ -7,6 +7,7 @@ const navLinks = [
 
 import { useState, useEffect } from 'react'
 import logo from '../assets/logo.svg'
+import smiliLogo from '../assets/smilee-logo.png'
 
 interface HeaderProps {
   navigationLinks?: typeof navLinks
@@ -74,13 +75,18 @@ export function Header({
         }`} 
         style={{ backgroundColor }}
       >
-      <div className="max-w-[1440px] mx-auto flex items-center justify-between">
-        {/* Logo */}
-        <div className="flex-shrink-0 transform hover:scale-105 transition-transform duration-200">
+      <div className="max-w-[1440px]  mx-auto flex items-center justify-between">
+        {/* Logo + Smili Logo */}
+        <div className="flex items-center gap-6 flex-shrink-0">
           <img 
             src={logo} 
             alt="Lalalaugh logo" 
             className="h-7 sm:h-8 md:h-9 lg:h-10 transition-all duration-200" 
+          />
+          <img 
+            src={smiliLogo} 
+            alt="Smili logo" 
+            className="h-8 sm:h-9 md:h-10 lg:h-11 transition-all duration-200" 
           />
         </div>
 
