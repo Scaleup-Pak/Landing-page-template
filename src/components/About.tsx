@@ -29,7 +29,7 @@ export function About() {
   };
 
   return (
-    <section className="w-full bg-[#FFFFFF] pt-[105px]">
+    <section className="w-full bg-[#FFFFFF] pt-[105px]" aria-label="About Lalalaugh">
       <Toaster position="top-center" richColors />
       <div className="w-full px-4 sm:px-6 md:px-8 lg:px-16 xl:px-24 2xl:px-[106px]">
         <div className="max-w-[1440px] mx-auto">
@@ -48,7 +48,7 @@ export function About() {
                 </h1>
                 {/* this image should show on the right side */}
                 <div className="flex md:justify-end justify-center  mt-3 md:mr-[-28px] items-center  md:items-end">
-                  <img src={line} alt="" width={221} height={17} />
+                  <img src={line} alt="Decorative underline for Laughter heading" width={221} height={17} />
                 </div>
               </div>
             </div>
@@ -87,7 +87,7 @@ export function About() {
           </div>
           {/* image with responsivness for all screens */}
           <div className="flex justify-center mt-[80px]">
-            <img src={about} alt="" className="w-auto h-auto" />
+            <img src={about} alt="La La Laugh app preview screenshot" className="w-auto h-auto" />
           </div>
 
           <div
@@ -163,7 +163,7 @@ export function About() {
 
             {/* image should be in the center and height width should be responsive according to screen size for sm md lg xl */}
             <div className="flex justify-center lg:w-full w-[50%] mx-auto ">
-              <img src={aboutsec} alt="" className="" />
+              <img src={aboutsec} alt="Lalalaugh social entertainment app features" className="" />
             </div>
           </div>
         </div>
