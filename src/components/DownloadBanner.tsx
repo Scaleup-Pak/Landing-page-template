@@ -11,7 +11,7 @@ export function DownloadBanner() {
             <div className="flex flex-col gap-[6px]">
               {/* adjust the size for small and mid screen */}
               <div className="w-full max-w-xs sm:max-w-md md:max-w-[780px] mx-auto mb-4 relative">
-                <img src={downlodeImage} alt="" className="w-full h-auto block" />
+                <img src={downlodeImage} alt="Lalalaugh app download section preview" className="w-full h-auto block" loading="lazy" />
                 {/* White line effect attached to the bottom of the phone frame */}
                 <div className="absolute bottom-[px] left-1/2 transform -translate-x-1/2 w-[110%] md:w-[105%] lg:w-[115%] h-[3px] bg-white shadow-[0_0_20px_rgba(255,255,255,0.6)]"></div>
               </div>
@@ -33,7 +33,7 @@ export function DownloadBanner() {
               {/* Google Play Button */}
               <button className="bg-white cursor-pointer  hover:bg-white/90 transition-colors rounded-2xl px-[16px] py-3 flex items-center gap-4 ">
                <div className="flex items-center gap-4 ">
-                 <img src={playstoreIcon} alt="" />
+                 <img src={playstoreIcon} alt="Google Play Store icon" loading="lazy" />
                 <div className="flex flex-col items-start">
                   <span className="text-xs text-black/80 font-medium">
                     GET IT ON
@@ -48,7 +48,7 @@ export function DownloadBanner() {
               {/* App Store Button */}
               <button className="bg-white cursor-pointer hover:bg-white/90 transition-colors rounded-2xl px-6 py-3 flex items-center gap-4 ">
              <div className="flex items-center gap-4 ">
-                 <img src={appleicon} alt="" />
+                 <img src={appleicon} alt="Apple App Store icon" loading="lazy" />
                 <div className="flex flex-col items-start">
                   <span className="text-xs text-black/80 font-medium">
                     Download On the
