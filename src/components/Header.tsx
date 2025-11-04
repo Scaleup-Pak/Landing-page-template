@@ -77,7 +77,7 @@ export function Header({
       >
       <div className="max-w-[1440px]  mx-auto flex items-center justify-between">
         {/* Logo + Smili Logo */}
-        <div className="flex items-center gap-6 flex-shrink-0">
+        <div className="flex items-center gap-4 flex-shrink-0">
           <img 
             src={logo} 
             alt="Lalalaugh logo" 
