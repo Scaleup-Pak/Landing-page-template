@@ -6,6 +6,17 @@ import image2 from "../assets/content-creator/2.png";
 import image3 from "../assets/content-creator/3.png";
 import image4 from "../assets/content-creator/4.png";
 import image5 from "../assets/content-creator/5.png";
+// import up to 16 images as needed
+import image6 from "../assets/content-creator/6.png";
+import image7 from "../assets/content-creator/7.png";
+import image8 from "../assets/content-creator/8.png";
+import image9 from "../assets/content-creator/9.png";
+import image10 from "../assets/content-creator/10.png";
+import image12 from "../assets/content-creator/12.png";
+import image404 from "../assets/content-creator/404.png";
+import image14 from "../assets/content-creator/14.png";
+import image15 from "../assets/content-creator/15.png";
+import image16 from "../assets/content-creator/16.png";
 import './embla-carousel.css';
 
 interface CardData {
@@ -22,7 +33,7 @@ const CarouselCard: React.FC<{ card: CardData; isActive: boolean }> = ({ card, i
         <img 
           src={card.imageUrl} 
           alt={`Slide ${card.id}`}
-          className="w-full h-full object-contain"
+          className="w-full h-full object-cover"
         />
       </div>
     </div>
@@ -59,8 +70,16 @@ const EmblaCarousel: React.FC = () => {
     { id: 3, imageUrl: image3 },
     { id: 4, imageUrl: image4 },
     { id: 5, imageUrl: image5 },
-    { id: 6, imageUrl: image2 },
-    { id: 7, imageUrl: image4 },
+    { id: 6, imageUrl: image6 },
+    { id: 7, imageUrl: image7 },
+    { id: 8, imageUrl: image8 },
+    { id: 9, imageUrl: image9 },
+    { id: 10, imageUrl: image10 },
+    { id: 11, imageUrl: image12 },
+    { id: 12, imageUrl: image14 },
+    { id: 13, imageUrl: image15 },
+    { id: 14, imageUrl: image16 },
+    { id: 15, imageUrl: image404 },
   ];
 
   const onSelect = useCallback(() => {
