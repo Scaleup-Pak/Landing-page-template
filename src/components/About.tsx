@@ -3,29 +3,38 @@ import aboutsec from "../assets/aboutsec.png";
 import about from "../assets/about.png";
 import { useState } from "react";
 import { toast, Toaster } from "sonner";
+import { submitWaitlistForm } from '../services/contactApi';
 
 export function About() {
   const [email, setEmail] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
     if (!email) return;
-    
     setIsSubmitting(true);
-    
-    // Simulate API call
-    setTimeout(() => {
-      toast.success("Thank you! You've been added to our waitlist! 🎉", {
+    try {
+      const response = await submitWaitlistForm({ email });
+      if (response.success) {
+        toast.success(response.message || "Thank you! You've been added to our waitlist! 🎉", {
+          duration: 4000,
+          style: { fontFamily: "Nunito, sans-serif" }
+        });
+        setEmail("");
+      } else {
+        toast.error(response.error || "Failed to sign up. Please try again.", {
+          duration: 4000,
+          style: { fontFamily: "Nunito, sans-serif" }
+        });
+      }
+    } catch (error) {
+      toast.error("An unexpected error occurred. Please try again later.", {
         duration: 4000,
-        style: {
-          fontFamily: "Nunito, sans-serif",
-        }
+        style: { fontFamily: "Nunito, sans-serif" }
       });
-      setEmail("");
+    } finally {
       setIsSubmitting(false);
-    }, 500);
+    }
   };
 
   return (

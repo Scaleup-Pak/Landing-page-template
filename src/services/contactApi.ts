@@ -1,3 +1,27 @@
+// API for waitlist submission
+export interface WaitlistFormData {
+  email: string;
+}
+
+export interface WaitlistSubmissionResponse {
+  id: string;
+  message: string;
+}
+
+const API_WAITLIST_ENDPOINT = '/waitlist';
+
+export async function submitWaitlistForm(
+  formData: WaitlistFormData
+): Promise<ApiResponse<WaitlistSubmissionResponse>> {
+  const payload = {
+    email: formData.email.trim().toLowerCase(),
+  };
+  console.log("🚀 ~ submitWaitlistForm ~ payload:", payload);
+  return apiRequest<WaitlistSubmissionResponse>(API_WAITLIST_ENDPOINT, {
+    method: 'POST',
+    body: JSON.stringify(payload),
+  });
+}
 import type { ContactFormData } from '../utils/validation';
 
 export interface ApiResponse<T = any> {
