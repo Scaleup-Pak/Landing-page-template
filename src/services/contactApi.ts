@@ -15,7 +15,7 @@ export interface ContactSubmissionResponse {
 // API configuration
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'https://api.yourservice.com';
 const API_ENDPOINTS = {
-  CONTACT: '/api/contact'
+  CONTACT: '/support'
 } as const;
 
 class ApiError extends Error {
@@ -109,15 +109,18 @@ async function apiRequest<T>(
 export async function submitContactForm(
   formData: ContactFormData
 ): Promise<ApiResponse<ContactSubmissionResponse>> {
-  // Prepare the payload
+  // Prepare the payload (remove timestamp and source)
+  // Ensure userType is a string: 'WAITLIST', 'CREATOR', or 'ADVERTISER'
+  const allowedUserTypes = ['WAITLIST', 'CREATOR', 'ADVERTISER'];
+  const userType = allowedUserTypes.includes(formData.userType)
+    ? formData.userType
+    : 'CREATOR'; // fallback or handle error as needed
   const payload = {
-    userType: formData.userType,
+    userType,
     name: formData.name.trim(),
     email: formData.email.trim().toLowerCase(),
     subject: formData.subject.trim(),
     message: formData.message.trim(),
-    timestamp: new Date().toISOString(),
-    source: 'website_contact_form'
   };
   console.log("🚀 ~ submitContactForm ~ payload:", payload)
 
@@ -127,37 +130,5 @@ export async function submitContactForm(
   });
 }
 
-// For development/testing - mock API response
-export async function submitContactFormMock(
-  _formData: ContactFormData
-): Promise<ApiResponse<ContactSubmissionResponse>> {
-  // Simulate API delay
-  await new Promise(resolve => setTimeout(resolve, 1000));
-  // Log mock payload for debugging
-  // eslint-disable-next-line no-console
-  console.log('Mock API received form data:', _formData);
-
-  // Simulate random success/failure for testing
-  const shouldSucceed = Math.random() > 0.2; // 80% success rate
-
-  if (shouldSucceed) {
-    return {
-      success: true,
-      data: {
-        id: `contact_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`,
-        message: 'Your message has been sent successfully!'
-      },
-      message: 'Thank you for contacting us. We will get back to you soon.'
-    };
-  } else {
-    return {
-      success: false,
-      error: 'Failed to send message. Please try again later.'
-    };
-  }
-}
-
-// Export the appropriate function based on environment
-export const submitContactFormApi = import.meta.env.PROD 
-  ? submitContactForm 
-  : submitContactFormMock;
+// Export the real API integration for contact form
+export const submitContactFormApi = submitContactForm;

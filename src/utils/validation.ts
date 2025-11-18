@@ -86,7 +86,7 @@ export const validateEmail = (email: string): ValidationResult => {
 };
 
 export const validateSubject = (subject: string): ValidationResult => {
-  return validateField(subject, {
+  const result = validateField(subject, {
     required: true,
     minLength: 3,
     maxLength: 100,
@@ -95,6 +95,14 @@ export const validateSubject = (subject: string): ValidationResult => {
       return value.trim().length >= 3;
     }
   });
+
+  if (!result.isValid && (result.error === 'Invalid value' || result.error?.includes('characters'))) {
+    return {
+      isValid: false,
+      error: 'Subject must be at least 3 characters long and meaningful.'
+    };
+  }
+  return result;
 };
 
 export const validateMessage = (message: string): ValidationResult => {
@@ -120,16 +128,13 @@ export const validateMessage = (message: string): ValidationResult => {
 };
 
 export const validateUserType = (userType: string): ValidationResult => {
-  const validTypes = ['waitlist', 'creators', 'advertisers'];
-  
+  const validTypes = ['WAITLIST', 'CREATOR', 'ADVERTISER'];
   if (!userType) {
     return { isValid: false, error: 'Please select a user type' };
   }
-
-  if (!validTypes.includes(userType.toLowerCase())) {
+  if (!validTypes.includes(userType)) {
     return { isValid: false, error: 'Invalid user type selected' };
   }
-
   return { isValid: true };
 };
 

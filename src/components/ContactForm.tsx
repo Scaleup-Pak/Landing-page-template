@@ -1,4 +1,12 @@
 import React, { useState } from 'react';
+
+// Enum for user types
+const SupportUserType = {
+  WAITLIST: 'WAITLIST',
+  CREATOR: 'CREATOR',
+  ADVERTISER: 'ADVERTISER'
+} as const;
+type SupportUserType = typeof SupportUserType[keyof typeof SupportUserType];
 import { InputField } from './forms/InputField';
 import { RadioGroup, type RadioOption } from './forms/RadioGroup';
 import { TextAreaField } from './forms/TextAreaField';
@@ -16,7 +24,7 @@ interface FormErrors {
 
 export const ContactForm: React.FC = () => {
   const [formData, setFormData] = useState<ContactFormData>({
-    userType: 'waitlist',
+    userType: SupportUserType.WAITLIST,
     name: '',
     email: '',
     subject: '',
@@ -27,9 +35,9 @@ export const ContactForm: React.FC = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const userTypeOptions: RadioOption[] = [
-    { value: 'waitlist', label: 'Waitlist' },
-    { value: 'creators', label: 'Creators' },
-    { value: 'advertisers', label: 'Advertisers' }
+    { value: SupportUserType.WAITLIST, label: 'Waitlist' },
+    { value: SupportUserType.CREATOR, label: 'Creator' },
+    { value: SupportUserType.ADVERTISER, label: 'Advertiser' }
   ];
 
   const handleInputChange = (field: keyof ContactFormData) => (
@@ -45,8 +53,13 @@ export const ContactForm: React.FC = () => {
   };
 
   const handleUserTypeChange = (value: string) => {
-    setFormData(prev => ({ ...prev, userType: value }));
-    
+    if (
+      value === SupportUserType.WAITLIST ||
+      value === SupportUserType.CREATOR ||
+      value === SupportUserType.ADVERTISER
+    ) {
+      setFormData(prev => ({ ...prev, userType: value }));
+    }
     // Clear error when user selects
     if (errors.userType) {
       setErrors(prev => ({ ...prev, userType: undefined }));
@@ -82,14 +95,13 @@ export const ContactForm: React.FC = () => {
       const response = await submitContactFormApi(formData);
       
       if (response.success) {
-        toast.success(response.message || 'Your message has been sent successfully! 🎉', {
+        toast.success('Your message has been sent successfully! 🎉', {
           duration: 4000,
           style: { fontFamily: "Nunito, sans-serif" }
         });
-        
         // Reset form on successful submission
         setFormData({
-          userType: '',
+          userType: SupportUserType.WAITLIST,
           name: '',
           email: '',
           subject: '',
