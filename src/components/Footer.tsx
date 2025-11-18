@@ -3,7 +3,7 @@ import playstoreIcon from "../assets/playstore.png";
 import appleicon from "../assets/appleFootericon.png";
 import FooterLogo from "../assets/footerlogo.png";
 import Qrcode from "../assets/Qrcode.png";
-
+import smiliLogo from '../assets/footersmilie.png';
 export function Footer() {
   const navigate = useNavigate();
   const location = useLocation();
@@ -40,12 +40,20 @@ export function Footer() {
         <div className="flex  flex-col lg:flex-row gap-8 sm:gap-10 md:gap-12 lg:gap-16 xl:gap-20 2xl:gap-[170px] ">
           {/* Left Section - Responsive width */}
           <div className="w-full lg:flex-1 flex flex-col gap-4 sm:gap-5 md:gap-6 ">
-            <div className="w-24 sm:w-28 md:w-32">
+            <div className="flex items-center justify-start gap-4 ">
+            <div className="w-24 sm:w-28 md:w-32 ">
               <img
                 src={FooterLogo}
                 alt="Footer Logo"
                 className="w-full h-auto"
               />
+              
+          </div>
+          <img 
+            src={smiliLogo} 
+            alt="Smili logo" 
+            className="h-8 sm:h-9 md:h-10 lg:h-11 transition-all duration-200" 
+          />
             </div>
             <p
               style={{ fontFamily: "Nunito, sans-serif" }}
@@ -228,7 +236,9 @@ export function Footer() {
         {/* Social Media Icons */}
         <div className="flex items-center gap-3 sm:gap-4">
           <a
-            href="#"
+            href="https://www.youtube.com/@lalalaughapp"
+            target="_blank"
+            rel="noopener noreferrer"
             className="text-[#999999] hover:text-[#3931C5] transition-colors"
           >
             <svg
@@ -240,7 +250,9 @@ export function Footer() {
             </svg>
           </a>
           <a
-            href="#"
+            href="https://www.tiktok.com/@lalalaughapp"
+            target="_blank"
+            rel="noopener noreferrer"
             className="text-[#999999] hover:text-[#3931C5] transition-colors"
           >
             <svg
@@ -252,7 +264,9 @@ export function Footer() {
             </svg>
           </a>
           <a
-            href="#"
+            href="https://www.linkedin.com/company/109815478/admin/dashboard/"
+            target="_blank"
+            rel="noopener noreferrer"
             className="text-[#999999] hover:text-[#3931C5] transition-colors"
           >
             <svg
@@ -264,7 +278,9 @@ export function Footer() {
             </svg>
           </a>
           <a
-            href="www/youtube.com"
+            href="https://www.instagram.com/lalalaughapp/"
+            target="_blank"
+            rel="noopener noreferrer"
             className="text-[#999999] hover:text-[#3931C5] transition-colors"
           >
             <svg
@@ -276,7 +292,9 @@ export function Footer() {
             </svg>
           </a>
           <a
-            href="#"
+            href="https://www.facebook.com/profile.php?id=61583015866921&sk=about"
+            target="_blank"
+            rel="noopener noreferrer"
             className="text-[#999999] hover:text-[#3931C5] transition-colors"
           >
             <svg
