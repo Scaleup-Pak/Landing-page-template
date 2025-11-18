@@ -65,21 +65,25 @@ const EmblaCarousel: React.FC = () => {
   const [scrollSnaps, setScrollSnaps] = useState<number[]>([]);
 
   const cards: CardData[] = [
-    { id: 1, imageUrl: image1 },
-    { id: 2, imageUrl: image2 },
+    { id: 14, imageUrl: image16 },
+
     { id: 3, imageUrl: image3 },
     { id: 4, imageUrl: image4 },
+    { id: 15, imageUrl: image404 },
+    { id: 12, imageUrl: image14 },
+    { id: 2, imageUrl: image2 },
+
     { id: 5, imageUrl: image5 },
-    { id: 6, imageUrl: image6 },
     { id: 7, imageUrl: image7 },
     { id: 8, imageUrl: image8 },
     { id: 9, imageUrl: image9 },
     { id: 10, imageUrl: image10 },
     { id: 11, imageUrl: image12 },
-    { id: 12, imageUrl: image14 },
     { id: 13, imageUrl: image15 },
-    { id: 14, imageUrl: image16 },
-    { id: 15, imageUrl: image404 },
+    { id: 6, imageUrl: image6 },
+    { id: 1, imageUrl: image1 },
+
+
   ];
 
   const onSelect = useCallback(() => {
