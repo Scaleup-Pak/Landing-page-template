@@ -12,10 +12,21 @@ import image9 from '../assets/Featur-section/9.png';
 import image10 from '../assets/Featur-section/10.png';
 import image11 from '../assets/Featur-section/11.png';
 import image12 from '../assets/Featur-section/12.png';
+import image13 from '../assets/Featur-section/13.png';
+
 const IMAGES = [
-  image1, image2, image3, image4,
-  image5, image6, image7, image8,
-  image9, image10, image11, image12,
+  { src: image1, stacked: false },
+  { src: [image2, image13], stacked: true },
+  { src: image3, stacked: false },
+  { src: image4, stacked: false },
+  { src: image5, stacked: false },
+  { src: image6, stacked: false },
+  { src: image7, stacked: false },
+  { src: image8, stacked: false },
+  { src: image9, stacked: false },
+  { src: image10, stacked: false },
+  { src: image11, stacked: false },
+  { src: image12, stacked: false },
 ];
 
 const ImageGrid: React.FC = () => {
@@ -24,17 +35,33 @@ const ImageGrid: React.FC = () => {
       <div className="max-w-[1440px] mx-auto">
         <ResponsiveMasonry
           columnsCountBreakPoints={{ 350: 1, 640: 2, 900: 3, 1200: 4 }}
-          gutterBreakPoints={{ 350: '8px', 640: '12px', 900: '16px', 1200: '20px' }}
         >
           <Masonry gutter="20px">
-            {IMAGES.map((src, idx) => (
-              <div key={idx} className="overflow-hidden rounded-lg mb-5">
-                <img
-                  src={src}
-                  alt={`Feature ${idx + 1}`}
-                  className="w-full h-auto block rounded-lg"
-                  loading="lazy"
-                />
+            {IMAGES.map((item, idx) => (
+              <div key={idx} className="overflow-hidden rounded-lg">
+                {item.stacked ? (
+                  <div className="flex flex-col gap-2">
+                    {(item.src as string[]).map((imgSrc, imgIdx) => (
+                      <div key={imgIdx} className="overflow-hidden rounded-lg">
+                        <img
+                          src={imgSrc}
+                          alt={`Feature ${idx + 1}-${imgIdx + 1}`}
+                          className={`w-full block rounded-lg ${
+                            imgIdx === 1 ? 'h-[280px] object-fill' : 'h-auto'
+                          }`}
+                          loading="lazy"
+                        />
+                      </div>
+                    ))}
+                  </div>
+                ) : (
+                  <img
+                    src={item.src as string}
+                    alt={`Feature ${idx + 1}`}
+                    className="w-full h-auto block rounded-lg"
+                    loading="lazy"
+                  />
+                )}
               </div>
             ))}
           </Masonry>
