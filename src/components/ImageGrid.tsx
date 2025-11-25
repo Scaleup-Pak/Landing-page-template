@@ -1,7 +1,6 @@
 import React from 'react';
 import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry';
 import image1 from '../assets/Featur-section/1.png';
-import image2 from '../assets/Featur-section/2.png';
 import image3 from '../assets/Featur-section/3.png';
 import image4 from '../assets/Featur-section/4.png';
 import image5 from '../assets/Featur-section/5.png';
@@ -16,7 +15,7 @@ import image13 from '../assets/Featur-section/13.png';
 
 const IMAGES = [
   { src: image1, stacked: false },
-  { src: [image2, image13], stacked: true },
+  { src: [image13], stacked: false },
   { src: image3, stacked: false },
   { src: image4, stacked: false },
   { src: image5, stacked: false },
