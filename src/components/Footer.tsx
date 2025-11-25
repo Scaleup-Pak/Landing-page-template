@@ -3,34 +3,34 @@ import playstoreIcon from "../assets/playstore.png";
 import appleicon from "../assets/appleFootericon.png";
 import FooterLogo from "../assets/footerlogo.png";
 import Qrcode from "../assets/Qrcode.png";
-import smiliLogo from '../assets/footersmilie.png';
+import smiliLogo from "../assets/footersmilie.png";
 export function Footer() {
   const navigate = useNavigate();
   const location = useLocation();
 
   const handleNavClick = (href: string) => {
     // If it's a route path, navigate to it
-    if (href.startsWith('/')) {
+    if (href.startsWith("/")) {
       navigate(href);
     } else {
       // If it's a hash link and we're not on homepage, go to homepage first
-      if (location.pathname !== '/') {
-        navigate('/');
+      if (location.pathname !== "/") {
+        navigate("/");
         setTimeout(() => {
           const element = document.querySelector(href);
           if (element) {
-            element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            element.scrollIntoView({ behavior: "smooth", block: "start" });
           }
         }, 100);
       } else {
         // We're on homepage, just scroll
         const element = document.querySelector(href);
         if (element) {
-          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          element.scrollIntoView({ behavior: "smooth", block: "start" });
         }
       }
     }
-  }
+  };
 
   return (
     <footer className="w-full bg-[#F4F4F4] py-8 sm:py-10 md:py-12 lg:py-20">
@@ -40,20 +40,17 @@ export function Footer() {
         <div className="flex  flex-col lg:flex-row gap-8 sm:gap-10 md:gap-12 lg:gap-16 xl:gap-20 2xl:gap-[170px] ">
           {/* Left Section - Responsive width */}
           <div className="w-full lg:flex-1 flex flex-col gap-4 sm:gap-5 md:gap-6 ">
-            <div className="flex items-center justify-start gap-4 ">
-            <div className="w-24 sm:w-28 md:w-32 ">
+            <div className="flex items-center gap-4 flex-shrink-0">
               <img
                 src={FooterLogo}
-                alt="Footer Logo"
-                className="w-full h-auto"
+                alt="Lalalaugh logo"
+                className="h-7 sm:h-8 md:h-9 lg:h-10 transition-all duration-200"
               />
-              
-          </div>
-          <img 
-            src={smiliLogo} 
-            alt="Smili logo" 
-            className="h-8 sm:h-9 md:h-10 lg:h-11 transition-all duration-200" 
-          />
+              <img
+                src={smiliLogo}
+                alt="Smili logo"
+                className="h-8 sm:h-9 md:h-10 lg:h-11 transition-all duration-200"
+              />
             </div>
             <p
               style={{ fontFamily: "Nunito, sans-serif" }}
@@ -75,7 +72,11 @@ export function Footer() {
               <div className="flex flex-row gap-3  sm:gap-4 lg:gap-3 items-start sm:items-center lg:items-start">
                 {/* QR Code */}
                 <div className="w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32   flex-shrink-0">
-                  <img src={Qrcode} alt="Lalalaugh app QR code for download" loading="lazy" />
+                  <img
+                    src={Qrcode}
+                    alt="Lalalaugh app QR code for download"
+                    loading="lazy"
+                  />
                 </div>
 
                 {/* Store Buttons with same width and hight */}
@@ -147,7 +148,7 @@ export function Footer() {
                   <span
                     style={{ fontFamily: "Nunito, sans-serif" }}
                     className="text-[#00000080] hover:text-[#3931C5] transition-colors text-sm sm:text-[18px] cursor-pointer"
-                    onClick={() => handleNavClick('#about')}
+                    onClick={() => handleNavClick("#about")}
                   >
                     About Us
                   </span>
@@ -156,7 +157,7 @@ export function Footer() {
                   <span
                     style={{ fontFamily: "Nunito, sans-serif" }}
                     className="text-[#00000080] hover:text-[#3931C5] transition-colors text-sm sm:text-[18px] cursor-pointer"
-                    onClick={() => handleNavClick('#creators')}
+                    onClick={() => handleNavClick("#creators")}
                   >
                     Content Creators
                   </span>
@@ -165,7 +166,7 @@ export function Footer() {
                   <span
                     style={{ fontFamily: "Nunito, sans-serif" }}
                     className="text-[#00000080] hover:text-[#3931C5] transition-colors text-sm sm:text-[18px] cursor-pointer"
-                    onClick={() => handleNavClick('#features')}
+                    onClick={() => handleNavClick("#features")}
                   >
                     Features
                   </span>
@@ -174,7 +175,7 @@ export function Footer() {
                   <span
                     style={{ fontFamily: "Nunito, sans-serif" }}
                     className="text-[#00000080] hover:text-[#3931C5] transition-colors text-sm sm:text-[18px] cursor-pointer"
-                    onClick={() => handleNavClick('#advertiser')}
+                    onClick={() => handleNavClick("#advertiser")}
                   >
                     Advertisers
                   </span>
@@ -195,7 +196,7 @@ export function Footer() {
                   <span
                     style={{ fontFamily: "Nunito, sans-serif" }}
                     className="text-[#00000080] hover:text-[#3931C5] transition-colors text-sm sm:text-[18px] cursor-pointer"
-                    onClick={() => handleNavClick('/terms')}
+                    onClick={() => handleNavClick("/terms")}
                   >
                     Terms of use & Privacy Policy
                   </span>
@@ -204,7 +205,7 @@ export function Footer() {
                   <span
                     style={{ fontFamily: "Nunito, sans-serif" }}
                     className="text-[#00000080] hover:text-[#3931C5] transition-colors text-sm sm:text-[18px] cursor-pointer"
-                    onClick={() => handleNavClick('/content-terms')}
+                    onClick={() => handleNavClick("/content-terms")}
                   >
                     Terms of Contents
                   </span>
@@ -213,7 +214,7 @@ export function Footer() {
                   <span
                     style={{ fontFamily: "Nunito, sans-serif" }}
                     className="text-[#00000080] hover:text-[#3931C5] transition-colors text-sm sm:text-[18px] cursor-pointer"
-                    onClick={() => handleNavClick('#contact')}
+                    onClick={() => handleNavClick("#contact")}
                   >
                     Contact and Suggestions
                   </span>
