@@ -15,6 +15,7 @@ export function About() {
     setIsSubmitting(true);
     try {
       const response = await submitWaitlistForm({ email });
+      console.log("🚀 ~ handleSubmit ~ response:", response)
       if (response.success) {
         toast.success(response.message || "Thank you! You've been added to our waitlist! 🎉", {
           duration: 4000,
@@ -22,13 +23,19 @@ export function About() {
         });
         setEmail("");
       } else {
-        toast.error(response.error || "Failed to sign up. Please try again.", {
+        // Show the error message from the API, fallback to generic
+        toast.error(response.error || response.message || "Failed to sign up. Please try again.", {
           duration: 4000,
           style: { fontFamily: "Nunito, sans-serif" }
         });
       }
     } catch (error) {
-      toast.error("An unexpected error occurred. Please try again later.", {
+      // If error is an object, try to extract message
+      let errorMsg = "An unexpected error occurred. Please try again later.";
+      if (error && typeof error === 'object' && 'message' in error) {
+        errorMsg = (error as any).message;
+      }
+      toast.error(errorMsg, {
         duration: 4000,
         style: { fontFamily: "Nunito, sans-serif" }
       });

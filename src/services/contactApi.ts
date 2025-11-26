@@ -81,15 +81,17 @@ async function apiRequest<T>(
     // Handle different response statuses
     if (!response.ok) {
       let errorMessage = 'An error occurred while processing your request';
-      
       try {
         const errorData = await response.json();
-        errorMessage = errorData.message || errorData.error || errorMessage;
+        // If errorData.message is an object, extract its message property
+        if (typeof errorData.message === 'object' && errorData.message !== null) {
+          errorMessage = errorData.message.message || errorData.message.error || errorMessage;
+        } else {
+          errorMessage = errorData.message || errorData.error || errorMessage;
+        }
       } catch {
-        // If JSON parsing fails, use status text or generic message
         errorMessage = response.statusText || errorMessage;
       }
-
       throw new ApiError(
         errorMessage,
         response.status,
