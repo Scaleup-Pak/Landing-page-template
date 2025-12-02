@@ -1,20 +1,18 @@
-import { useState } from "react";
 import iphone from "../assets/iphon.png";
 import EmblaCarousel from "./Carousel";
 
 export function Creators() {
-  const handleScrollToWaitlist = () => {
-    const element = document.querySelector("#waitlist-form");
-    if (element) {
-      const header = document.querySelector("header");
-      const headerHeight = header ? header.offsetHeight : 0;
-      window.scrollTo({
-        top: (element as HTMLElement).offsetTop - headerHeight - 20,
-        behavior: "smooth",
-      });
-    }
-  };
-    const [isMenuOpen, setIsMenuOpen] = useState(false)
+  // const handleScrollToWaitlist = () => {
+  //   const element = document.querySelector("#waitlist-form");
+  //   if (element) {
+  //     const header = document.querySelector("header");
+  //     const headerHeight = header ? header.offsetHeight : 0;
+  //     window.scrollTo({
+  //       top: (element as HTMLElement).offsetTop - headerHeight - 20,
+  //       behavior: "smooth",
+  //     });
+  //   }
+  // };
   
   const handleNavClick = (href: string) => {
     const element = document.querySelector(href);
@@ -26,8 +24,6 @@ export function Creators() {
         behavior: "smooth",
       });
     }
-    // Add a small delay before closing to see the click animation
-    setTimeout(() => setIsMenuOpen(false), 150);
   };
 
   return (

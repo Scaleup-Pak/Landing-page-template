@@ -1,8 +1,6 @@
-import { useState } from "react";
 import ImageGrid from "./ImageGrid";
 
 export function Features() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
     const handleNavClick = (href: string) => {
     const element = document.querySelector(href);
     if (element) {
@@ -14,7 +12,6 @@ export function Features() {
       });
     }
     // Add a small delay before closing to see the click animation
-    setTimeout(() => setIsMenuOpen(false), 150);
   };
 
   return (
