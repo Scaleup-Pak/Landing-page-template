@@ -75,9 +75,9 @@ export function Header({
         }`} 
         style={{ backgroundColor }}
       >
-      <div className="max-w-[1440px]  mx-auto flex items-center justify-between">
+      <div className="max-w-[1440px] cursor-pointer  mx-auto flex items-center justify-between">
         {/* Logo + Smili Logo */}
-        <div className="flex items-center gap-4 flex-shrink-0">
+        <div className="flex items-center gap-4 flex-shrink-0 cursor-pointer" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
           <img 
             src={logo} 
             alt="Lalalaugh logo" 

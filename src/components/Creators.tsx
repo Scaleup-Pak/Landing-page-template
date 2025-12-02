@@ -1,16 +1,35 @@
+import { useState } from "react";
 import iphone from "../assets/iphon.png";
 import EmblaCarousel from "./Carousel";
 
 export function Creators() {
   const handleScrollToWaitlist = () => {
-    const element = document.querySelector('#waitlist-form');
+    const element = document.querySelector("#waitlist-form");
     if (element) {
-      const header = document.querySelector('header');
+      const header = document.querySelector("header");
       const headerHeight = header ? header.offsetHeight : 0;
-      window.scrollTo({ top: (element as HTMLElement).offsetTop - headerHeight - 20, behavior: 'smooth' });
+      window.scrollTo({
+        top: (element as HTMLElement).offsetTop - headerHeight - 20,
+        behavior: "smooth",
+      });
     }
   };
+    const [isMenuOpen, setIsMenuOpen] = useState(false)
   
+  const handleNavClick = (href: string) => {
+    const element = document.querySelector(href);
+    if (element) {
+      const header = document.querySelector("header");
+      const headerHeight = header ? header.offsetHeight : 0;
+      window.scrollTo({
+        top: (element as HTMLElement).offsetTop - headerHeight,
+        behavior: "smooth",
+      });
+    }
+    // Add a small delay before closing to see the click animation
+    setTimeout(() => setIsMenuOpen(false), 150);
+  };
+
   return (
     <section className="w-full pt-[105px] mb-4">
       {/* carousel section */}
@@ -57,7 +76,21 @@ export function Creators() {
                 }}
                 className="text-center md:text-left"
               >
-                We want to make La La Laugh the best place for you to create and share content that sparks joy. Have ideas or feedback? Have a look at our <span className="text-[#0b5bfc]  hover:cursor-pointer underline"> proposal for creators</span> and let us know if you have any  <span className="text-[#0b5bfc] underline hover:cursor-pointer">suggestions</span>.
+                We want to make La La Laugh the best place for you to create and
+                share content that sparks joy. Have ideas or feedback? Have a
+                look at our{" "}
+                <span className="text-[#0b5bfc]  hover:cursor-pointer underline">
+                  {" "}
+                  proposal for creators
+                </span>{" "}
+                and let us know if you have any{" "}
+                <span
+                  className="text-[#0b5bfc] underline hover:cursor-pointer"
+                  onClick={() => handleNavClick("#contact")}
+                >
+                  suggestions
+                </span>
+                .
               </p>
             </div>
             {/* creator program image  */}
