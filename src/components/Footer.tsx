@@ -214,6 +214,24 @@ export function Footer() {
                   <span
                     style={{ fontFamily: "Nunito, sans-serif" }}
                     className="text-[#00000080] hover:text-[#3931C5] transition-colors text-sm sm:text-[18px] cursor-pointer"
+                    onClick={() => handleNavClick("/advertiser")}
+                  >
+                    Advertisers
+                  </span>
+                </li>
+                <li>
+                  <span
+                    style={{ fontFamily: "Nunito, sans-serif" }}
+                    className="text-[#00000080] hover:text-[#3931C5] transition-colors text-sm sm:text-[18px] cursor-pointer"
+                    onClick={() => handleNavClick("/creator-proposal")}
+                  >
+                    Creator Proposal
+                  </span>
+                </li>
+                <li>
+                  <span
+                    style={{ fontFamily: "Nunito, sans-serif" }}
+                    className="text-[#00000080] hover:text-[#3931C5] transition-colors text-sm sm:text-[18px] cursor-pointer"
                     onClick={() => handleNavClick("#contact")}
                   >
                     Contact and Suggestions

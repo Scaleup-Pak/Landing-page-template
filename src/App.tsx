@@ -4,6 +4,8 @@ import { TermsOfContent } from "./pages/TermsOfContent";
 import { ScrollToTop } from "./components/ScrollToTop";
 import { TermsOfUse } from "./pages/TermsOfUse";
 import { WaitlistPage } from "./pages/WaitlistPage";
+import { Advertiser } from "./pages/Advertiser";
+import { CreatorProposal } from "./pages/CreatorProposal";
 
 function App() {
   return (
@@ -13,6 +15,8 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/terms" element={<TermsOfUse />} />
         <Route path="/content-terms" element={<TermsOfContent />} />
+        <Route path="/advertiser" element={<Advertiser />} />
+        <Route path="/creator-proposal" element={<CreatorProposal />} />
         <Route path="/waitlist" element={<WaitlistPage />} />
       </Routes>
     </Router>

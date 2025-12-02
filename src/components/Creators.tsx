@@ -1,7 +1,9 @@
 import iphone from "../assets/iphon.png";
 import EmblaCarousel from "./Carousel";
+import { useNavigate } from "react-router-dom";
 
 export function Creators() {
+  const navigate = useNavigate();
   // const handleScrollToWaitlist = () => {
   //   const element = document.querySelector("#waitlist-form");
   //   if (element) {
@@ -15,14 +17,18 @@ export function Creators() {
   // };
   
   const handleNavClick = (href: string) => {
-    const element = document.querySelector(href);
-    if (element) {
-      const header = document.querySelector("header");
-      const headerHeight = header ? header.offsetHeight : 0;
-      window.scrollTo({
-        top: (element as HTMLElement).offsetTop - headerHeight,
-        behavior: "smooth",
-      });
+    if (href.startsWith("/")) {
+      navigate(href);
+    } else {
+      const element = document.querySelector(href);
+      if (element) {
+        const header = document.querySelector("header");
+        const headerHeight = header ? header.offsetHeight : 0;
+        window.scrollTo({
+          top: (element as HTMLElement).offsetTop - headerHeight,
+          behavior: "smooth",
+        });
+      }
     }
   };
 
@@ -75,7 +81,7 @@ export function Creators() {
                 We want to make La La Laugh the best place for you to create and
                 share content that sparks joy. Have ideas or feedback? Have a
                 look at our{" "}
-                <span className="text-[#0b5bfc]  hover:cursor-pointer underline">
+                <span className="text-[#0b5bfc]  hover:cursor-pointer underline" onClick={() => handleNavClick("/creator-proposal")}>
                   {" "}
                   proposal for creators
                 </span>{" "}
