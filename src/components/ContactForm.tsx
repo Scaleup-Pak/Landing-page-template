@@ -11,8 +11,14 @@ import { InputField } from './forms/InputField';
 import { RadioGroup, type RadioOption } from './forms/RadioGroup';
 import { TextAreaField } from './forms/TextAreaField';
 import { validateContactForm, type ContactFormData } from '../utils/validation';
-import { submitContactFormApi } from '../services/contactApi';
 import { toast, Toaster } from 'sonner';
+
+// Email addresses for different user types
+const EMAIL_ADDRESSES = {
+  WAITLIST: 'contact@lalalaugh.com',
+  CREATOR: 'creator@lalalaugh.com',
+  ADVERTISER: 'advertiser@lalalaugh.com'
+} as const;
 
 interface FormErrors {
   userType?: string;
@@ -66,7 +72,7 @@ export const ContactForm: React.FC = () => {
     }
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
     // Validate form
@@ -86,20 +92,29 @@ export const ContactForm: React.FC = () => {
     setIsSubmitting(true);
 
     try {
-      // Log payload for debugging before submission
-      // This prints to the browser console when running in development
-      // and helps confirm what will be sent to the API.
-      // Keep this log during debugging and remove it for production if desired.
-      // eslint-disable-next-line no-console
-      console.log('Submitting contact form payload:', formData);
-      const response = await submitContactFormApi(formData);
+      // Get the email address based on user type
+      const recipientEmail = EMAIL_ADDRESSES[formData.userType as keyof typeof EMAIL_ADDRESSES];
       
-      if (response.success) {
-        toast.success('Your message has been sent successfully! 🎉', {
-          duration: 4000,
-          style: { fontFamily: "Nunito, sans-serif" }
-        });
-        // Reset form on successful submission
+      // Create mailto link with form data
+      const subject = encodeURIComponent(formData.subject);
+      const body = encodeURIComponent(
+       
+        `${formData.message}`
+      );
+      
+      const mailtoLink = `mailto:${recipientEmail}?subject=${subject}&body=${body}`;
+      
+      // Open default email client
+      window.location.href = mailtoLink;
+      
+      // Show success message
+      toast.success('Opening your email client... 📧', {
+        duration: 4000,
+        style: { fontFamily: "Nunito, sans-serif" }
+      });
+      
+      // Reset form after a short delay
+      setTimeout(() => {
         setFormData({
           userType: SupportUserType.WAITLIST,
           name: '',
@@ -107,19 +122,15 @@ export const ContactForm: React.FC = () => {
           subject: '',
           message: ''
         });
-      } else {
-        toast.error(response.error || 'Failed to send message. Please try again.', {
-          duration: 4000,
-          style: { fontFamily: "Nunito, sans-serif" }
-        });
-      }
+        setIsSubmitting(false);
+      }, 1000);
+      
     } catch (error) {
       console.error('Form submission error:', error);
       toast.error('An unexpected error occurred. Please try again later.', {
         duration: 4000,
         style: { fontFamily: "Nunito, sans-serif" }
       });
-    } finally {
       setIsSubmitting(false);
     }
   };
