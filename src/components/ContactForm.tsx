@@ -35,7 +35,7 @@ export const ContactForm: React.FC = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const userTypeOptions: RadioOption[] = [
-    { value: SupportUserType.WAITLIST, label: 'Waitlist' },
+    { value: SupportUserType.WAITLIST, label: 'Contact Us' },
     { value: SupportUserType.CREATOR, label: 'Creator' },
     { value: SupportUserType.ADVERTISER, label: 'Advertiser' }
   ];
