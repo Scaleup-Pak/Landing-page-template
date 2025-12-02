@@ -57,12 +57,7 @@ export function Creators() {
                 }}
                 className="text-center md:text-left"
               >
-                We want to make La La Laugh the best place for you to create and
-                share content that sparks joy. Have ideas or feedback? Click{" "}
-                <span className="text-[#000]">Contact Us</span> with
-                suggestions—or simply join the{" "}
-                <span className="text-[#000]">waiting list</span> to be part of
-                the launch.
+                We want to make La La Laugh the best place for you to create and share content that sparks joy. Have ideas or feedback? Have a look at our <span className="text-[#0b5bfc]  hover:cursor-pointer underline"> proposal for creators</span> and let us know if you have any  <span className="text-[#0b5bfc] underline hover:cursor-pointer">suggestions</span>.
               </p>
             </div>
             {/* creator program image  */}
@@ -96,14 +91,14 @@ export function Creators() {
                       joyful revolution.
                     </p>
                     {/* button */}
-                    <div className="flex justify-center lg:justify-start mb-6">
+                    {/* <div className="flex justify-center lg:justify-start mb-6">
                       <button
                         onClick={handleScrollToWaitlist}
                         className="bg-[#3931C5] text-white cursor-pointer  px-6 py-3 rounded-[11px] transition hover:bg-[#2d25a0]"
                       >
                         Explore App
                       </button>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               </div>

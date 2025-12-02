@@ -79,7 +79,7 @@ export function About() {
             </div>
             
             {/* Email signup form */}
-            <form id="waitlist-form" onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-4 justify-center items-center w-full max-w-2xl mx-auto mt-6">
+            {/* <form id="waitlist-form" onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-4 justify-center items-center w-full max-w-2xl mx-auto mt-6">
               <input 
                 type="email" 
                 value={email}
@@ -98,7 +98,7 @@ export function About() {
               >
                 {isSubmitting ? "Signing up..." : "Sign up"}
               </button>
-            </form>
+            </form> */}
 
           </div>
           {/* image with responsivness for all screens */}

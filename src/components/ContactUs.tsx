@@ -11,15 +11,9 @@ export function ContactUs() {
               style={{ fontFamily: "Nunito, sans-serif" }}
               className="text-center mb-[17px]  text-[28px] sm:text-[32px] md:text-[40px]  leading-tight md:leading-[50px] font-sans font-bold "
             >
-              Contact Us
+           Contact and Suggestions
             </h4>
-            <p
-              style={{ fontFamily: "Nunito, sans-serif" }}
-              className="text-center text-[#00000099]    sm:text-lg md:text-xl     leading-relaxed md:leading-8"
-            >
-              Please send us a note and we’ll get back to you as quickly as
-              possible.
-            </p>
+           
           </div>
           {/* Contact Form */}
           <div className="mt-8">
