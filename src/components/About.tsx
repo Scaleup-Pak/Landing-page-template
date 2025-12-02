@@ -1,48 +1,48 @@
 import line from "../assets/line.svg";
 import aboutsec from "../assets/aboutsec.png";
 import about from "../assets/about.png";
-import { useState } from "react";
-import { toast, Toaster } from "sonner";
-import { submitWaitlistForm } from '../services/contactApi';
+// import { useState } from "react";
+import {  Toaster } from "sonner";
+// import { submitWaitlistForm } from '../services/contactApi';
 
 export function About() {
-  const [email, setEmail] = useState("");
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  // const [email, setEmail] = useState("");
+  // const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!email) return;
-    setIsSubmitting(true);
-    try {
-      const response = await submitWaitlistForm({ email });
-      console.log("🚀 ~ handleSubmit ~ response:", response)
-      if (response.success) {
-        toast.success(response.message || "Thank you! You've been added to our waitlist! 🎉", {
-          duration: 4000,
-          style: { fontFamily: "Nunito, sans-serif" }
-        });
-        setEmail("");
-      } else {
-        // Show the error message from the API, fallback to generic
-        toast.error(response.error || response.message || "Failed to sign up. Please try again.", {
-          duration: 4000,
-          style: { fontFamily: "Nunito, sans-serif" }
-        });
-      }
-    } catch (error) {
-      // If error is an object, try to extract message
-      let errorMsg = "An unexpected error occurred. Please try again later.";
-      if (error && typeof error === 'object' && 'message' in error) {
-        errorMsg = (error as any).message;
-      }
-      toast.error(errorMsg, {
-        duration: 4000,
-        style: { fontFamily: "Nunito, sans-serif" }
-      });
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
+  // const handleSubmit = async (e: React.FormEvent) => {
+  //   e.preventDefault();
+  //   if (!email) return;
+  //   setIsSubmitting(true);
+  //   try {
+  //     const response = await submitWaitlistForm({ email });
+  //     console.log("🚀 ~ handleSubmit ~ response:", response)
+  //     if (response.success) {
+  //       toast.success(response.message || "Thank you! You've been added to our waitlist! 🎉", {
+  //         duration: 4000,
+  //         style: { fontFamily: "Nunito, sans-serif" }
+  //       });
+  //       setEmail("");
+  //     } else {
+  //       // Show the error message from the API, fallback to generic
+  //       toast.error(response.error || response.message || "Failed to sign up. Please try again.", {
+  //         duration: 4000,
+  //         style: { fontFamily: "Nunito, sans-serif" }
+  //       });
+  //     }
+  //   } catch (error) {
+  //     // If error is an object, try to extract message
+  //     let errorMsg = "An unexpected error occurred. Please try again later.";
+  //     if (error && typeof error === 'object' && 'message' in error) {
+  //       errorMsg = (error as any).message;
+  //     }
+  //     toast.error(errorMsg, {
+  //       duration: 4000,
+  //       style: { fontFamily: "Nunito, sans-serif" }
+  //     });
+  //   } finally {
+  //     setIsSubmitting(false);
+  //   }
+  // };
 
   return (
     <section className="w-full bg-[#FFFFFF] pt-[105px]" aria-label="About Lalalaugh">
