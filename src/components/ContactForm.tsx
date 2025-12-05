@@ -1,4 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
+import emailjs from '@emailjs/browser';
+import { useEffect } from 'react';
 
 // Enum for user types
 const SupportUserType = {
@@ -13,11 +15,16 @@ import { TextAreaField } from './forms/TextAreaField';
 import { validateContactForm, type ContactFormData } from '../utils/validation';
 import { toast, Toaster } from 'sonner';
 
-// Email addresses for different user types
-const EMAIL_ADDRESSES = {
-  WAITLIST: 'contact@lalalaugh.com',
-  CREATOR: 'creator@lalalaugh.com',
-  ADVERTISER: 'advertiser@lalalaugh.com'
+// EmailJS configuration from environment variables
+const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+// Email recipients configuration for different user types
+const EMAIL_RECIPIENTS = {
+  WAITLIST: { email: 'contact@lalalaugh.com', name: 'LaLaLaugh Support' },
+  CREATOR: { email: 'creator@lalalaugh.com', name: 'Creator Team' },
+  ADVERTISER: { email: 'hamza.maqbool@thesoftaims.com', name: 'Advertiser Team' }
 } as const;
 
 interface FormErrors {
@@ -29,6 +36,8 @@ interface FormErrors {
 }
 
 export const ContactForm: React.FC = () => {
+  const formRef = useRef<HTMLFormElement>(null);
+  
   const [formData, setFormData] = useState<ContactFormData>({
     userType: SupportUserType.WAITLIST,
     name: '',
@@ -40,11 +49,27 @@ export const ContactForm: React.FC = () => {
   const [errors, setErrors] = useState<FormErrors>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
 
+  // Initialize EmailJS with the public key once on mount
+  useEffect(() => {
+    if (EMAILJS_PUBLIC_KEY) {
+      try {
+        emailjs.init(EMAILJS_PUBLIC_KEY);
+      } catch (err) {
+        console.warn('EmailJS init failed:', err);
+      }
+    }
+  }, []);
+
   const userTypeOptions: RadioOption[] = [
     { value: SupportUserType.WAITLIST, label: 'Contact Us' },
     { value: SupportUserType.CREATOR, label: 'Creator' },
     { value: SupportUserType.ADVERTISER, label: 'Advertiser' }
   ];
+
+  // Map the selected user type to a recipient (email + name) (fallback to WAITLIST)
+  const recipient =
+    EMAIL_RECIPIENTS[(formData.userType as keyof typeof EMAIL_RECIPIENTS)] ||
+    EMAIL_RECIPIENTS.WAITLIST;
 
   const handleInputChange = (field: keyof ContactFormData) => (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -72,7 +97,7 @@ export const ContactForm: React.FC = () => {
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
     // Validate form
@@ -87,50 +112,71 @@ export const ContactForm: React.FC = () => {
       return;
     }
 
+    // Check if EmailJS is configured
+    if (!EMAILJS_SERVICE_ID || !EMAILJS_TEMPLATE_ID || !EMAILJS_PUBLIC_KEY) {
+      console.error('EmailJS is not configured. Please set up environment variables.');
+      toast.error('Email service is not configured. Please contact support.', {
+        duration: 4000,
+        style: { fontFamily: "Nunito, sans-serif" }
+      });
+      return;
+    }
+
     // Clear errors and start submission
     setErrors({});
     setIsSubmitting(true);
 
     try {
-      // Get the email address based on user type
-      const recipientEmail = EMAIL_ADDRESSES[formData.userType as keyof typeof EMAIL_ADDRESSES];
-      
-      // Create mailto link with form data
-      const subject = encodeURIComponent(formData.subject);
-      const body = encodeURIComponent(
-       
-        `${formData.message}`
+      if (!formRef.current) {
+        throw new Error('Form reference is not available');
+      }
+      // Build template params (explicitly) so EmailJS uses the dynamic To value.
+      const templateParams = {
+        to_email: recipient.email,
+        to_name: recipient.name,
+        from_name: formData.name,
+        from_email: formData.email,
+        reply_to: formData.email,
+        user_type: formData.userType,
+        subject: formData.subject,
+        message: formData.message,
+      } as const;
+
+      console.log('Sending email with template params:', templateParams);
+
+      // Use emailjs.send for explicit template params
+      const response = await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        templateParams
       );
-      
-      const mailtoLink = `mailto:${recipientEmail}?subject=${subject}&body=${body}`;
-      
-      // Open default email client
-      window.location.href = mailtoLink;
+
+      console.log('Email sent successfully!', response.status, response.text);
       
       // Show success message
-      toast.success('Opening your email client... 📧', {
-        duration: 4000,
+      toast.success('Message sent successfully! We\'ll get back to you soon. 🎉', {
+        duration: 5000,
         style: { fontFamily: "Nunito, sans-serif" }
       });
       
-      // Reset form after a short delay
-      setTimeout(() => {
-        setFormData({
-          userType: SupportUserType.WAITLIST,
-          name: '',
-          email: '',
-          subject: '',
-          message: ''
-        });
-        setIsSubmitting(false);
-      }, 1000);
+      // Reset form
+      setFormData({
+        userType: SupportUserType.WAITLIST,
+        name: '',
+        email: '',
+        subject: '',
+        message: ''
+      });
       
     } catch (error) {
-      console.error('Form submission error:', error);
-      toast.error('An unexpected error occurred. Please try again later.', {
-        duration: 4000,
+      console.error('Email sending failed:', error);
+      
+      // Show error message
+      toast.error('Failed to send message. Please try again or contact us directly.', {
+        duration: 5000,
         style: { fontFamily: "Nunito, sans-serif" }
       });
+    } finally {
       setIsSubmitting(false);
     }
   };
@@ -138,7 +184,7 @@ export const ContactForm: React.FC = () => {
   return (
     <div className="max-w-2xl mx-auto">
       <Toaster position="top-center" richColors />
-      <form onSubmit={handleSubmit} className="space-y-6">
+  <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
         {/* User Type Selection */}
         <div className="mb-6">
           <p 
@@ -148,7 +194,7 @@ export const ContactForm: React.FC = () => {
             Select User Type 
           </p>
           <RadioGroup
-            name="userType"
+            name="user_type"
             options={userTypeOptions}
             value={formData.userType}
             onChange={handleUserTypeChange}
@@ -159,6 +205,7 @@ export const ContactForm: React.FC = () => {
         {/* Name Field */}
         <InputField
           type="text"
+          name="user_name"
           placeholder="Your full name"
           label="Name"
           value={formData.name}
@@ -171,6 +218,7 @@ export const ContactForm: React.FC = () => {
         {/* Email Field */}
         <InputField
           type="email"
+          name="user_email"
           placeholder="your.email@example.com"
           label="Email Address"
           value={formData.email}
@@ -183,6 +231,7 @@ export const ContactForm: React.FC = () => {
         {/* Subject Field */}
         <InputField
           type="text"
+          name="subject"
           placeholder="Brief description of your inquiry"
           label="Subject"
           value={formData.subject}
@@ -194,6 +243,7 @@ export const ContactForm: React.FC = () => {
 
         {/* Message Field */}
         <TextAreaField
+          name="message"
           placeholder="Please provide details about your inquiry or message..."
           label="Message"
           value={formData.message}
@@ -203,6 +253,13 @@ export const ContactForm: React.FC = () => {
           maxLength={1000}
           rows={5}
         />
+
+        {/* Hidden inputs for EmailJS template */}
+  <input type="hidden" name="to_email" value={recipient.email} />
+  <input type="hidden" name="to_name" value={recipient.name} />
+  <input type="hidden" name="from_name" value={formData.name || ''} />
+  <input type="hidden" name="from_email" value={formData.email || ''} />
+        <input type="hidden" name="reply_to" value={formData.email} />
 
         {/* Submit Button */}
         <button
