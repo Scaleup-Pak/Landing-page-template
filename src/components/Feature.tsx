@@ -1,4 +1,18 @@
-import ImageGrid from "./ImageGrid";
+import EmblaCarousel from "./Carousel";
+import type { CardData } from "./Carousel";
+import f1 from "../assets/Featur-section/1.png";
+import f2 from "../assets/Featur-section/2.png";
+import f3 from "../assets/Featur-section/3.png";
+import f4 from "../assets/Featur-section/4.png";
+import f5 from "../assets/Featur-section/5.png";
+import f6 from "../assets/Featur-section/6.png";
+import f7 from "../assets/Featur-section/7.png";
+import f8 from "../assets/Featur-section/8.png";
+import f9 from "../assets/Featur-section/9.png";
+import f10 from "../assets/Featur-section/10.png";
+import f11 from "../assets/Featur-section/11.png";
+import f12 from "../assets/Featur-section/12.png";
+import f13 from "../assets/Featur-section/13.png";
 
 export function Features() {
     const handleNavClick = (href: string) => {
@@ -13,6 +27,22 @@ export function Features() {
     }
     // Add a small delay before closing to see the click animation
   };
+
+  const featureItems: CardData[] = [
+    { id: 1, imageUrl: f1 },
+    { id: 2, imageUrl: f13 },
+    { id: 3, imageUrl: f3 },
+    { id: 4, imageUrl: f4 },
+    { id: 5, imageUrl: f5 },
+    { id: 6, imageUrl: f6 },
+    { id: 7, imageUrl: f7 },
+    { id: 8, imageUrl: f8 },
+    { id: 9, imageUrl: f9 },
+    { id: 10, imageUrl: f10 },
+    { id: 11, imageUrl: f11 },
+    { id: 12, imageUrl: f12 },
+    { id: 13, imageUrl: f2 },
+  ];
 
   return (
     <section className="w-full pt-[105px] mb-4 " id="advertiser">
@@ -74,7 +104,7 @@ export function Features() {
         </div>
       </div>
       <div className="mt-6 flex flex-col gap-16">
-        <ImageGrid />
+        <EmblaCarousel items={featureItems} autoplay={true} delay={3500} />
       </div>
     </section>
   );

@@ -36,7 +36,7 @@ export function Creators() {
     <section className="w-full pt-[105px] mb-4">
       {/* carousel section */}
       <div className="w-full  py-[55px]">
-        <EmblaCarousel />
+        <EmblaCarousel heading="Explore Our Top Creators" />
       </div>
       <div className="w-full  px-4 sm:px-6 md:px-8 lg:px-16 xl:px-24 2xl:px-[106px]">
         <div className="max-w-[1440px]  mx-auto">
