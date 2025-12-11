@@ -37,16 +37,14 @@ interface EmblaCarouselProps {
 
 const CarouselCard: React.FC<{ card: CardData; isActive: boolean }> = ({ card, isActive }) => {
   return (
-    <div 
-      className="relative h-[598.417px] flex items-center justify-center"
-    >
-      <div className={`rounded-3xl overflow-hidden transition-transform duration-500 ease-out will-change-transform ${isActive ? 'w-full h-full scale-100' : 'w-[95%] h-[478.326px] scale-95'}`}>
-        <img 
-          src={card.imageUrl} 
-          alt={`Slide ${card.id}`}
-          className="w-full h-full object-cover"
-        />
-      </div>
+    <div className="relative w-full h-full overflow-hidden rounded-3xl ">
+      <img
+        src={card.imageUrl}
+        alt={`Card ${card.id}`}
+        className={`w-full h-full object-contain rounded-3xl transition-all duration-300 ${
+          isActive ? 'scale-100' : 'scale-85 '
+        }`}
+      />
     </div>
   );
 };

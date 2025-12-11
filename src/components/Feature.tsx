@@ -41,7 +41,6 @@ export function Features() {
     { id: 10, imageUrl: f10 },
     { id: 11, imageUrl: f11 },
     { id: 12, imageUrl: f12 },
-    { id: 13, imageUrl: f2 },
   ];
 
   return (
