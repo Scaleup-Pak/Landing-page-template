@@ -2,7 +2,6 @@
 .embla {
   overflow: hidden;
   --slide-spacing: 1rem;
-  --slide-height: 620px;
 }
 
 .embla__viewport {
