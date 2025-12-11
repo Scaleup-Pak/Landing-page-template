@@ -94,7 +94,7 @@ export function Features() {
                 style={{ fontFamily: "Nunito", color: "rgba(0, 0, 0, 0.60)" }}
                 className="text-left    sm:text-lg md:text-xl lg:text-[20px]    leading-relaxed md:leading-[29px] font-normal"
               >
-           On La La Laugh, your brand connects with audiences in their happiest moments — when they’re smiling, laughing, and ready to engage. Have look at our <span onClick={() => handleNavClick("/advertiser") } className="text-[#0b5bfc]  hover:cursor-pointer underline"> proposal for advertisers</span>  and let us know if you have any <span className="text-[#0b5bfc] underline hover:cursor-pointer" onClick={() => handleNavClick("#contact")}>suggestions</span>.
+           On La La Laugh, your brand connects with audiences in their happiest moments — when they’re smiling, laughing, and ready to engage. Have look at our <span onClick={() => handleNavClick("/advertiser") } className="text-[#0b5bfc]  hover:cursor-pointer underline"> proposal for advertisers</span>  and let us know if you have any <span className="text-[#0b5bfc] underline hover:cursor-pointer" onClick={() => handleNavClick("#contact")}>Questions</span>.
               </p>
               <h2
                 style={{ fontFamily: "Nunito", color:"#000000",fontWeight:600, fontStyle:"normal" }}

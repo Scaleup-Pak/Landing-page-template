@@ -90,7 +90,7 @@ export function Creators() {
                   className="text-[#0b5bfc] underline hover:cursor-pointer"
                   onClick={() => handleNavClick("#contact")}
                 >
-                  suggestions
+                  Questions
                 </span>
                 .
               </p>
