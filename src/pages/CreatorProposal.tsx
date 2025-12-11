@@ -1,266 +1,275 @@
 import { Link } from "react-router-dom";
 import FooterLogo from "../assets/footerlogo.png";
+import "../Css/Creatorproposal.css";
 
 export function CreatorProposal() {
   return (
     <div className="min-h-screen bg-white">
       {/* Logo and Title Section */}
-      <div className="px-4 sm:px-6 md:px-8 lg:px-16 xl:px-24 2xl:px-32 pt-6 sm:pt-8 pb-4 sm:pb-6">
+      <div className="container-padding pt-8 pb-6">
         <Link to="/" className="focus:outline-none focus:ring-2 focus:ring-[#3931C5] focus:ring-offset-2">
           <img
             src={FooterLogo}
             alt="LA LA LAUGH Logo"
-            className="w-16 sm:w-20 md:w-24 lg:w-28 xl:w-32 h-auto mb-6 sm:mb-8 md:mb-10 lg:mb-12"
+            className="w-24 md:w-28 h-auto mb-8"
           />
         </Link>
-        <h1
-          className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-[44px] font-bold text-black"
-          style={{ fontFamily: "Nunito, sans-serif" }}
-        >
-          Creator Program Proposal
+        <h1 className="main-title">
+          LA LA LAUGH — Creators' Proposal
         </h1>
       </div>
 
       {/* Content */}
-      <div className="px-4 sm:px-6 md:px-8 lg:px-16 xl:px-24 2xl:px-32 pb-8 sm:pb-12 md:pb-16">
-        <div style={{ fontFamily: "Nunito, sans-serif" }}>
-          <p
-            className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-[24px] mb-6 sm:mb-8 text-gray-500"
-            style={{ fontWeight: 500, lineHeight: "1.447" }}
-          >
-            Welcome to La La Laugh's Creator Program! We're building the clearest, fairest, and kindest way to monetize creativity. This proposal outlines our vision for empowering creators to earn from their humor and build sustainable careers in comedy.
+      <div className="container-padding pb-12">
+        <p className="subtitle-text">
+          The world's first Social Entertainment platform: the Take-a-Break app built for joy, creators, and a healthier digital culture.
+        </p>
+
+        {/* Section 1 */}
+        <div className="mb-8">
+          <h2 className="section-heading">
+            1. Introduction: Why La La Laugh Exists
+          </h2>
+          <p className="body-text">
+            La La Laugh was created to disrupt the current social media landscape by offering something radically simple: pure entertainment, good energy, and a platform that respects creators.
+          </p>
+          <p className="body-text">
+            People don't need more pressure or toxicity — they need a break. La La Laugh is the <strong>Take-a-Break App</strong>, a joyful escape designed for a better human experience.
+          </p>
+          <p className="body-text">
+            As a company, we commit to staying simple, lean, and profitable from day one. Creators are the core of the creator economy, so our structure and strategy are built around respecting the people who create the value.
+          </p>
+          <p className="body-text">
+            Our Founder & CEO believes strongly in:
+          </p>
+          <ul className="ml-8 space-y-1 mb-4">
+            <li className="list-item">
+              <strong>Prioritizing high-quality advertising over chasing investors.</strong> Growth should be sustainable, not dependent on endless funding rounds.
+            </li>
+            <li className="list-item">
+              <strong>Bringing a new era to the creator economy.</strong> Creators deserve transparency, simplicity, and real revenue — not arbitrary rules or algorithmic manipulation.
+            </li>
+            <li className="list-item">
+              <strong>Honoring user choice and the social agora.</strong> We avoid unnecessary censorship or preconceived filtering. Users decide what they want to watch.
+            </li>
+            <li className="list-item">
+              <strong>Restoring real human connection.</strong> Humor is medicine in a polarized world. La La Laugh sparks joy online and encourages more connection offline.
+            </li>
+          </ul>
+        </div>
+
+        {/* Section 2 */}
+        <div className="mb-8">
+          <h2 className="section-heading">
+            2. Our Development Roadmap — Two Phases
+          </h2>
+          <p className="body-text">
+            La La Laugh will grow in two major phases, with a third innovation phase already envisioned.
+          </p>
+          
+          <h3 className="subsection-heading">
+            Phase 1 — Launch & Growth
+          </h3>
+          <p className="body-text">
+            Our priority is to grow an authentic community while staying sustainable.
+          </p>
+          <ul className="ml-6 space-y-2 mb-4">
+            <li className="list-item">Build a positive, humor-driven environment</li>
+            <li className="list-item">Feature creators early to help them grow</li>
+            <li className="list-item">Use sponsorships to operate while Phase 2 is developed</li>
+            <li className="list-item">Stay lean, agile, transparent, and community-driven</li>
+            <li className="list-item">Prepare the foundation for full monetization</li>
+          </ul>
+          <p className="body-text">
+            In Phase 1, we grow together with creators while securing sponsors that let us operate without sacrificing values.
           </p>
 
-          {/* Section 1 */}
-          <div className="mb-6 sm:mb-8">
-            <h2
-              className="text-lg sm:text-xl md:text-2xl lg:text-[28px] mb-3 sm:mb-4 font-bold text-black"
-            >
-              1. Our Mission for Creators
-            </h2>
-            <p
-              className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-[24px] mb-3 sm:mb-4 text-gray-500"
-              style={{ fontWeight: 500, lineHeight: "1.447" }}
-            >
-              At La La Laugh, we believe that making people laugh should also help you earn. Our Creator Program is designed to provide real income opportunities for comedians, writers, and humorists of all levels. We're committed to:
-            </p>
-            <ul className="pl-6 space-y-2">
-              <li
-                className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-[24px] text-gray-500"
-                style={{ fontWeight: 500, lineHeight: "1.447" }}
-              >
-                • Transparent revenue sharing with competitive rates
-              </li>
-              <li
-                className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-[24px] text-gray-500"
-                style={{ fontWeight: 500, lineHeight: "1.447" }}
-              >
-                • Direct brand partnerships and sponsored content opportunities
-              </li>
-              <li
-                className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-[24px] text-gray-500"
-                style={{ fontWeight: 500, lineHeight: "1.447" }}
-              >
-                • Community-driven challenges and competitions with cash prizes
-              </li>
-              <li
-                className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-[24px] text-gray-500"
-                style={{ fontWeight: 500, lineHeight: "1.447" }}
-              >
-                • Fan tipping and subscription features for recurring income
-              </li>
-            </ul>
+          <h3 className="subsection-heading">
+            Phase 2 — Monetization for Creators
+          </h3>
+          <p className="body-text">
+            Once we reach a strong user base, we introduce one of the fairest monetization systems in the industry.
+          </p>
+          
+          <div className="ml-4 space-y-4">
+            <div>
+              <p className="body-text font-semibold mb-1">
+                A. Laugh Coins (Future Development)
+              </p>
+              <p className="body-text ml-4">
+                Creators earn 55%–80% of all in-app tips.
+              </p>
+            </div>
+
+            <div>
+              <p className="body-text font-semibold mb-1">
+                B. Revenue Share on Advertising
+              </p>
+              <p className="body-text ml-4">
+                When sponsorships transition to full advertising, creators will receive:
+              </p>
+              <ul className="ml-10 space-y-1">
+                <li className="list-item">60% revenue share for everyone</li>
+                <li className="list-item">65% for creators who hit performance milestones</li>
+                <li className="list-item">70% lifetime share for individual pieces of content that reach major milestones</li>
+              </ul>
+              <p className="body-text ml-4 mt-2">
+                This rewards merit, not early access.
+              </p>
+            </div>
+
+            <div>
+              <p className="body-text font-semibold mb-1">
+                C. Best Joke Awards
+              </p>
+              <p className="body-text ml-4 mb-1">
+                Rewards and visibility for:
+              </p>
+              <ul className="ml-10 space-y-1">
+                <li className="list-item">Joke of the Day</li>
+                <li className="list-item">Joke of the Week</li>
+                <li className="list-item">Joke of the Month</li>
+                <li className="list-item">Joke of the Year</li>
+              </ul>
+            </div>
+
+            <div>
+              <p className="body-text font-semibold mb-1">
+                D. Creator Tools (Future Development)
+              </p>
+              <ul className="ml-10 space-y-1">
+                <li className="list-item">Sponsorship management tools</li>
+                <li className="list-item">Affiliate and profit-sharing features</li>
+                <li className="list-item">Transparent metrics (real views, completions, skips)</li>
+              </ul>
+            </div>
           </div>
 
-          {/* Section 2 */}
-          <div className="mb-6 sm:mb-8">
-            <h2
-              className="text-lg sm:text-xl md:text-2xl lg:text-[28px] mb-3 sm:mb-4 font-bold text-black"
-            >
-              2. Monetization Features
-            </h2>
-            <p
-              className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-[24px] mb-3 sm:mb-4 text-gray-500"
-              style={{ fontWeight: 500, lineHeight: "1.447" }}
-            >
-              Our platform offers multiple ways for creators to earn:
-            </p>
-            <ul className="pl-6 space-y-2">
-              <li
-                className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-[24px] text-gray-500"
-                style={{ fontWeight: 500, lineHeight: "1.447" }}
-              >
-                • <strong>Ad Revenue Sharing:</strong> Earn from ads shown on your content with industry-leading CPM rates
-              </li>
-              <li
-                className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-[24px] text-gray-500"
-                style={{ fontWeight: 500, lineHeight: "1.447" }}
-              >
-                • <strong>Brand Deals:</strong> Connect directly with brands for sponsored content and partnerships
-              </li>
-              <li
-                className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-[24px] text-gray-500"
-                style={{ fontWeight: 500, lineHeight: "1.447" }}
-              >
-                • <strong>Fan Support:</strong> Receive tips, gifts, and subscription revenue from your most dedicated fans
-              </li>
-              <li
-                className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-[24px] text-gray-500"
-                style={{ fontWeight: 500, lineHeight: "1.447" }}
-              >
-                • <strong>Challenge Prizes:</strong> Compete in platform challenges for cash rewards and featured spots
-              </li>
-            </ul>
-          </div>
+          <h3 className="subsection-heading">
+            Phase 3 — Innovation: The Future of the Creator Economy
+          </h3>
+          <p className="body-text">
+            Our CEO — an inventor and innovator — is developing proprietary ideas to elevate creators further.
+          </p>
+          <p className="body-text">
+            This includes "The Creators' Bill of Rights": A commitment to transparency, collaboration, and long-term creator empowerment.
+          </p>
+          <p className="body-text">
+            Phase 3 transforms La La Laugh into a full creative ecosystem.
+          </p>
+        </div>
 
-          {/* Section 3 */}
-          <div className="mb-6 sm:mb-8">
-            <h2
-              className="text-lg sm:text-xl md:text-2xl lg:text-[28px] mb-3 sm:mb-4 font-bold text-black"
-            >
-              3. Creator Support & Tools
-            </h2>
-            <p
-              className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-[24px] mb-3 sm:mb-4 text-gray-500"
-              style={{ fontWeight: 500, lineHeight: "1.447" }}
-            >
-              We provide creators with everything they need to succeed:
-            </p>
-            <ul className="pl-6 space-y-2">
-              <li
-                className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-[24px] text-gray-500"
-                style={{ fontWeight: 500, lineHeight: "1.447" }}
-              >
-                • Advanced analytics dashboard to track performance and earnings
-              </li>
-              <li
-                className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-[24px] text-gray-500"
-                style={{ fontWeight: 500, lineHeight: "1.447" }}
-              >
-                • Content creation tools and templates optimized for humor
-              </li>
-              <li
-                className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-[24px] text-gray-500"
-                style={{ fontWeight: 500, lineHeight: "1.447" }}
-              >
-                • Direct audience feedback and engagement metrics
-              </li>
-              <li
-                className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-[24px] text-gray-500"
-                style={{ fontWeight: 500, lineHeight: "1.447" }}
-              >
-                • Dedicated creator success team for personalized support
-              </li>
-            </ul>
-          </div>
+        {/* Section 3 */}
+        <div className="mb-8">
+          <h2 className="section-heading">
+            3. Why La La Laugh Is Better Than Anything Else
+          </h2>
+          
+          <div className="space-y-3">
+            <div>
+              <p className="body-text font-semibold mb-1">
+                A. Sponsorship & Brand Management
+              </p>
+              <p className="body-text ml-4">
+                Creators will have built-in tools to work smoothly with advertisers.
+              </p>
+            </div>
 
-          {/* Section 4 */}
-          <div className="mb-6 sm:mb-8">
-            <h2
-              className="text-lg sm:text-xl md:text-2xl lg:text-[28px] mb-3 sm:mb-4 font-bold text-black"
-            >
-              4. Community Guidelines for Creators
-            </h2>
-            <p
-              className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-[24px] mb-3 sm:mb-4 text-gray-500"
-              style={{ fontWeight: 500, lineHeight: "1.447" }}
-            >
-              To maintain our positive community, creators must adhere to these guidelines:
-            </p>
-            <ul className="pl-6 space-y-2">
-              <li
-                className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-[24px] text-gray-500"
-                style={{ fontWeight: 500, lineHeight: "1.447" }}
-              >
-                • Content must be original and not infringe on others' rights
-              </li>
-              <li
-                className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-[24px] text-gray-500"
-                style={{ fontWeight: 500, lineHeight: "1.447" }}
-              >
-                • Maintain respectful and inclusive humor that brings joy
-              </li>
-              <li
-                className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-[24px] text-gray-500"
-                style={{ fontWeight: 500, lineHeight: "1.447" }}
-              >
-                • Engage authentically with your audience and the community
-              </li>
-              <li
-                className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-[24px] text-gray-500"
-                style={{ fontWeight: 500, lineHeight: "1.447" }}
-              >
-                • Follow platform policies on advertising and sponsorships
-              </li>
-            </ul>
-          </div>
+            <div>
+              <p className="body-text font-semibold mb-1">
+                B. Transparent Metrics
+              </p>
+              <p className="body-text ml-4">
+                No inflated numbers. No mysterious algorithms. Creators and advertisers see real performance from day one.
+              </p>
+            </div>
 
-          {/* Section 5 */}
-          <div className="mb-6 sm:mb-8">
-            <h2
-              className="text-lg sm:text-xl md:text-2xl lg:text-[28px] mb-3 sm:mb-4 font-bold text-black"
-            >
-              5. Getting Started as a Creator
-            </h2>
-            <p
-              className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-[24px] mb-3 sm:mb-4 text-gray-500"
-              style={{ fontWeight: 500, lineHeight: "1.447" }}
-            >
-              Ready to start your comedy career on La La Laugh? Here's how:
-            </p>
-            <ul className="pl-6 space-y-2">
-              <li
-                className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-[24px] text-gray-500"
-                style={{ fontWeight: 500, lineHeight: "1.447" }}
-              >
-                • Download the app and create your creator profile
-              </li>
-              <li
-                className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-[24px] text-gray-500"
-                style={{ fontWeight: 500, lineHeight: "1.447" }}
-              >
-                • Share your first piece of content and start building your audience
-              </li>
-              <li
-                className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-[24px] text-gray-500"
-                style={{ fontWeight: 500, lineHeight: "1.447" }}
-              >
-                • Apply for the Creator Program once you meet the minimum requirements
-              </li>
-              <li
-                className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-[24px] text-gray-500"
-                style={{ fontWeight: 500, lineHeight: "1.447" }}
-              >
-                • Connect with our creator success team for personalized guidance
-              </li>
-            </ul>
-          </div>
+            <div>
+              <p className="body-text font-semibold mb-1">
+                C. A Healthier Entertainment Experience
+              </p>
+              <p className="body-text ml-4">
+                La La Laugh replaces doom-scrolling with pure joy and humor. A lighter mental space = happier creators, better engagement, and sustainable growth.
+              </p>
+            </div>
 
-          {/* Section 6 */}
-          <div className="mb-8 sm:mb-12">
-            <h2
-              className="text-lg sm:text-xl md:text-2xl lg:text-[28px] mb-3 sm:mb-4 font-bold text-black"
-            >
-              6. Contact Our Creator Team
-            </h2>
-            <p
-              className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-[24px] mb-3 sm:mb-4 text-gray-500"
-              style={{ fontWeight: 500, lineHeight: "1.447" }}
-            >
-              Have questions about the Creator Program? We're here to help!
-              <br />
-              Ideas to Move Forward LLC
-              <br />
-              Creator Program Department
-              <br />
-              1309 Coffeen Avenue, STE 1200
-              <br />
+            <div>
+              <p className="body-text font-semibold mb-1">
+                D. Early Creators Become Long-Term Partners
+              </p>
+              <p className="body-text ml-4 mb-1">
+                Creators who join in Phase 1 receive:
+              </p>
+              <ul className="ml-10 space-y-1">
+                <li className="list-item">priority access to monetization</li>
+                <li className="list-item">boosted discovery placement</li>
+                <li className="list-item">sponsorship visibility</li>
+                <li className="list-item">platform recognition</li>
+                <li className="list-item">influence on the product's direction</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        {/* Section 4 */}
+        <div className="mb-8">
+          <h2 className="section-heading">
+            4. Our Mission
+          </h2>
+          <p className="body-text">
+            Our mission is to create a positive, human-first entertainment experience that uplifts people, empowers creators, and rebuilds community through humor.
+          </p>
+          <p className="body-text">
+            La La Laugh is the first Social Entertainment platform — built not for addiction, but for joy.
+          </p>
+        </div>
+
+        {/* Section 5 */}
+        <div className="mb-8">
+          <h2 className="section-heading">
+            5. And Unlike Other Platforms…
+          </h2>
+          <p className="body-text">
+            La La Laugh will never require:
+          </p>
+          <ul className="ml-6 space-y-1 mb-4">
+            <li className="list-item">minimum watch hours</li>
+            <li className="list-item">subscriber thresholds</li>
+            <li className="list-item">inflated or fake metrics</li>
+            <li className="list-item">confusing "eligibility reviews"</li>
+          </ul>
+          <p className="body-text">
+            We keep it simple. We keep it fair. We keep it human.
+          </p>
+        </div>
+
+        {/* Section 6 */}
+        <div className="mb-12">
+          <h2 className="section-heading">
+            6. Conclusion
+          </h2>
+          <p className="body-text">
+            La La Laugh is a movement — a shift toward healthier digital experiences, creator equity, and transparent entertainment.
+          </p>
+          <p className="body-text">
+            We invite creators — comedians, storytellers, entertainers, and anyone who can spark joy — to help build the happiest platform on the internet.
+          </p>
+          <p className="body-text mb-8">
+            This is the beginning of a new era in social entertainment. Let's build it together.
+          </p>
+          
+          <div className="border-t border-gray-300 pt-6 mt-8">
+            <p className="body-text font-semibold mb-2">
+              Contact Our Creator Team
+            </p>
+            <p className="body-text">
+              Have questions about the Creator Program? We're here to help!<br />
+              Ideas to Move Forward LLC<br />
+              Creator Program Department<br />
+              1309 Coffeen Avenue, STE 1200<br />
               Sheridan, WY 82801, USA
             </p>
-            <p
-              className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-[24px] text-gray-500"
-              style={{ fontWeight: 500, lineHeight: "1.447" }}
-            >
+            <p className="body-text">
               Email:{" "}
               <a
                 href="mailto:creators@lalalaugh.com"
@@ -274,25 +283,22 @@ export function CreatorProposal() {
       </div>
 
       {/* Footer Section */}
-      <div className="bg-white">
-        <div className="mt-8 px-4 sm:px-6 md:px-8 lg:pl-16 lg:pr-12 xl:pl-24 xl:pr-16 2xl:pl-[110px] sm:mt-10 md:mt-12 pt-6 sm:pt-7 md:pt-8 border-t border-[#CCCCCC] flex flex-col sm:flex-row justify-between items-center gap-4 sm:gap-6 pb-6">
-          <p
-            style={{ fontFamily: "Nunito, sans-serif" }}
-            className="text-[#00000066] text-xs sm:text-[20px] text-center sm:text-left"
-          >
-            Lalalaugh @ all rights reserved
+      <div className="bg-white border-t border-gray-300">
+        <div className="container-padding py-6 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="font-nunito text-gray-500 text-base text-center md:text-left">
+            Lalalaugh © all rights reserved
           </p>
 
           {/* Social Media Icons */}
-          <div className="flex items-center gap-3 sm:gap-4">
+          <div className="flex items-center gap-4">
             <a
               href="https://www.youtube.com/@lalalaughapp"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[#999999] hover:text-[#3931C5] transition-colors"
+              className="text-gray-500 hover:text-[#3931C5] transition-colors"
             >
               <svg
-                className="w-5 h-5 sm:w-6 sm:h-6"
+                className="w-5 h-5"
                 fill="currentColor"
                 viewBox="0 0 24 24"
               >
@@ -301,10 +307,10 @@ export function CreatorProposal() {
             </a>
             <a
               href="#"
-              className="text-[#999999] hover:text-[#3931C5] transition-colors"
+              className="text-gray-500 hover:text-[#3931C5] transition-colors"
             >
               <svg
-                className="w-5 h-5 sm:w-6 sm:h-6"
+                className="w-5 h-5"
                 fill="currentColor"
                 viewBox="0 0 24 24"
               >
@@ -313,10 +319,10 @@ export function CreatorProposal() {
             </a>
             <a
               href="#"
-              className="text-[#999999] hover:text-[#3931C5] transition-colors"
+              className="text-gray-500 hover:text-[#3931C5] transition-colors"
             >
               <svg
-                className="w-5 h-5 sm:w-6 sm:h-6"
+                className="w-5 h-5"
                 fill="currentColor"
                 viewBox="0 0 24 24"
               >

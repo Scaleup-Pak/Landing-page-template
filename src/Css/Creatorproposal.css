@@ -1,0 +1,142 @@
+/* Custom classes for CreatorProposal component - Simple & Clean Design */
+
+/* Font family utility */
+.font-nunito {
+  font-family: "Nunito, sans-serif";
+}
+
+/* Responsive padding utility - Reduced for cleaner look */
+.container-padding {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 768px) {
+  .container-padding {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container-padding {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+}
+
+/* Body text utility - Darker and more readable */
+.body-text {
+  font-family: "Nunito, sans-serif";
+  font-weight: 400;
+  line-height: 1.7;
+  color: #2d3748;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+  .body-text {
+    font-size: 1.0625rem;
+  }
+}
+
+/* Bold variant for body text */
+.body-text.font-semibold {
+  font-weight: 600;
+  color: #1a202c;
+  font-size: 1.0625rem;
+}
+
+@media (min-width: 768px) {
+  .body-text.font-semibold {
+    font-size: 1.125rem;
+  }
+}
+
+/* Section heading utility - Cleaner styling */
+.section-heading {
+  font-family: "Nunito, sans-serif";
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 1.25rem;
+  margin-top: 2.5rem;
+  font-size: 1.5rem;
+  line-height: 1.3;
+}
+
+@media (min-width: 768px) {
+  .section-heading {
+    font-size: 1.75rem;
+    margin-top: 3rem;
+  }
+}
+
+/* Subsection heading */
+.subsection-heading {
+  font-family: "Nunito, sans-serif";
+  font-weight: 700;
+  color: #1a202c;
+  margin-bottom: 0.75rem;
+  margin-top: 1.75rem;
+  font-size: 1.125rem;
+  line-height: 1.4;
+}
+
+@media (min-width: 768px) {
+  .subsection-heading {
+    font-size: 1.25rem;
+    margin-top: 2rem;
+  }
+}
+
+/* List item utility - Simpler and cleaner */
+.list-item {
+  font-family: "Nunito, sans-serif";
+  font-weight: 400;
+  line-height: 1.7;
+  color: #2d3748;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  padding-left: 0.5rem;
+}
+
+@media (min-width: 768px) {
+  .list-item {
+    font-size: 1.0625rem;
+  }
+}
+
+/* Main title */
+.main-title {
+  font-family: "Nunito, sans-serif";
+  font-weight: 700;
+  color: #000;
+  font-size: 1.875rem;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .main-title {
+    font-size: 2.5rem;
+  }
+}
+
+/* Subtitle text */
+.subtitle-text {
+  font-family: "Nunito, sans-serif";
+  font-weight: 400;
+  line-height: 1.7;
+  color: #2d3748;
+  font-size: 1.125rem;
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 768px) {
+  .subtitle-text {
+    font-size: 1.25rem;
+  }
+}
