@@ -19,9 +19,7 @@ export function TermsOfUse() {
         >
           Terms of Use & Privacy Policy
         </h1>
-        <p className="text-sm sm:text-base text-gray-500 mt-2">
-          Effective Date: September 1st, 2024 | Entity: Ideas to Move Forward LLC
-        </p>
+      
       </div>
 
       {/* Content */}
