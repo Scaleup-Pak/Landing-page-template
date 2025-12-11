@@ -12,9 +12,15 @@ import f10 from "../assets/Featur-section/10.png";
 import f11 from "../assets/Featur-section/11.png";
 import f12 from "../assets/Featur-section/12.png";
 import f13 from "../assets/Featur-section/13.png";
+import { useNavigate } from "react-router-dom";
 
 export function Features() {
+  const navigate = useNavigate();
+
     const handleNavClick = (href: string) => {
+          if (href.startsWith("/")) {
+      navigate(href);
+    } else {
     const element = document.querySelector(href);
     if (element) {
       const header = document.querySelector("header");
@@ -23,8 +29,7 @@ export function Features() {
         top: (element as HTMLElement).offsetTop - headerHeight,
         behavior: "smooth",
       });
-    }
-    // Add a small delay before closing to see the click animation
+    }}
   };
 
   const featureItems: CardData[] = [
@@ -89,7 +94,7 @@ export function Features() {
                 style={{ fontFamily: "Nunito", color: "rgba(0, 0, 0, 0.60)" }}
                 className="text-left    sm:text-lg md:text-xl lg:text-[20px]    leading-relaxed md:leading-[29px] font-normal"
               >
-           On La La Laugh, your brand connects with audiences in their happiest moments — when they’re smiling, laughing, and ready to engage. Have look at our <span className="text-[#0b5bfc]  hover:cursor-pointer underline"> proposal for advertisers</span>  and let us know if you have any <span className="text-[#0b5bfc] underline hover:cursor-pointer" onClick={() => handleNavClick("#contact")}>suggestions</span>.
+           On La La Laugh, your brand connects with audiences in their happiest moments — when they’re smiling, laughing, and ready to engage. Have look at our <span onClick={() => handleNavClick("/advertiser") } className="text-[#0b5bfc]  hover:cursor-pointer underline"> proposal for advertisers</span>  and let us know if you have any <span className="text-[#0b5bfc] underline hover:cursor-pointer" onClick={() => handleNavClick("#contact")}>suggestions</span>.
               </p>
               <h2
                 style={{ fontFamily: "Nunito", color:"#000000",fontWeight:600, fontStyle:"normal" }}
