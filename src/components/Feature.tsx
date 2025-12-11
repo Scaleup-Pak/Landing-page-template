@@ -1,7 +1,6 @@
 import EmblaCarousel from "./Carousel";
 import type { CardData } from "./Carousel";
 import f1 from "../assets/Featur-section/1.png";
-import f2 from "../assets/Featur-section/2.png";
 import f3 from "../assets/Featur-section/3.png";
 import f4 from "../assets/Featur-section/4.png";
 import f5 from "../assets/Featur-section/5.png";
