@@ -15,7 +15,7 @@ export function Creators() {
   //     });
   //   }
   // };
-  
+
   const handleNavClick = (href: string) => {
     if (href.startsWith("/")) {
       navigate(href);
@@ -81,7 +81,10 @@ export function Creators() {
                 We want to make La La Laugh the best place for you to create and
                 share content that sparks joy. Have ideas or feedback? Have a
                 look at our{" "}
-                <span className="text-[#0b5bfc]  hover:cursor-pointer underline" onClick={() => handleNavClick("/creator-proposal")}>
+                <span
+                  className="text-[#0b5bfc]  hover:cursor-pointer underline"
+                  onClick={() => handleNavClick("/creator-proposal")}
+                >
                   {" "}
                   proposal for creators
                 </span>{" "}
@@ -118,12 +121,10 @@ export function Creators() {
                       style={{ fontFamily: "Nunito" }}
                       className="text-center text-[#00000099]   md:text-left text-base sm:text-lg md:text-xl lg:text-[18px]    leading-relaxed md:leading-8"
                     >
-                      Forget toxic feeds and endless doomscrolling. Here, jokes,
-                      comedy, and parody are the cure. Trolls and dark
-                      algorithms? Not welcome. Just pure comedy, inclusivity,
-                      and a simple space to unwind. Ditch the drama. Let humor
-                      be the medicine that changes the world. Join La La Laugh’s
-                      joyful revolution.
+                      We design La La Laugh to be accessible to all. With
+                      dominant-hand controls and upcoming features for deaf and
+                      blind users, we aim for an experience everyone can enjoy
+                      effortlessly. Nobody gets left behind.
                     </p>
                     {/* button */}
                     {/* <div className="flex justify-center lg:justify-start mb-6">
