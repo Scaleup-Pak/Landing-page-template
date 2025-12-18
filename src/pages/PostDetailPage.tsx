@@ -153,7 +153,7 @@ export function PostDetailPage() {
                 {post.user.fullName.charAt(0).toUpperCase()}
               </div>
             )}
-            <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 bg-red-500 rounded-full w-6 h-6 flex items-center justify-center border-2 border-black">
+            <div className="absolute -bottom-2 -right-0 transform  bg-[#3A2DCA] rounded-full w-6 h-6 flex items-center justify-center ">
               <svg
                 className="w-3 h-3 text-white"
                 fill="currentColor"
