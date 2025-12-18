@@ -100,8 +100,8 @@ export function Creators() {
             </div>
             {/* creator program image  */}
             <div className=" " id="features">
-              <div className=" pt-[53px]  px-[78px] w-full h-full flex justify-between gap-[100px] bg-[#F4F4F4] rounded-[30px]">
-                {/* left side image wich will only show from md to above and right side text */}
+              <div className=" pt-[53px]  px-4 sm:px-8 lg:px-[78px] w-full h-full flex flex-col lg:flex-row justify-between gap-8 lg:gap-[100px] bg-[#F4F4F4] rounded-[30px]">
+                {/* left side image - desktop only */}
                 <div className="hidden lg:flex lg:flex-col lg:justify-end">
                   <div className=" w-full">
                     <img src={iphone} width={400} alt="Creators" />
@@ -112,29 +112,24 @@ export function Creators() {
                   <div className="flex flex-col gap-5 justify-center ">
                     <h4
                       style={{ fontFamily: "Nunito, sans-serif" }}
-                      className="text-center md:text-left text-[24px] lg:w-[50%] md:text-[30px] leading-tight md:leading-[50px] font-sans font-bold "
+                      className="text-center lg:text-left text-[24px] lg:w-[50%] md:text-[30px] leading-tight md:leading-[50px] font-sans font-bold "
                     >
                       App Based On Your Dominant Hand
                     </h4>
 
                     <p
                       style={{ fontFamily: "Nunito" }}
-                      className="text-center text-[#00000099]   md:text-left text-base sm:text-lg md:text-xl lg:text-[18px]    leading-relaxed md:leading-8"
+                      className="text-center text-[#00000099] lg:text-left text-base sm:text-lg md:text-xl lg:text-[18px] leading-relaxed md:leading-8"
                     >
-                      We design La La Laugh to be accessible to all. With
-                      dominant-hand controls and upcoming features for deaf and
-                      blind users, we aim for an experience everyone can enjoy
-                      effortlessly. Nobody gets left behind.
+                      La La Laugh is the first app designed to adapt to you—whether you're left-handed or right-handed. With our patented functionality, you can switch all controls to your dominant hand for a more natural, intuitive, and comfortable experience. We are working in adding more features and innovations. Stay tuned.
                     </p>
-                    {/* button */}
-                    {/* <div className="flex justify-center lg:justify-start mb-6">
-                      <button
-                        onClick={handleScrollToWaitlist}
-                        className="bg-[#3931C5] text-white cursor-pointer  px-6 py-3 rounded-[11px] transition hover:bg-[#2d25a0]"
-                      >
-                        Explore App
-                      </button>
-                    </div> */}
+                    
+                    {/* Mobile/Tablet image - centered below text */}
+                    <div className="lg:hidden flex justify-center mt-4">
+                      <img src={iphone} className="max-w-[280px] sm:max-w-[320px] w-full" alt="Creators" />
+                    </div>
+
+                   
                   </div>
                 </div>
               </div>
