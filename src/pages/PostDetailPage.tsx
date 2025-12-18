@@ -104,15 +104,15 @@ export function PostDetailPage() {
   const displayImage = post.thumbnailUrl || post.previewUrl;
 
   return (
-    <div className="fixed inset-0 bg-black overflow-hidden">
-      {/* Main Video/Image Container - Full Screen */}
-      <div className="relative h-full w-full flex items-center justify-center">
+    <div className="fixed inset-0 bg-black overflow-hidden flex items-center justify-center">
+      {/* Video Container - Constrained to mobile-like width on large screens */}
+      <div className="relative h-full w-full max-w-[500px] mx-auto bg-black">
         {/* Background Image/Video */}
         {displayImage ? (
           <img
             src={displayImage}
             alt={post.title || "Video thumbnail"}
-            className="h-full w-full object-contain"
+            className="h-full w-full object-cover"
           />
         ) : (
           <div className="flex items-center justify-center h-full w-full bg-gray-900">
@@ -138,8 +138,8 @@ export function PostDetailPage() {
           </div>
         )}
 
-        {/* Right Side Action Bar - TikTok Style */}
-        <div className="absolute right-4 bottom-24 flex flex-col items-center gap-6 z-20">
+        {/* Right Side Action Bar - TikTok Style - INSIDE video container */}
+        <div className="absolute right-3 bottom-24 flex flex-col items-center gap-5 z-20">
           {/* User Avatar with Follow Button */}
           <div className="relative">
             {post.user.profilePicture ? (
