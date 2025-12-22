@@ -23,7 +23,6 @@ export function PostDetailPage() {
   const [error, setError] = useState<string | null>(null);
   const [videoError, setVideoError] = useState(false);
   const [isMuted, setIsMuted] = useState(false);
-  const [aspectRatio, setAspectRatio] = useState<number | null>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
@@ -58,13 +57,7 @@ export function PostDetailPage() {
   }, [id]);
 
   // Detect video aspect ratio
-  const handleVideoLoadedMetadata = () => {
-    if (videoRef.current) {
-      const { videoWidth, videoHeight } = videoRef.current;
-      const ratio = videoWidth / videoHeight;
-      setAspectRatio(ratio);
-    }
-  };
+
 
   // Loading state
   if (loading) {
@@ -132,7 +125,6 @@ export function PostDetailPage() {
             playsInline
             preload="metadata"
             onError={() => setVideoError(true)}
-            onLoadedMetadata={handleVideoLoadedMetadata}
           >
             {/* Support multiple video formats */}
             <source src={videoUrl} type="video/mp4" />
