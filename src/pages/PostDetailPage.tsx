@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { useParams, Link } from "react-router-dom";
 import { postService } from "../services/postService";
 import type { PostDetail } from "../types/post";
@@ -15,11 +15,16 @@ const formatCount = (count: number): string => {
   }
   return count.toString();
 };
+
 export function PostDetailPage() {
   const { id } = useParams<{ id: string }>();
   const [post, setPost] = useState<PostDetail | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [videoError, setVideoError] = useState(false);
+  const [isMuted, setIsMuted] = useState(false);
+  const [aspectRatio, setAspectRatio] = useState<number | null>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
     const fetchPost = async () => {
@@ -51,6 +56,15 @@ export function PostDetailPage() {
 
     fetchPost();
   }, [id]);
+
+  // Detect video aspect ratio
+  const handleVideoLoadedMetadata = () => {
+    if (videoRef.current) {
+      const { videoWidth, videoHeight } = videoRef.current;
+      const ratio = videoWidth / videoHeight;
+      setAspectRatio(ratio);
+    }
+  };
 
   // Loading state
   if (loading) {
@@ -100,20 +114,33 @@ export function PostDetailPage() {
     );
   }
 
-  // Determine which image to show
-  const displayImage = post.thumbnailUrl || post.previewUrl;
-
+  // Determine video source and fallback image
+  const videoUrl = post?.convertedUrl;
   return (
     <div className="fixed inset-0 bg-black overflow-hidden flex items-center justify-center">
       {/* Video Container - Constrained to mobile-like width on large screens */}
-      <div className="relative h-full w-full max-w-[500px] mx-auto bg-black">
-        {/* Background Image/Video */}
-        {displayImage ? (
-          <img
-            src={displayImage}
-            alt={post.title || "Video thumbnail"}
-            className="h-full w-full object-cover"
-          />
+      <div className="w-full h-full ">
+        {/* Video Player or Image Fallback */}
+        {videoUrl && !videoError ? (
+          <video
+            ref={videoRef}
+            controls
+            autoPlay
+            loop
+            muted={isMuted}
+            className=" w-full h-full object-contain"
+            playsInline
+            preload="metadata"
+            onError={() => setVideoError(true)}
+            onLoadedMetadata={handleVideoLoadedMetadata}
+          >
+            {/* Support multiple video formats */}
+            <source src={videoUrl} type="video/mp4" />
+            <source src={videoUrl} type="video/webm" />
+            <source src={videoUrl} type="video/ogg" />
+            {/* Fallback text */}
+            Your browser does not support the video tag.
+          </video>
         ) : (
           <div className="flex items-center justify-center h-full w-full bg-gray-900">
             <svg
@@ -138,6 +165,50 @@ export function PostDetailPage() {
           </div>
         )}
 
+        {/* Mute/Unmute Button */}
+        {videoUrl && !videoError && (
+          <button
+            onClick={() => setIsMuted(!isMuted)}
+            className="absolute top-4 right-4 z-30 bg-black/50 hover:bg-black/70 rounded-full p-3 transition-all active:scale-95"
+          >
+            {isMuted ? (
+              <svg
+                className="w-6 h-6 text-white"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"
+                />
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M17 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2"
+                />
+              </svg>
+            ) : (
+              <svg
+                className="w-6 h-6 text-white"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"
+                />
+              </svg>
+            )}
+          </button>
+        )}
+
         {/* Right Side Action Bar - TikTok Style - INSIDE video container */}
         <div className="absolute right-3 bottom-24 flex flex-col items-center gap-5 z-20">
           {/* User Avatar with Follow Button */}
@@ -153,7 +224,7 @@ export function PostDetailPage() {
                 {post.user.fullName.charAt(0).toUpperCase()}
               </div>
             )}
-            <div className="absolute -bottom-2 -right-0 transform  bg-[#3A2DCA] rounded-full w-6 h-6 flex items-center justify-center ">
+            <div className="absolute -bottom-2 -right-0 transform bg-[#3A2DCA] rounded-full w-6 h-6 flex items-center justify-center">
               <svg
                 className="w-3 h-3 text-white"
                 fill="currentColor"

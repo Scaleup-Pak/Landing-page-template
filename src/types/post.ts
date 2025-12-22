@@ -23,6 +23,7 @@ export interface PostDetail {
   duration: number | null;
   previewUrl: string | null;
   thumbnailUrl?: string | null;
+  convertedUrl?: string | null;
   createdAt: string | Date;
   updatedAt: string | Date;
   user: PostUser;
