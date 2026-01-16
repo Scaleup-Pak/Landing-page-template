@@ -1,0 +1,10 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "com.lala.laugh.app",
+    "sha256_cert_fingerprints": [
+     "1F:DD:A4:B6:68:2D:68:44:61:43:91:FB:C6:AF:99:B3:D7:73:C1:06:AB:15:D7:57:B4:1A:A6:AB:1F:05:EA:A9"
+    ]
+  }
+}]
