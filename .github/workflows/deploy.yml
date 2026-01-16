@@ -41,7 +41,14 @@ jobs:
     - name: Sync files to S3
       run: |
         aws s3 sync dist/ s3://lalalaugh.com --delete
+        
+    - name: Set Content-Type for .well-known files
+      run: |
+        # Set Content-Type for Android App Links
+        aws s3 cp dist/.well-known/assetlinks.json s3://lalalaugh.com/.well-known/assetlinks.json \
+          --content-type "application/json" \
+          --cache-control "public, max-age=3600"
 
     - name: Invalidate CloudFront cache
       run: |
-        aws cloudfront create-invalidation --distribution-id E3HILKMO28MDXF --paths "/*"
+        aws cloudfront create-invalidation --distribution-id E3HILKMO28MDXF --paths "/*" "/.well-known/*"
