@@ -1,18 +1,87 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap");
 @import "tailwindcss";
 
 /* Tailwind v4 Theme Configuration */
 :root {
-  --font-family-sans: 'Nunito', sans-serif;
+  --font-family-sans: 'Plus Jakarta Sans', sans-serif;
   --font-weight-medium: 500;
   --font-weight-semibold: 600;
   --font-weight-bold: 700;
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-text-strong: #222222;
+  --color-text-muted: rgba(34, 34, 34, 0.7);
+
+  /* Global app theme (extracted from updated desktop header) */
+  --theme-surface: #f3f3f3;
+  --theme-primary: #53aaa3;
+  --theme-primary-hover: #4b9992;
+  --theme-ink: #121918;
+  --theme-primary-ring: rgba(83, 170, 163, 0.2);
+  --theme-primary-ring-strong: rgba(83, 170, 163, 0.14);
+  --theme-card-border: rgba(18, 25, 24, 0.1);
+  --theme-card-date: rgba(18, 25, 24, 0.45);
+  --theme-surface-soft: #f6f6f6;
+
+  /* Header theme tokens */
+  --header-bg: var(--theme-surface);
+  --header-nav: var(--color-text-strong);
+  --header-nav-muted: var(--color-text-muted);
+  --header-nav-active: var(--color-text-strong);
+  --header-cta-bg: var(--theme-primary);
+  --header-cta-hover: var(--theme-primary-hover);
+  --header-cta-text: var(--color-white);
+  --header-mobile-panel-bg: rgba(83, 170, 163, 0.1);
+  --header-mobile-panel-border: rgba(83, 170, 163, 0.3);
+
+}
+
+@theme {
+  --font-sans: var(--font-family-sans);
+
+  --color-background: #ffffff;
+  --color-foreground: #222222;
+  --color-muted-background: #f3f3f3;
+  --color-muted-foreground: rgba(34, 34, 34, 0.7);
+
+  --color-primary: #53aaa3;
+  --color-primary-hover: #4b9992;
+  --color-primary-ring: rgba(83, 170, 163, 0.2);
+  --color-primary-ring-strong: rgba(83, 170, 163, 0.14);
+
+  --color-ink: #121918;
+  --color-card-border: rgba(18, 25, 24, 0.1);
+  --color-card-date: rgba(18, 25, 24, 0.45);
+  --color-surface-soft: #f6f6f6;
+}
+
+html,
+body,
+#root {
+  font-family: var(--font-family-sans);
+}
+
+@layer base {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-family-sans);
+    font-weight: 700;
+    font-style: normal;
+    font-size: 50px;
+    line-height: 66px;
+    letter-spacing: 0;
+  }
 }
 
 
 /* Custom text components */
 @layer components {
   .text-paragraph {
-    font-family: 'Nunito';
+    font-family: var(--font-family-sans);
     font-size: 18px;
     font-style: normal;
     font-weight: 400;
@@ -21,7 +90,7 @@
 
   }
   .text-heading-large {
-    font-family: 'Nunito';
+    font-family: var(--font-family-sans);
     font-size: 27px;
     font-style: normal;
     font-weight: 700;
@@ -30,19 +99,19 @@
   }
 
   .text-heading {
-    font-family: 'Nunito';
+    font-family: var(--font-family-sans);
     font-weight: 600;
     font-style: normal;
   }
 
   .text-nav {
-    font-family: 'Nunito';
+    font-family: var(--font-family-sans);
     font-weight: 600;
     font-style: normal;
   }
   
   .text-h1 {
-    font-family: 'Nunito';
+    font-family: var(--font-family-sans);
     font-size: 48px;
     font-weight: 700;
     line-height: 56px;

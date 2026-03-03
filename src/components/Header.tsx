@@ -1,43 +1,31 @@
-const navLinks = [
-  { href: "#about", label: "About us" },
-  { href: "#creators", label: "Creators" },
-  { href: "#features", label: "Features" },
-  { href: "#advertiser", label: "Advertisers" },
-];
-
 import { useState, useEffect } from "react";
-import logo from "../assets/logo.svg";
-import smiliLogo from "../assets/smilee-logo.png";
+import { headerContent, type HeaderNavLink } from "../content/header";
 
 interface HeaderProps {
-  navigationLinks?: typeof navLinks;
+  navigationLinks?: HeaderNavLink[];
   ctaText?: string;
-  backgroundColor?: string;
+  ctaHref?: string;
 }
 
 export function Header({
-  navigationLinks = navLinks,
-  ctaText = "Contact & Suggestions",
-  backgroundColor = "#3931C5",
+  navigationLinks = headerContent.navLinks,
+  ctaText = headerContent.ctaText,
+  ctaHref = headerContent.ctaHref,
 }: HeaderProps = {}) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeLink, setActiveLink] = useState("");
 
-  // Handle scroll effect for header styling and active link highlighting
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
 
-      // Determine active link based on section in view
-      const sections = ["#about", "#creators", "#features", "#advertiser"];
       let current = "";
-      sections.forEach((section) => {
+      headerContent.activeSections.forEach((section) => {
         const element = document.querySelector(section);
         if (element) {
           const rect = element.getBoundingClientRect();
           if (rect.top <= 100 && rect.bottom >= 100) {
-            // Threshold for "in view"
             current = section;
           }
         }
@@ -59,54 +47,44 @@ export function Header({
         behavior: "smooth",
       });
     }
-    // Add a small delay before closing to see the click animation
     setTimeout(() => setIsMenuOpen(false), 150);
   };
 
   return (
     <>
-      {/* Mobile Menu Backdrop */}
       {isMenuOpen && (
         <div
-          className="lg:hidden fixed inset-0 bg-black/20 backdrop-blur-sm z-40 transition-opacity duration-300"
+          className="fixed inset-0 z-40 bg-ink/20 backdrop-blur-sm transition-opacity duration-300 lg:hidden"
           onClick={() => setIsMenuOpen(false)}
         />
       )}
 
       <header
-        className={`fixed top-0 w-full px-4 sm:px-6 md:px-8 lg:px-16 xl:px-24 2xl:px-[106px] py-4 sm:py-5 md:py-6 transition-all duration-300 z-50 ${
-          isScrolled ? "shadow-lg backdrop-blur-sm" : ""
+        className={`fixed top-0 z-50 w-full bg-muted-background px-4 py-4 transition-all duration-300 sm:px-6 sm:py-5 md:px-8 md:py-6 lg:px-16 xl:px-24 2xl:px-[106px] ${
+          isScrolled ? "shadow-lg" : ""
         }`}
-        style={{ backgroundColor }}
       >
-        <div className="max-w-[1440px] cursor-pointer  mx-auto flex items-center justify-between">
-          {/* Logo + Smili Logo */}
+        <div className="mx-auto flex max-w-[1440px] cursor-pointer items-center justify-between">
           <div
-            className="flex items-center gap-4 flex-shrink-0 cursor-pointer"
+            className="flex cursor-pointer flex-shrink-0 items-center gap-4"
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           >
             <img
-              src={logo}
-              alt="Lalalaugh logo"
-              className="h-7 sm:h-8 md:h-9 lg:h-10 transition-all duration-200"
-            />
-            <img
-              src={smiliLogo}
-              alt="Smili logo"
-              className="h-8 sm:h-9 md:h-10 lg:h-11 transition-all duration-200"
+              src={headerContent.logoSrc}
+              alt={headerContent.logoAlt}
+              className="h-10 transition-all duration-200 sm:h-12 md:h-14 lg:h-16"
             />
           </div>
 
-          {/* Desktop Navigation Links */}
-          <nav className="hidden lg:flex items-center gap-6 xl:gap-8">
+          <nav className="hidden items-center gap-6 lg:flex xl:gap-8">
             {navigationLinks.map((link, index) => (
               <span
                 key={link.href}
-                className={`relative transition-all duration-300  text-sm xl:text-base cursor-pointer hover:text-white hover:scale-105 ${
+                className={`relative cursor-pointer text-sm transition-all duration-300 hover:scale-105 hover:text-primary xl:text-base ${
                   link.href === activeLink && activeLink
-                    ? "text-white"
-                    : "text-white/70"
-                } after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-0.5 after:bg-white after:transition-all after:duration-300 hover:after:w-full ${
+                    ? "text-foreground"
+                    : "text-muted-foreground"
+                } after:absolute after:bottom-[-4px] after:left-0 after:h-0.5 after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full ${
                   link.href === activeLink && activeLink ? "after:w-full" : ""
                 }`}
                 onClick={() => handleNavClick(link.href)}
@@ -117,33 +95,25 @@ export function Header({
             ))}
           </nav>
 
-          {/* CTA Button - Desktop */}
           <div className="flex items-center gap-3 sm:gap-4">
             <button
               type="button"
-              className="hidden lg:block bg-white cursor-pointer text-[#3931C5] hover:bg-white/90 hover:scale-105 hover:shadow-lg px-[30px] xl:px-6 py-2 xl:py-3 rounded-lg transition-all duration-300 text-sm xl:text-base whitespace-nowrap transform"
-              onClick={() => handleNavClick("#contact")}
+              className="hidden cursor-pointer whitespace-nowrap rounded-lg bg-primary px-[30px] py-2 text-sm text-white transition-all duration-300 hover:scale-105 hover:bg-primary-hover hover:shadow-lg xl:px-6 xl:py-3 xl:text-base lg:block"
+              onClick={() => handleNavClick(ctaHref)}
             >
               {ctaText}
             </button>
+
             <button
               type="button"
-              className="hidden lg:block bg-transparent cursor-pointer border border-[#FFFFFF] text-[#FFFFFF]  hover:scale-105 hover:shadow-lg px-[30px] xl:px-6 py-2 xl:py-3 rounded-lg transition-all duration-300 text-sm xl:text-base whitespace-nowrap transform"
-              onClick={() => window.open("https://app.lalalaugh.com", "_blank")}
-            >
-              Sponsor Videos
-            </button>
-            {/* Mobile Menu Button */}
-            <button
-              type="button"
-              className={`lg:hidden text-white focus:outline-none p-2 cursor-pointer rounded-lg hover:bg-white/10 transition-all duration-300 transform hover:scale-110 active:scale-95 ${
-                isMenuOpen ? "bg-white/10 rotate-90" : ""
+              className={`rounded-lg p-2 text-foreground transition-all duration-300 hover:scale-110 hover:bg-foreground/5 focus:outline-none active:scale-95 lg:hidden ${
+                isMenuOpen ? "rotate-90 bg-foreground/5" : ""
               }`}
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               aria-label="Toggle menu"
             >
               <svg
-                className="w-6 h-6 sm:w-7 sm:h-7 transition-transform duration-300"
+                className="h-6 w-6 transition-transform duration-300 sm:h-7 sm:w-7"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -152,11 +122,7 @@ export function Header({
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   strokeWidth={2}
-                  d={
-                    isMenuOpen
-                      ? "M6 18L18 6M6 6l12 12"
-                      : "M4 6h16M4 12h16M4 18h16"
-                  }
+                  d={isMenuOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"}
                   className="transition-all duration-300"
                 />
               </svg>
@@ -164,30 +130,23 @@ export function Header({
           </div>
         </div>
 
-        {/* Mobile Navigation Menu */}
         <div
-          className={`lg:hidden overflow-hidden transition-all duration-500 ease-in-out ${
-            isMenuOpen
-              ? "max-h-96 opacity-100 mt-4 sm:mt-6"
-              : "max-h-0 opacity-0 mt-0"
+          className={`overflow-hidden transition-all duration-500 ease-in-out lg:hidden ${
+            isMenuOpen ? "mt-4 max-h-96 opacity-100 sm:mt-6" : "mt-0 max-h-0 opacity-0"
           }`}
         >
-          <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 sm:p-5 border border-white/20">
+          <div className="rounded-lg border border-primary/30 bg-primary/10 p-4 backdrop-blur-sm sm:p-5">
             <nav className="flex flex-col gap-3 sm:gap-4">
               {navigationLinks.map((link, index) => (
                 <span
                   key={link.href}
-                  className={`transition-all duration-300 font-medium text-sm sm:text-base cursor-pointer hover:text-white hover:translate-x-2 hover:scale-105 active:scale-95 ${
+                  className={`relative cursor-pointer pl-4 text-sm font-medium transition-all duration-300 hover:translate-x-2 hover:scale-105 hover:text-foreground hover:before:scale-125 hover:before:bg-foreground active:scale-95 sm:text-base ${
                     link.href === activeLink && activeLink
-                      ? "text-white"
-                      : "text-white/70"
-                  } transform translate-y-2 opacity-0 ${
+                      ? "text-foreground before:scale-125 before:bg-foreground"
+                      : "text-muted-foreground"
+                  } before:absolute before:left-0 before:top-1/2 before:h-2 before:w-2 before:-translate-y-1/2 before:rounded-full before:bg-muted-foreground before:transition-all before:duration-300 ${
                     isMenuOpen ? "animate-slideInUp" : ""
-                  } relative pl-4 before:absolute before:left-0 before:top-1/2 before:w-2 before:h-2 before:bg-white/50 before:rounded-full before:transform before:-translate-y-1/2 before:transition-all before:duration-300 hover:before:bg-white hover:before:scale-125 ${
-                    link.href === activeLink && activeLink
-                      ? "before:bg-white before:scale-125"
-                      : ""
-                  }`}
+                  } translate-y-2 opacity-0`}
                   onClick={() => handleNavClick(link.href)}
                   style={{
                     animationDelay: `${index * 0.1}s`,
@@ -197,24 +156,12 @@ export function Header({
                   {link.label}
                 </span>
               ))}
-
               <button
                 type="button"
-                className={`bg-transparent text-[#FFFFFF]  hover:scale-105 border-[#FFFFFF] border hover:shadow-lg font-semibold px-4 sm:px-5 py-2 sm:py-2.5 rounded-lg transition-all duration-300 text-sm sm:text-base self-start mt-2 transform translate-y-2 opacity-0 ${
+                className={`mt-2 self-start rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-white transition-all duration-300 hover:scale-105 hover:bg-primary-hover hover:shadow-lg sm:px-5 sm:py-2.5 sm:text-base ${
                   isMenuOpen ? "animate-slideInUp" : ""
-                }`}
-                onClick={() =>
-                  window.open("https://app.lalalaugh.com", "_blank")
-                }
-              >
-                Sponsor Videos
-              </button>
-              <button
-                type="button"
-                className={`bg-white text-[#3931C5] hover:bg-white/90 hover:scale-105 hover:shadow-lg font-semibold px-4 sm:px-5 py-2 sm:py-2.5 rounded-lg transition-all duration-300 text-sm sm:text-base self-start mt-2 transform translate-y-2 opacity-0 ${
-                  isMenuOpen ? "animate-slideInUp" : ""
-                }`}
-                onClick={() => handleNavClick("#contact")}
+                } translate-y-2 opacity-0`}
+                onClick={() => handleNavClick(ctaHref)}
                 style={{
                   animationDelay: `${navigationLinks.length * 0.1}s`,
                   animationFillMode: "forwards",

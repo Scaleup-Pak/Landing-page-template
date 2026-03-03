@@ -140,7 +140,6 @@ export const validateUserType = (userType: string): ValidationResult => {
 
 // Helper function to validate entire form
 export interface ContactFormData {
-  userType: string;
   name: string;
   email: string;
   subject: string;
@@ -160,11 +159,6 @@ export interface FormValidationResult {
 
 export const validateContactForm = (data: ContactFormData): FormValidationResult => {
   const errors: FormValidationResult['errors'] = {};
-
-  const userTypeResult = validateUserType(data.userType);
-  if (!userTypeResult.isValid) {
-    errors.userType = userTypeResult.error;
-  }
 
   const nameResult = validateName(data.name);
   if (!nameResult.isValid) {

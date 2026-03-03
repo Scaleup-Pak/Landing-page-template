@@ -135,20 +135,13 @@ async function apiRequest<T>(
 export async function submitContactForm(
   formData: ContactFormData
 ): Promise<ApiResponse<ContactSubmissionResponse>> {
-  // Prepare the payload (remove timestamp and source)
-  // Ensure userType is a string: 'WAITLIST', 'CREATOR', or 'ADVERTISER'
-  const allowedUserTypes = ['WAITLIST', 'CREATOR', 'ADVERTISER'];
-  const userType = allowedUserTypes.includes(formData.userType)
-    ? formData.userType
-    : 'CREATOR'; // fallback or handle error as needed
+  // Backend /support DTO does not accept userType.
   const payload = {
-    userType,
     name: formData.name.trim(),
     email: formData.email.trim().toLowerCase(),
     subject: formData.subject.trim(),
     message: formData.message.trim(),
   };
-  console.log("🚀 ~ submitContactForm ~ payload:", payload)
 
   return apiRequest<ContactSubmissionResponse>(API_ENDPOINTS.CONTACT, {
     method: 'POST',

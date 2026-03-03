@@ -1,0 +1,50 @@
+import { testimonialsContent } from "../content/testimonials";
+
+export function Testimonial() {
+  return (
+    <section id="testimonials" className="w-full py-16 sm:py-20 lg:py-24 bg-background">
+      <div className="w-full px-4 sm:px-6 md:px-8 lg:px-16 xl:px-24 2xl:px-[106px]">
+        <div className="mx-auto flex w-full max-w-[1200px] flex-col gap-10 sm:gap-12">
+          <div className="flex flex-col items-center gap-5 text-center">
+            <h2 className="max-w-[980px] text-[34px] font-semibold leading-[1.2] text-foreground sm:text-[42px] sm:leading-[54px]">
+              {testimonialsContent.heading}
+            </h2>
+            <p className="max-w-[1023px] text-base leading-7 tracking-[-0.01em] text-muted-foreground sm:text-lg">
+              {testimonialsContent.description}
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-[15px]">
+            {testimonialsContent.items.map((item) => (
+              <article
+                key={item.id}
+                className="flex min-h-[250px] flex-col justify-between rounded-[14px] border border-[rgba(33,37,41,0.1)] bg-[rgba(246,246,246,0.4)] p-[22px]"
+              >
+                <p className="text-[16px] leading-[25px] tracking-[-0.01em] text-[#212529]">
+                  &ldquo;{item.quote}&rdquo;
+                </p>
+
+                <div className="mt-8 flex items-center gap-[10px]">
+                  <img
+                    src={item.avatarSrc}
+                    alt={item.name}
+                    className="h-[50px] w-[48px] rounded-[52px] object-cover"
+                    loading="lazy"
+                  />
+                  <div>
+                    <p className="text-[17px] font-semibold leading-7 tracking-[-0.01em] text-[#212529]">
+                      {item.name}
+                    </p>
+                    <p className="text-[14px] leading-[21px] text-[rgba(33,37,41,0.5)]">
+                      {item.role}
+                    </p>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}

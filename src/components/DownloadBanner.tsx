@@ -1,65 +1,36 @@
-import playstoreIcon from "../assets/playstore.png";
-import appleicon from "../assets/applelogo.png";
-import downlodeImage from "../assets//downloadsection.png";
+import { downloadBannerContent } from "../content/downloadBanner";
+import { StoreButtons } from "./StoreButtons";
 
 export function DownloadBanner() {
   return (
-    <section className="w-full py-[105px] bg-[#3931C5]">
+    <section className="w-full py-[105px] bg-primary">
       <div className="w-full px-4 sm:px-6 md:px-8 lg:px-16 xl:px-24 2xl:px-[106px]">
-        <div className="max-w-[1440px] mx-auto">
+        <div className="mx-auto max-w-[1440px]">
           <div className="flex flex-col gap-8 md:gap-[60px]">
             <div className="flex flex-col gap-[6px]">
-              {/* adjust the size for small and mid screen */}
-              <div className="w-full max-w-xs sm:max-w-md md:max-w-[780px] mx-auto mb-4 relative">
-                <img src={downlodeImage} alt="Lalalaugh app download section preview" className="w-full h-auto block" loading="lazy" />
-                {/* White line effect attached to the bottom of the phone frame */}
-                <div className="absolute bottom-[px] left-1/2 transform -translate-x-1/2 w-[110%] md:w-[105%] lg:w-[115%] h-[3px] bg-white shadow-[0_0_20px_rgba(255,255,255,0.6)]"></div>
+              <div className="relative mx-auto mb-4 w-full max-w-xs sm:max-w-md md:max-w-[780px]">
+                <img
+                  src={downloadBannerContent.previewImageSrc}
+                  alt={downloadBannerContent.previewImageAlt}
+                  className="block h-auto w-full"
+                  loading="lazy"
+                />
+                <div className="absolute bottom-[px] left-1/2 h-[3px] w-[110%] -translate-x-1/2 transform bg-white shadow-[0_0_20px_rgba(255,255,255,0.6)] md:w-[105%] lg:w-[115%]"></div>
               </div>
               <h4
-                style={{ fontFamily: "Nunito, sans-serif", fontWeight: "700" }}
-                className="text-center text-[#FFFFFF] text-[28px] sm:text-[32px] md:text-[40px] leading-tight md:leading-[57px]"
+                style={{ fontWeight: "700" }}
+                className="text-center text-[28px] leading-tight text-white sm:text-[32px] md:text-[40px] md:leading-[57px]"
               >
-                Download the LA LA LAUGH App
+                {downloadBannerContent.heading}
               </h4>
               <p
-                style={{ fontFamily: "Nunito, sans-serif" }}
-                className="text-center text-[#FFFFFF80] sm:text-lg md:text-xl leading-relaxed md:leading-8"
+                className="text-center leading-relaxed text-white/80 sm:text-lg md:text-xl md:leading-8"
               >
-                Download LA LA LAUGH app today and avail exclusive videos.
+                {downloadBannerContent.description}
               </p>
             </div>
 
-            <div className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-5">
-              {/* Google Play Button */}
-              <button className="bg-white cursor-pointer  hover:bg-white/90 transition-colors rounded-2xl px-[16px] py-3 flex items-center gap-4 ">
-               <div className="flex items-center gap-4 ">
-                 <img src={playstoreIcon} alt="Google Play Store icon" loading="lazy" />
-                <div className="flex flex-col items-start">
-                  <span className="text-xs text-black/80 font-medium">
-                    GET IT ON
-                  </span>
-                  <span className="text-[24px]  text-black">
-                    Google Play
-                  </span>
-                </div>
-               </div>
-              </button>
-
-              {/* App Store Button */}
-              <button className="bg-white cursor-pointer hover:bg-white/90 transition-colors rounded-2xl px-6 py-3 flex items-center gap-4 ">
-             <div className="flex items-center gap-4 ">
-                 <img src={appleicon} alt="Apple App Store icon" loading="lazy" />
-                <div className="flex flex-col items-start">
-                  <span className="text-xs text-black/80 font-medium">
-                    Download On the
-                  </span>
-                  <span className="text-[24px]  text-black">
-                    App Store
-                  </span>
-                </div>
-             </div>
-              </button>
-            </div>
+            <StoreButtons buttons={downloadBannerContent.storeButtons} />
           </div>
         </div>
       </div>

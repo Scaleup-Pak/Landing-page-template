@@ -1,25 +1,28 @@
-import { About } from "../components/About";
 import { Header } from "../components/Header";
-import { Creators } from "../components/Creators";
 import { Features } from "../components/Feature";
 import { ContactUs } from "../components/ContactUs";
 import { DownloadBanner } from "../components/DownloadBanner";
 import { Footer } from "../components/Footer";
+import { Hero } from "../components/Hero";
+import { HowItWorks } from "../components/HowItWorks";
+import { Testimonial } from "../components/Testimonial";
+import { Faqs } from "../components/Faqs";
 
 export function HomePage() {
   return (
     <>
       <Header />
       <main>
-        <h1 style={{display: 'none'}}>Lalalaugh – Social Entertainment App for Content Creators & Communities</h1>
-        <section className="pt-16">
-          <About />
-        </section>
-        <section>
-          <Creators />
-        </section>
+        <Hero />
+        <HowItWorks />\
         <section>
           <Features />
+        </section>
+        <section>
+          <Testimonial />
+        </section>
+        <section>
+          <Faqs />
         </section>
         <section id="contact">
           <ContactUs />
